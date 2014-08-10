@@ -1,0 +1,42 @@
+{% extends "onnet_widget_dashboard.tpl" %}
+
+{% block widget_headline %}
+    {{ headline }}
+    {% button class="btn btn-xs btn-onnet pull-right" action={redirect dispatch="finance_details"} text=_"make payments"%}
+    {% button class="btn btn-xs btn-onnet pull-right" text=_"change password" id="changepwdbtn"
+                                  action={enable target="change_password_id"}
+                                  action={disable target="changepwdbtn"}
+                                  action={enable target="cancelchangepwdbtn"}
+    %}
+    {% button class="btn btn-xs btn-onnet pull-right disabled" text=_"cancel password change" id="cancelchangepwdbtn"
+                                  action={disable target="change_password_id"}
+                                  action={enable target="changepwdbtn"}
+                                  action={disable target="cancelchangepwdbtn"}
+    %}
+{% endblock %}
+
+{% block widget_class %}{% if last %}last{% endif %}{% endblock %}
+
+{% block widget_content %}
+<table class="table table-condensed table-hover table-centered">
+    <thead>
+        <tr>
+            <th>{_ Account status _}</th>
+            <th>{% if m.onnet.account_status == 0 %}{_ Active _} 
+                            {% else %}{_ Blocked _}{% endif %}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if m.onnet.is_prepaid %}
+            <tr><td>{_ Current balance _}</td><td>{{ m.onnet.account_balance }} {_ rub. _}</td></tr>
+        {% else %}
+            <tr><td>{_ Current month expenses _}</td><td>{{ m.onnet.calc_curr_month_exp }} {_ rub. _}</td></tr>
+        {% endif %}  
+        {% for amount, date, comment in m.onnet[{account_payments limit=1}] %}
+            <tr><td>{_ Previous payment _}</td><td>{{ date }} - {{ amount }} {_ rub. _} - {% if comment|match:"ssist" %}{_ ASSIST _}{% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}{% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}{% else %}{_ Wire transfer _}{% endif %}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

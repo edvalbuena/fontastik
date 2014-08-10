@@ -1,0 +1,253 @@
+input[type="text"].input-long-onnet {
+  width: 90%!important;
+  padding-left: 5%;
+  vertical-align: middle;
+  margin-bottom: 1px!important;
+}
+
+table.dataTable thead > tr > th {
+  padding-left: 10px!important;
+  padding-right: 10px!important;
+}
+
+input[type="text"].input-number-onnet {
+  width: 9em!important;
+  height: 1.6em!important;
+  padding-left: 5%;
+  vertical-align: middle;
+  margin-bottom: 1px!important;
+}
+
+input[type="text"].input-number-zonnet {
+  width: 9em!important;
+  height: 1.6em!important;
+  padding-left: 5%;
+  vertical-align: middle;
+  margin-bottom: 1px!important;
+}
+
+.znone {
+  text-decoration: none!important;
+  color: #333333!important;
+}
+
+.input-small-onnet {
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1px!important;
+}
+
+.input-small-zonnet {
+  width: 90px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 1px!important;
+}
+
+#incoming_calls_list_table {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.disabled {
+  display: none!important;
+  visibility: hidden!important;
+}
+
+.btn-onnet {
+  color: #515151;
+//  background-color: #E86110;
+  border-color: #eea236;
+  margin-left: 3px;
+}
+
+.panel-onnet>.panel-heading>.panel-title {
+  font-size: 14px;
+}
+
+.panel-onnet>.panel-heading {
+//  color: #515151;
+  background-color: rgba(62,122,140,.2);
+  /* border-color: #bce8f1; */
+}
+
+.panel-onnet>.panel-body {
+  padding: 0px;
+}
+
+.panel {
+  padding: 0px;
+  background-color: #F6F6F6;
+}
+
+.undecorate-link {
+  text-decoration: none!important;
+  color: inherit!important;
+  cursor: pointer;
+}
+
+.table-centered {
+    margin: 0 auto !important;
+    color: #515151;
+}
+
+.max-800 {
+  max-width: 800px! important;
+}
+
+.table>thead>tr>th {
+    border-bottom-width: 0px!important;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-dialog {
+  width: auto!important;
+  max-width: 800px;
+}
+
+.modal-header {
+  padding: 5px;
+  padding-left: 10%;
+}
+
+.modal-body {
+  position: relative;
+  padding: none!important;
+//  padding-left: 3px;
+}
+
+table#calls_amount1.table>tbody>tr>td {
+  padding: 1px;
+  border-top: 1px solid #ddd;
+}
+
+table#calls_amount2.table>tbody>tr>td {
+  padding: 1px;
+  border-top: 1px solid #ddd;
+}
+
+table#calls_amount1.table {
+  margin-bottom: auto!important;
+}
+
+table#calls_amount2.table {
+  margin-bottom: auto!important;
+}
+
+div.widget {
+  margin-bottom: 10px;
+  border-bottom: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+#orderform-service-description {
+  padding: 3%;
+}
+
+#comments {
+  width: 100%;
+}
+
+.onnet-pager {
+  padding-left: 0;
+  padding-bottom: 15px;
+  text-align: center;
+  list-style: none;
+}
+
+.onnet-pager div>a {
+  display: inline-block;
+  padding: 5px 14px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.td-center {
+  text-align: center!important;
+  vertical-align: middle!important;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+
+.pr-0 {
+  padding-right: 0px;
+}
+
+.pl-10 {
+  padding-left: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.pl-15 {
+  padding-left: 15px;
+}
+
+.pr-15 {
+  padding-right: 15px;
+}
+
+.mb-10 {
+  margin-bottom: 10px!important;
+}
+
+input#recaptcha_response_field {
+  width: 260px!important;
+  margin-left: 9px;
+  margin-right: 0px!important;
+  text-align: center;
+}
+
+div#recaptcha_widget {
+  margin-left: 90px;
+}
+
+#sign-in-box {
+  position: absolute;
+  bottom: -160px;
+  width: 250px;
+  padding: 10px;
+  background: #E86110;
+  display: none;
+}
+
+#forgot-pwd-box {
+  position: absolute;
+  bottom: -140px;
+  width: 250px;
+  padding: 10px;
+  background: #E86110;
+  display: none;
+}
+
+#forgot-pwd {
+  padding-top: 16px;
+  text-transform: none;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+

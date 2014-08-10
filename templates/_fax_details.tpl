@@ -1,0 +1,3 @@
+<span>
+    {% print arg %}
+</span>

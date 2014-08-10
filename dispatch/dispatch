@@ -1,0 +1,61 @@
+[
+
+ {home,      [],	controller_template,  	[ {template, "index.tpl"} ]},
+
+%% {favicon, ["favicon.ico"], controller_file, [{path,"images/favicon.ico"},{root,[lib]},{use_cache,false},{content_disposition,inline},{ssl,any}]},
+
+ {virtualoffice,["virtualoffice"],         controller_template,  [ {template, "virtualoffice.tpl"} ]},
+ {hostedpbx,["hostedpbx"],         controller_template,  [ {template, "hostedpbx.tpl"} ]},
+ {phonenumbers,["phonenumbers"],         controller_template,  [ {template, "phonenumbers.tpl"} ]},
+ {virtualserver,["virtualserver"],         controller_template,  [ {template, "virtualserver.tpl"} ]},
+ {cloudstorage,["cloudstorage"],         controller_template,  [ {template, "cloudstorage.tpl"} ]},
+ {spla,["spla"],         controller_template,  [ {template, "spla.tpl"} ]},
+ {internet,["internet"],         controller_template,  [ {template, "internet.tpl"} ]},
+ {serviceorder,["serviceorder"],         controller_template,  [ {template, "serviceorder.tpl"} ]},
+ {payments,["payments"],         controller_template,  [ {template, "payments.tpl"} ]},
+ {aboutus,["aboutus"],         controller_template,  [ {template, "aboutus.tpl"} ]},
+ {network,["network"],         controller_template,  [ {template, "network.tpl"} ]},
+ {trademark,["trademark"],         controller_template,  [ {template, "trademark.tpl"} ]},
+ {licenses,["licenses"],         controller_template,  [ {template, "licenses.tpl"} ]},
+ {companydetails,["companydetails"],         controller_template,  [ {template, "companydetails.tpl"} ]},
+ {contactus,["contactus"],         controller_template,  [ {template, "contactus.tpl"} ]},
+ {makeorder,["makeorder"],         controller_template,  [ {template, "makeorder.tpl"} ]},
+ {onnet_dashboard,["onnet_dashboard"],         controller_template,  [ {template, "onnet_dashboard.tpl"} ]},
+ {account_details,["account_details"],         controller_template,  [ {template, "account_details.tpl"} ]},
+ {finance_details,["finance_details"],         controller_template,  [ {template, "finance_details.tpl"} ]},
+ {statistics,["statistics"],         controller_template,  [ {template, "statistics.tpl"} ]},
+ {documents,["documents"],         controller_template,  [ {template, "documents.tpl"} ]},
+ {getlbdocs, ["getlbdocs","id",id], controller_getlbdocs, [{path, id},{use_cache, false},{content_disposition, attachment},{ssl, any}]},
+ {cdr_csv_download,  ["cdr", "csv", "download"],   controller_onnet_cdr_csv, []},
+ {kazoo_status_panel, ["status_panel"], controller_onnet, [{template, "kazoo_status_panel.tpl"}, {selected, "status_panel"}]},
+ {kazoo_fax_in, ["fax_in"], controller_onnet, [{template, "kazoo_fax_in.tpl"}, {selected, "fax_in"}]},
+ {kazoo_fax_out, ["fax_out"], controller_onnet, [{template, "kazoo_fax_out.tpl"}, {selected, "fax_out"}]},
+ {kazoo_call_recordings, ["call_recordings"], controller_onnet, [{template, "kazoo_call_recordings.tpl"}, {selected, "call_recordings"}]},
+
+ {test,["test"],         controller_template,  [ {template, "test.tpl"} ]},
+
+ {services,["services", id],         controller_page,  [ {template, "services.tpl"} ]},
+ {services,["services", id, slug],   controller_page,  [ {template, "services.tpl"} ]},
+
+ %% Normal page to show a resource.
+ {page, ["page", id],       controller_page, [ {template, {cat, "page.tpl"}} ]},
+ {page, ["page", id, slug], controller_page, [ {template, {cat, "page.tpl"}} ]},
+
+ %% Pages when part of a menu
+ {page, ["page", id, "in-menu", in_menu],       controller_page, [ {template, {cat, "page.tpl"}} ]},
+ {page, ["page", id, "in-menu", in_menu, slug], controller_page, [ {template, {cat, "page.tpl"}} ]},
+
+ %% Pages when part of a collection
+ {page, ["page", id, "in-collection", in_collection],       controller_page, [ {template, {cat, "page.tpl"}} ]},
+ {page, ["page", id, "in-collection", in_collection, slug], controller_page, [ {template, {cat, "page.tpl"}} ]},
+
+ %% Show the map of an item
+ {map, ["map", id], controller_page, [ {template, {cat, "map.tpl"}} ]},
+
+ %% Redirect controller for resource of type 'website'
+ {website, ["redirect", id, slug], controller_website_redirect, []},
+
+ %% Simple search page
+ {search, ["search"], controller_template, [ {template, "search.tpl"} ]}
+
+].
