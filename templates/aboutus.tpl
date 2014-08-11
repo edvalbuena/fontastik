@@ -19,7 +19,7 @@
 
 </ul>
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p><span style="font-size: 18px;">Миссия компании:</span></p>
 </div>
 
@@ -29,7 +29,7 @@
     <li><p>помочь нашим клиентам сократить издержки и защитить свои инвестиции путем внедрения свободного программного обеспечения.</p></li>
 </ul>
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p><span style="font-size: 18px;">Для этого у нас есть все необходимое:</span></p>
 </div>
 
@@ -40,7 +40,7 @@
     <li><p>мы предлагаем комплексное обслуживание клиентов &ndash; от предоставления услуг телефонии и доступа к сети Интернет до организации информационной инфраструктуры офиса &laquo;под ключ&raquo;.</p></li>
 </ul>
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p><span style="font-size: 18px;">Наши основные принципы:</span></p>
 </div>
 

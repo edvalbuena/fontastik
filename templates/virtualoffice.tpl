@@ -6,7 +6,7 @@
 
 {% block service_description %}
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p>
 <span style="font-size: 18px;">Возможности Виртуального офиса</span>
     </p>
@@ -22,7 +22,7 @@
     <li> <p>обратный вызов (Call-back).</p> </li>
 </ul>
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p> <span style="font-size: 18px;">Преимущества Виртуального офиса</span> </p>
 </div>
 
@@ -35,7 +35,7 @@
     <li><p>Вы экономите время и средства при решении вопросов, связанных с телефонизацией офиса, так как Вам не надо приобретать специальное оборудование.</p></li>
 </ul>
 <p></p>
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p> <span style="font-size: 18px;">Тарифы</span> </p>
 </div>
 <table class="table table-bordered table-hover table-centered" style="max-width: 800px;">
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td >Подключение номера ГТС</td>
-            <td style="text-align: center;"><a href="http://onnet.su/freenumbers">от 1 000</a></td>
+            <td style="text-align: center;"><a href="/phonenumbers">от 1 000</a></td>
         </tr>
         <tr>
             <td >Абонентская плата за услугу</td>

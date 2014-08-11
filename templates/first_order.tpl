@@ -128,8 +128,8 @@
               <li id="counterparty_back" class="previous">
                 <a href="#">&larr; {_ Back _}</a>
               </li>
-              <li id="clearorderform"><a style="color: #fff; background-color: #0074cc;" href="#">{_ Clear form _}</a></li>
-              <li id="submitorderform"><a style="color: #fff; background-color: #FF8334;" href="#">{_ Make an order _}</a></li>
+              <li id="submitorderform"><a style="color: #fff; background-color: #E86110;" href="#">{_ Make an order _}</a></li>
+              <li id="clearorderform"><a style="color: #fff; background-color: #3E7A8C;" href="#">{_ Clear form _}</a></li>
               <li id="counterparty_next" class="next hide">
                 <a href="#">{_ Next _} &rarr;</a>
               </li>

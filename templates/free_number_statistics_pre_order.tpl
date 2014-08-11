@@ -3,8 +3,8 @@
          action={dialog_close}
     %}
     <div class="onnet-pager">
-        <div style="display: inline-block;" id="addnumbertorderform"><a style="color: #fff; background-color: #FF8334; text-decoration: none;" href="/first_order?phonenumber={{number_id}}">{_ Add number to order _}</a></div>
-        <div style="display: inline-block;" id="backtolist"><a style="color: #fff; background-color: #0074cc; text-decoration: none;" href="#">{_ Choose another number _}</a></div>
+        <div style="display: inline-block;" id="addnumbertorderform"><a style="color: #fff; background-color: #E86110; text-decoration: none;" href="/first_order?phonenumber={{number_id}}">{_ Add number to order _}</a></div>
+        <div style="display: inline-block;" id="backtolist"><a style="color: #fff; background-color: #3E7A8C; text-decoration: none;" href="#">{_ Choose another number _}</a></div>
     </div>
 
 

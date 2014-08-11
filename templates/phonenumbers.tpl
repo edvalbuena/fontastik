@@ -26,10 +26,10 @@
 {% for number_id, number, price in m.onnet.get_freenumbers_list %}
 
 <tr>
-<td align="right" style="font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: bottom; width: 50%;"><p><img alt="*" style="height: 60px; float: left; margin-right: 20px;" src="http://onnet.su/components/com_joodb/sample-images/{{ 3|rand|format_integer }}.gif" /></p>
-<span id={{ number_id }} style="padding: 14px 0 0 0; font-size: 200%; letter-spacing:1pt"><strong>{{ number }}</strong></span>
+<td align="right" style="font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: bottom; width: 50%;"><p class="hidden-xs"><img alt="*" style="height: 60px; float: left; margin-right: 20px;" src="/lib/images/{{ 3|rand|format_integer }}.gif" /></p>
+<a id={{ number_id }} style="padding: 14px 0 0 0; font-size: 1.7em; letter-spacing:1pt" class="free_numbers undecorate-link"><strong>{{ number }}</strong></a>
 </td>
-<td style="font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: middle; text-align: center; font-size: 150%;">{{ price }}</td>
+<td style="color: #515151; font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: middle; text-align: center; font-size: 1.3em;">{{ price }}</td>
 <td>{{ number_id }}</td>
 <td>{{ number_id|pretty_phonenumber }}</td>
 </tr>

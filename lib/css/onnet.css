@@ -1,3 +1,42 @@
+.btn-onnet-orange {
+  color: #ffffff;
+  background-color: #E86110;
+  border-color: #E86110;
+}
+
+.pagination>li>a,
+.pagination>li>a:hover {
+  color: #3E7A8C;
+}
+
+
+.pagination > .active > a,
+.pagination > .active > a:hover {
+  background-color: #3E7A8C;
+}
+
+.services li {
+//  background: rgba(62, 122, 140, .2);
+//  background: #FFF2EB;
+}
+
+//.block-header h2 {
+//  background: rgba(62,122,140,.2);
+//}
+
+.info-board-onnet {
+  background-color: #eee;
+  border-color: rgba(62,122,140,.2);
+}
+
+.free_numbers {
+  color: #3E7A8C!important;
+}
+
+.free_numbers:hover {
+  color: #FF8334!important;
+}
+
 input[type="text"].input-long-onnet {
   width: 90%!important;
   padding-left: 5%;
@@ -85,7 +124,7 @@ input[type="text"].input-number-zonnet {
 
 .undecorate-link {
   text-decoration: none!important;
-  color: inherit!important;
+  color: inherit;
   cursor: pointer;
 }
 

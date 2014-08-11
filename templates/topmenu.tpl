@@ -6,7 +6,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">OnNet communications</a>
+          <a class="hidden-xs navbar-brand" href="/">OnNet communications</a>
+          <a class="visible-xs navbar-brand" href="/">OnNet</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -29,9 +30,11 @@
                   {% if m.zkazoo.get_kazoo_account_id %}
                     <li><a href="/status_panel">{_ Status panel _}</a></li>
                   {% endif %}
+                  {% if m.onnet.is_operators_session %}
                   <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   <li><a href="/fax_out">{_ Outgoing Faxes _}</a></li>
                   <li><a href="/call_recordings">{_ Call recordings _}</a></li>
+                  {% endif %}
                 </ul>
               </li>
            {% endif %}
@@ -70,16 +73,9 @@
             <li class="hidden-sm hidden-md"><a href="/contactus">{_ Contact us _}</a></li>
            {% endif %}
             <!-- Profile links for extra small screens -->
-            <li class="visible-xs"><a href="sign-in.html">{_ Sign in _}</a></li>
-            <li  class="visible-xs"><a href="#">Sign out</a></li>
+            <!-- <li class="visible-xs"><a href="sign-in.html">{_ Sign in _}</a></li> -->
+            <!-- <li  class="visible-xs"><a href="#">Sign out</a></li> -->
           </ul>
-          <!-- Search form for extra small screens -->
-          <form class="navbar-form navbar-left visible-xs" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="{_ Search _}">
-            </div>
-            <button type="submit" class="btn btn-blue">Go!</button>
-          </form>
           <ul class="nav navbar-nav navbar-right hidden-xs">
           {% if not m.onnet.is_auth %}
             <!-- Sign in & Sign up -->
