@@ -18,7 +18,7 @@
 </p>
 <table class="table table-bordered" style="max-width: 800px; margin: 0 auto !important; float: none !important;" border="0">
     <thead>
-        <tr>
+        <tr class="th-onnet">
             <th style="text-align: center;">Виртуальная АТС</th>
             <th style="text-align: center;">&nbsp;Цена, руб. (без учета НДС)</th>
         </tr>

@@ -1,3 +1,33 @@
+.th-onnet {
+  background-color: #eee;
+  color: #333;
+}
+
+a.carousel-arrow:hover, 
+a.carousel-arrow:active {
+  background: #3E7A8C!important;
+}
+
+table#calls_list_table tfoot tr {
+  background-color: white;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: white;
+}
+
+.zalarm {
+  color: #da4f49;
+}
+
+.zwarning {
+  color: #c09853;
+}
+
+.zprimary {
+  color: #3E7A8C;
+}
+
 .btn-onnet-orange {
   color: #ffffff;
   background-color: #E86110;

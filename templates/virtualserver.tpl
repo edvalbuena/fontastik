@@ -11,7 +11,7 @@
 <p>На Виртуальном выделенном сервере Вы можете устанавливать отдельную операционную систему и любое программное обеспечение, хранить и создавать неограниченное количество баз данных,&nbsp; сайтов, почтовых ящиков, размещать крупные проекты, требующие  специализированного программного обеспечения, организовать собственную АТС любой мощности. Вы ограничены только физическими ресурсами (объемом дискового пространства, объемом оперативной памяти) в соответствии с выбранным Вами тарифным планом, так как при разделении физического сервера компании ОнНет комьюникейшнс на несколько виртуальных серверов каждый VPS/VDS получает место на жестком диске и фиксированную оперативную память. При этом все ресурсы принадлежат Вам: Вы можете администрировать виртуальный сервер самостоятельно либо привлечь высококвалифицированных специалистов нашей компании.</p>
 
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p>
 <span style="font-size: 18px;">Преимущества услуги Виртуальный выделенный сервер</span>
     </p>
@@ -31,9 +31,9 @@
 </p>
 
 
-<table class="table table-bordered">
+<table class="table table-bordered table-centered" style="max-width: 900px">
     <tbody>
-        <tr style="background-color: rgb(238, 238, 238);">
+        <tr class="th-onnet">
             <td width="40%" style="text-align: center;"><strong>Виртуальный сервер</strong></td>
             <td width="8%" style="text-align: center;"><strong>VPS </strong><strong>0.5</strong></td>
             <td width="8%" style="text-align: center;"><strong>VPS 1</strong></td>
@@ -97,7 +97,7 @@
 </table>
 
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p>
 <span style="font-size: 18px;">Вы получаете</span>
     </p>

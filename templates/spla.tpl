@@ -6,7 +6,7 @@
 
 {% block service_description %}
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p>
 <span style="font-size: 18px;">{_ Hosted Microsoft Software _} </span> 
     </p>
@@ -49,10 +49,10 @@
             </ul>
 <br />
             <p>Серверное программное обеспечение можно лицензировать на процессор  (учитывается только количество физических процессоров в физическом или  виртуальном сервере) или на количество пользователей, использующих  серверные технологии ПО. По правилам лицензирования возможно  использование предыдущих версий серверных программных продуктов.</p>
-
-            <table class="table table-bordered">
+<br />
+            <table class="table table-bordered table-centered" style="max-width: 800px;">
                 <tbody>
-                    <tr style="background-color: rgb(238, 238, 238);">
+                    <tr class="th-onnet">
                         <td style="width: 50%; vertical-align: middle; text-align: center;">Наименование</td>
                         <td width="25%" class="text-center">На пользователя,<br />руб/мес</td>
                         <td width="25%" class="text-center">На процессор,<br />руб/мес</td>
@@ -133,9 +133,9 @@
                 </tbody>
             </table>
             <p>&nbsp;</p>
-            <table class="table table-bordered">
+            <table class="table table-bordered table-centered" style="max-width: 800px;">
                 <tbody>
-                    <tr>
+                    <tr class="th-onnet">
                         <td width="75%" style="background-color: rgb(238, 238, 238);" class="text-center">Описание услуги</td>
                         <td width="25%" style="background-color: rgb(238, 238, 238);" class="text-center">Стоимость</td>
                     </tr>

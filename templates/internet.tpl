@@ -6,7 +6,7 @@
 
 {% block service_description %}
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p>
         Услуга доступа в сеть Интернет оказывается клиенту на основании соответствующих лицензий компании «ОнНет комьюникейшнс»
         на предоставление телематических услуг (служб). Подключение к сети Интернет может быть осуществлено с использованием выделенных
@@ -18,7 +18,7 @@
 </p>
 <table class="table table-bordered" style="max-width: 800px; margin: 0 auto !important; float: none !important;" border="0">
     <thead>
-        <tr>
+        <tr class="th-onnet">
             <th style="text-align: center;" colspan="4">
                 Стоимость инсталляции (цены указаны с учетом НДС)
             </th>
@@ -48,8 +48,8 @@
 </p>
 <table class="table table-bordered" style="max-width: 800px; margin: 0 auto !important; float: none !important;" border="0">
     <thead>
-        <tr>
-            <th colspan="13">
+        <tr class="th-onnet">
+            <th style="text-align: center;" colspan="13">
                 Абонентская плата при безлимитном доступе в Интернет (руб. / месяц с учетом НДС)
             </th>
         </tr>
@@ -138,7 +138,7 @@
 <p>
      
 </p>
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p>
         Перед заключением Договора на предоставление доступа в Интернет проводится техническое исследование возможности предоставления
         услуги по указанному заказчиком адресу. Услуга проедоставляется при наличии технической возможности.  

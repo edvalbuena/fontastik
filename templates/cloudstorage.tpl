@@ -14,7 +14,7 @@
 
 <p>Сетевое хранилище данных - это система хранения данных с жесткими дисками, которые подключаются к компьютерной сети и обеспечивают доступ к общей информации одновременно нескольким пользователям.</p>
 
-<div class="info-board info-board-blue">
+<div class="info-board info-board-onnet">
     <p> <span style="font-size: 18px;">Возможности Сетевого хранилища</span> </p>
 </div>
 
@@ -80,9 +80,9 @@
 
 <br />
 
-<table class="table table-bordered">
+<table class="table table-bordered table-centered" style="max-width: 800px;">
     <tbody>
-        <tr style="background-color: rgb(238, 238, 238);">
+        <tr class="th-onnet">
             <td width="50%" style="text-align: center;">Объем дискового пространства, Гб</td>
             <td style="text-align: center;">Подключение услуги, руб.&nbsp;&nbsp;&nbsp;&nbsp; (без учета&nbsp; НДС)</td>
             <td style="text-align: center;">Абонентская плата, руб./мес.&nbsp; (без учета НДС)</td>

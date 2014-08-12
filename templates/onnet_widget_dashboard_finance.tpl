@@ -22,8 +22,8 @@
     <thead>
         <tr>
             <th>{_ Account status _}</th>
-            <th>{% if m.onnet.account_status == 0 %}{_ Active _} 
-                            {% else %}{_ Blocked _}{% endif %}
+            <th>{% if m.onnet.account_status == 0 %}<span class="zprimary">{_ Active _}</span> 
+                            {% else %}<span class="zalarm">{_ Blocked _}{% endif %}</span>
             </th>
         </tr>
     </thead>

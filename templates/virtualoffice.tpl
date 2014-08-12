@@ -40,7 +40,7 @@
 </div>
 <table class="table table-bordered table-hover table-centered" style="max-width: 800px;">
     <thead>
-        <tr>
+        <tr class="th-onnet">
             <th style="text-align: center;">Название услуги</th>
             <th style="text-align: center;">&nbsp;Цена, руб. (без учета НДС)</th>
         </tr>
