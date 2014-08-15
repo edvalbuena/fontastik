@@ -9,9 +9,9 @@
 
     <title>OnNet communications Inc.</title>
 
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 
     <!-- Bootstrap -->
@@ -21,7 +21,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href='http://fonts.googleapis.com/css?family=Tangerine:100,300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Tangerine:100,300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
     {% lib
           "css/z.modal.css"

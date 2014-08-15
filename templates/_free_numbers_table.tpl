@@ -34,8 +34,11 @@
 <td>{{ number_id|pretty_phonenumber }}</td>
 </tr>
 
-{% wire id=number_id type="click" action={dialog_open template="free_number_statistics.tpl" title=[ _"Inbound calls statistics for number", "   ", "(812) ", number ] number=number number_id=number_id} %}
-
+{% wire id=number_id type="click" 
+        action={dialog_open template="free_number_statistics.tpl" title=[ _"Inbound calls statistics for number", "   ", "(812) ", number ] 
+                                                                  number=number number_id=number_id} 
+        action={growl text=_"Please wait while statistics will be loaded..."}
+%}
 {% endfor %}
 
 </tbody>

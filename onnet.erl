@@ -171,10 +171,10 @@ event({postback, cdr_csv_export, _TriggerId, _TargetId}, Context) ->
 
 event({submit,{forgottenpwd, _}, _, _}, Context) ->
     case onnet_util:maybe_send_passwd(Context) of
-        'true' ->
+        'false' -> z_render:growl_error(?__("No such email address",Context), Context);
+        _ ->
              Context2 = z_render:dialog_close(Context),
-             z_render:growl(?__("Password sent. Please check your mailbox.",Context2), Context2);
-        _ -> z_render:growl_error(?__("No such email address",Context), Context)
+             z_render:growl(?__("Password sent. Please check your mailbox.",Context2), Context2)
     end;
 
 event({submit,{additionalnumberorderform, _}, _, _}, Context) ->

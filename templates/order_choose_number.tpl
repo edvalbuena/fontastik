@@ -3,7 +3,7 @@
     <i class="fa fa-hand-o-down fa-lg"> <span class="pl-15">{_ Choose phone numbers _}</span></i>
   </div>
   <div class="panel-body">
-    {% button class="btn btn-onnet-orange pull-right" text=_"add number" 
+    {% button class="btn btn-onnet-slough pull-right" text=_"add number" 
       action={dialog_open template="_free_numbers_table.tpl" title=[_"Add phone number to your order"] subject_id=id} 
       action={growl text=_"Please wait while numbers are loading..."}
     %}

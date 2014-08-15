@@ -1,6 +1,15 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "more news"
+msgstr "еще новости"
+
+msgid "News"
+msgstr "Новости"
+
+msgid "Please wait while statistics will be loaded..."
+msgstr "Пожалуйста подождите пока загрузится статистика..."
+
 msgid "Details"
 msgstr "Подробно"
 

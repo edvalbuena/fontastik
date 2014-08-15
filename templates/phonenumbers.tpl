@@ -9,6 +9,16 @@
 <br />
 <br />
 
+{% javascript %}
+// Redefine function in order stop key interception in dataTables filter field
+// modules/mod_base/lib/js/modules/jquery.hotkeys.js
+(function(jQuery){
+
+        jQuery.each([ "keydown", "keyup", "keypress" ], function() {
+                jQuery.event.special[ this ] = { add: 0 };
+        });
+})( jQuery );
+{% endjavascript %}
 
 <div class="center-block max-800">
 
@@ -34,7 +44,11 @@
 <td>{{ number_id|pretty_phonenumber }}</td>
 </tr>
 
-{% wire id=number_id type="click" action={dialog_open template="free_number_statistics_pre_order.tpl" title=[ _"Inbound calls statistics for number", "   ", "(812) ", number ] number=number number_id=number_id} %}
+{% wire id=number_id 
+  action={dialog_open template="free_number_statistics_pre_order.tpl" title=[ _"Inbound calls statistics for number", "   ", "(812) ", number ] 
+                                                                      number=number number_id=number_id} 
+  action={growl text=_"Please wait while statistics will be loaded..."}
+%}
 
 {% endfor %}
 
@@ -93,7 +107,7 @@
 
 			"sDom" : "<'row-fluid'><'span'<'span14'l><'span10'f>r>t<'span'<'span14'i><'span10'p>>",
 
-			"iDisplayLength" : 10,
+			"iDisplayLength" : -1,
 
 			"aLengthMenu" : [[10, 25, 50, -1], [10, 25, 50, "Все"]],
 

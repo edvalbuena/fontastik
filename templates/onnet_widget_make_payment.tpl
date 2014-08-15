@@ -22,6 +22,7 @@
             <td>{% button class="btn btn-xs btn-onnet pull-right" action={postback postback="assist_pay" delegate="onnet" qarg="assist_pay"} text=_"proceed"%}</td>
         </tr>
     </tbody>
+    {% if m.modules.info.mod_zomoney.enabled %}
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
         <tr style="background-color:#F8F8F8">
@@ -42,6 +43,8 @@
             <td>{% button class="btn btn-xs btn-onnet pull-right" action={postback postback="dengionline_pay" delegate="mod_zomoney" qarg="dengionline_pay"} text=_"proceed"%}</td>
         </tr>
     </tbody>
+    {% endif %}
+    {% if m.modules.info.mod_zyamoney.enabled %}
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
         <tr style="background-color:#F8F8F8">
@@ -78,6 +81,7 @@
             <td>{% button class="btn btn-xs btn-onnet pull-right" text=_"proceed" action={postback postback="yamoney_pay" delegate="mod_zyamoney" qarg="yamoney_pay" qarg="yapayment_type"} %}</td>
         </tr>
     </tbody>
+    {% endif %}
 </table>
 {% endblock %}
 

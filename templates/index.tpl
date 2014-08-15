@@ -89,7 +89,7 @@
               Вы – современный человек. 
               <br />
               <br />
-              <span style="color: #E86110;">А это значит, что СВЯЗЬ ДЛЯ ВАС ВСЁ!</span>
+              <span style="color: #E86110;">А это значит, СВЯЗЬ ДЛЯ ВАС ВСЁ!</span>
               <br />
           </p> 
           <div style="font-size: 1.15em; text-align: justify; display: inline-block;">
@@ -130,80 +130,20 @@
             <span class="decoration"></span>
           </h2>
         </div>
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#blog" data-toggle="tab">{_ Blog _}</a></li>
-          <li><a href="#comments" data-toggle="tab">{_ Comments _}</a></li>
-          <li><a href="#events" data-toggle="tab">{_ Events _}</a></li>
-        </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="blog">
+            {% for id in m.search[{query cat='news' sort='-rsc.publication_start' pagelen=4}] %}
             <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" src="/lib/img/blog-1.jpg" alt="Blog Message">
+              <a class="pull-left" href="{{ m.rsc[id].page_path }}">
+                {% image m.rsc[id].depiction class="media-object" alt="Blog Message" %}
               </a>
               <div class="media-body">
-                <h4 class="media-heading"><a href="#">Story title</a></h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
+                <h4 class="media-heading"><a href="{{ m.rsc[id].page_path }}">{{ m.rsc[id].title }}</a></h4>
+                <a class="undecorate-link" href="{{ m.rsc[id].page_path }}">{{ m.rsc[id].summary }}</a>
               </div>
             </div>
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" src="/lib/img/blog-2.jpg" alt="Blog Message">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="#">Story title</a></h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
-              </div>
-            </div>
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" src="/lib/img/blog-3.jpg" alt="Blog Message">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="#">Story title</a></h4>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius, tincidunt odio nec, placerat enim.
-              </div>
-            </div>
-            <a href="#" class="read-more">Read more stories...</a>
-          </div>
-          <div class="tab-pane" id="comments">
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" src="/lib/img/face1.jpg" alt="Blog Message">
-              </a>
-              <div class="media-body">
-                <a href="#">Alex Smith</a> <span class="text-muted">20 minutes ago</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius...</p>
-              </div>
-            </div>
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" src="/lib/img/face2.jpg" alt="Blog Message">
-              </a>
-              <div class="media-body">
-                <a href="#">Dan Smith</a> <span class="text-muted">1 hour ago</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius...</p>
-              </div>
-            </div>
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" src="/lib/img/face3.jpg" alt="Blog Message">
-              </a>
-              <div class="media-body">
-                <a href="#">David Smith</a> <span class="text-muted">11/10/2013</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ipsum varius...</p>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="events">
-            <h5>Moblie Web+DevCon San Francisco 2014 <small>January 28, 2014</small></h5>
-            <p class="text-muted"><i class="fa fa-map-marker"></i> Kuala Lumpur, Malaysia</p>
-            <hr>
-            <h5>2013 The 2nd International Conference on Information and Intelligent Computing(ICIIC 2013) <small>December 29, 2013</small></h5>
-            <p class="text-muted"><i class="fa fa-map-marker"></i> San Francisco, California, United States</p>
-            <hr>
-            <h5>International Conference on Cloud Computing and eGovernances 2014 <small>November 20, 2013</small></h5>
-            <p class="text-muted"><i class="fa fa-map-marker"></i> Saigon, Ho Chi Minh, Vietnam</p>
+            {% endfor %}
+            <a href="#" class="read-more">more news...</a>
           </div>
         </div>
         </div>

@@ -28,10 +28,22 @@ table#calls_list_table tfoot tr {
   color: #3E7A8C;
 }
 
+.btn-onnet-slough {
+  color: #ffffff;
+  background-color: #3E7A8C;
+  border-color: #E86110;
+}
+
+.btn-onnet-slough:hover {
+  color: #ffffff;
+  background-color: #E86110;
+  border-color: #3E7A8C;
+}
+
 .btn-onnet-orange {
   color: #ffffff;
   background-color: #E86110;
-  border-color: #E86110;
+  border-color: #3E7A8C;
 }
 
 .pagination>li>a,
@@ -150,6 +162,12 @@ input[type="text"].input-number-zonnet {
 .panel {
   padding: 0px;
   background-color: #F6F6F6;
+}
+
+.undecorate-button {
+  text-decoration: none!important;
+  color: white!important;
+  cursor: pointer;
 }
 
 .undecorate-link {

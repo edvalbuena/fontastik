@@ -1,0 +1,36 @@
+{% extends "onnet_base.tpl" %}
+
+{% block main %}
+
+  <div class="wrapper">    
+    <div class="container">
+      <div class="row">
+        <!-- Welcome message
+            ================= -->
+        <div class="col-md-12">
+        <div class="block-header">
+          <h2>
+            <span class="title">{% block service_name %}{% endblock %}</span>
+            <span class="decoration"></span>
+            <span class="decoration"></span>
+            <span class="decoration"></span>
+          </h2>
+        </div>
+
+{% block content %}
+
+{% block service_name %}{{ m.rsc[id].title }}{% endblock %}
+
+
+{{ m.rsc[id].body }}
+
+
+{% endblock %}
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+    
+{% endblock %}
