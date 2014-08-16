@@ -1,3 +1,24 @@
+/* Hide made by reCaptcha empty iframe */
+body > iframe[src="about:blank"] {
+  display:none;
+}
+
+.navbar-nav li#order {
+        background: #3E7A8C;
+        background: linear-gradient(top, #3E7A8C, #3E7A8C);
+        background: -webkit-linear-gradient(top, #3E7A8C, #3E7A8C);
+        background: -moz-linear-gradient(top, #3E7A8C, #3E7A8C);
+        position: relative;
+}
+
+div table tbody tr td label.radio {
+  margin-bottom: .5em;
+}
+
+.pager li>a, .pager li>span {
+  border-radius: 0px!important;
+}
+
 .th-onnet {
   background-color: #eee;
   color: #333;
@@ -56,15 +77,6 @@ table#calls_list_table tfoot tr {
 .pagination > .active > a:hover {
   background-color: #3E7A8C;
 }
-
-.services li {
-//  background: rgba(62, 122, 140, .2);
-//  background: #FFF2EB;
-}
-
-//.block-header h2 {
-//  background: rgba(62,122,140,.2);
-//}
 
 .info-board-onnet {
   background-color: #eee;
@@ -140,7 +152,6 @@ input[type="text"].input-number-zonnet {
 
 .btn-onnet {
   color: #515151;
-//  background-color: #E86110;
   border-color: #eea236;
   margin-left: 3px;
 }
@@ -150,9 +161,7 @@ input[type="text"].input-number-zonnet {
 }
 
 .panel-onnet>.panel-heading {
-//  color: #515151;
   background-color: rgba(62,122,140,.2);
-  /* border-color: #bce8f1; */
 }
 
 .panel-onnet>.panel-body {
@@ -177,8 +186,8 @@ input[type="text"].input-number-zonnet {
 }
 
 .table-centered {
-    margin: 0 auto !important;
-    color: #515151;
+  margin: 0 auto !important;
+  color: #515151;
 }
 
 .max-800 {
@@ -186,7 +195,7 @@ input[type="text"].input-number-zonnet {
 }
 
 .table>thead>tr>th {
-    border-bottom-width: 0px!important;
+  border-bottom-width: 0px!important;
 }
 
 .center-block {
@@ -208,7 +217,6 @@ input[type="text"].input-number-zonnet {
 .modal-body {
   position: relative;
   padding: none!important;
-//  padding-left: 3px;
 }
 
 table#calls_amount1.table>tbody>tr>td {
@@ -256,7 +264,6 @@ div.widget {
   padding: 5px 14px;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 15px;
 }
 
 .td-center {

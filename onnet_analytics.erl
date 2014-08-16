@@ -31,7 +31,7 @@ get_call_attempts_by_retrodays(PhoneNum, {Year, Month, Day}, DaysAmount, Context
        DaysAmount < 0 ->
            lists:reverse(Acc);
        DaysAmount >= 0 ->
-           AccNew = Acc ++ get_call_attempts_by_date(PhoneNum, zonnet_util:countdown_day({Year, Month, Day}, DaysAmount), Context),
+           AccNew = Acc ++ get_call_attempts_by_date(PhoneNum, onnet_util:countdown_day({Year, Month, Day}, DaysAmount), Context),
            get_call_attempts_by_retrodays(PhoneNum, {Year, Month, Day}, DaysAmount - 1, Context, AccNew)
     end.
     

@@ -12,7 +12,6 @@ is_authorized(ReqData, Context) ->
     z_acl:wm_is_authorized(true, Context2).
 
 html(Context) ->
-    lager:info("inside html"),
     Template = z_context:get(template, Context, "onnet_dashboard.tpl"),
     Html = z_template:render(Template, [], Context),
     z_context:output(Html, Context).

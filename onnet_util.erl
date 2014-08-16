@@ -53,6 +53,7 @@
     ,check_file_size_exceeded/3
     ,countdown_day/2
     ,get_freenumbers_list/1
+    ,send_additional_numbers_order/1
 ]).
 
 -include_lib("zotonic.hrl").
@@ -320,3 +321,37 @@ countdown_day({Year,Month,Day},N) ->
 
 get_freenumbers_list(Context) ->
     lb:get_freenumbers_list(Context).
+
+send_additional_numbers_order(Context) ->
+    IsPrepaid = is_prepaid(Context),
+    AccountBalance = account_balance(Context),
+    ReqData = z_context:get_reqdata(Context),
+    {ClientIP, _}  = webmachine_request:peer(ReqData),
+    CustomerEmail = z_context:get_q("customeremail", Context),
+    PhoneNumbers = z_context:get_q_all("chosennumbers", Context),
+    SalesEmail = m_config:get_value(onnet, sales_email, Context),
+    Username = z_context:get_session(lb_username, Context),
+    Vars = [{email, CustomerEmail}
+            ,{chosennumbers, PhoneNumbers}
+            ,{clientip, ClientIP}
+            ,{is_prepaid, IsPrepaid}
+            ,{account_balance, AccountBalance}
+            ,{username, Username}
+           ],
+
+    E_Num_Order_Customer = #email{
+        to=CustomerEmail,
+        from=SalesEmail,
+        html_tpl="_email_additional_numbers_order.tpl",
+        vars=Vars
+    },
+    z_email:send(E_Num_Order_Customer, Context),
+
+    E_Num_Order_Sales = #email{
+        to=SalesEmail,
+        from=CustomerEmail,
+        html_tpl="_email_additional_numbers_order.tpl",
+        vars=Vars
+    },
+    z_email:send(E_Num_Order_Sales, Context).
+

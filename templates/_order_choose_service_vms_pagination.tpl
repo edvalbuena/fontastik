@@ -1,4 +1,3 @@
-<fieldset>
                 {% wire id="choose_service_next"
                         action={add_class class="hide" target="choose_service_div"}
                         action={remove_class class="hide" target="contact_info_div"}
@@ -11,4 +10,3 @@
                         <a href="#">{_ Next _} &rarr;</a>
                     </li>
                 </ul>
-</fieldset>

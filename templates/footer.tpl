@@ -22,22 +22,8 @@
           <div class="content social">
             <p>{_ Stay in touch with us _}:</p>
             <ul>
-                <li><a href="#"><i class="fa fa-twitter"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-pinterest"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-youtube"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-github"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-vk"></i></a>
-                </li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a>
-                </li>
+                <li><a href="https://twitter.com/onnetcomm"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/onnet"><i class="fa fa-github"></i></a></li>
             </ul>
             <div class="clearfix"></div>
           </div>

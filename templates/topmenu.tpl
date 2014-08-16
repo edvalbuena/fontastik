@@ -128,18 +128,12 @@
               {% wire id="sign_out" postback={signout} delegate="onnet" %} 
             </li>
           {% endif %}
-            <!-- Search Button -->
-            <li id="search">
-              <a href="#" id="search-btn"><i class="fa fa-search" id="search-icon"></i> {_ Search _}</a>
-              <div class="search-box hidden" id="search-box">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="{_ Search _}">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                  </span>
-                </div>
-              </div>
+          {% if not m.onnet.is_auth %}
+            <!-- Place Order -->
+            <li id="order">
+              <a href="/first_order"><i class="fa fa-shopping-cart" style="padding-right: .5em;"></i> {_ Order _}</a>
             </li>
+          {% endif %}
             {% all include "language_choice.tpl" %}
           </ul>
         </div>

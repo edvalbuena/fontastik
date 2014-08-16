@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Order"
+msgstr "Заказать"
+
 msgid "more news"
 msgstr "еще новости"
 

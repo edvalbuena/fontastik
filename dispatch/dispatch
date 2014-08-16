@@ -2,8 +2,6 @@
 
  {home,      [],	controller_template,  	[ {template, "index.tpl"} ]},
 
-%% {favicon, ["favicon.ico"], controller_file, [{path,"images/favicon.ico"},{root,[lib]},{use_cache,false},{content_disposition,inline},{ssl,any}]},
-
  {virtualoffice,["virtualoffice"],         controller_template,  [ {template, "virtualoffice.tpl"} ]},
  {hostedpbx,["hostedpbx"],         controller_template,  [ {template, "hostedpbx.tpl"} ]},
  {phonenumbers,["phonenumbers"],         controller_template,  [ {template, "phonenumbers.tpl"} ]},
@@ -19,7 +17,7 @@
  {licenses,["licenses"],         controller_template,  [ {template, "licenses.tpl"} ]},
  {companydetails,["companydetails"],         controller_template,  [ {template, "companydetails.tpl"} ]},
  {contactus,["contactus"],         controller_template,  [ {template, "contactus.tpl"} ]},
- {makeorder,["makeorder"],         controller_template,  [ {template, "makeorder.tpl"} ]},
+ {first_order, ["first_order"], controller_template, [{template, "first_order.tpl"}, {anonymous, true}]},
  {onnet_dashboard,["onnet_dashboard"],         controller_template,  [ {template, "onnet_dashboard.tpl"} ]},
  {account_details,["account_details"],         controller_template,  [ {template, "account_details.tpl"} ]},
  {finance_details,["finance_details"],         controller_template,  [ {template, "finance_details.tpl"} ]},

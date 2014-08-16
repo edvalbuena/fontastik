@@ -1,4 +1,3 @@
-<fieldset>
 <div> 
 <input type="hidden" name="servicetype" value="virtualpbx">
 <h4>Для коллективов, нуждающиxся в тесном взаимодействии.</h4>
@@ -40,4 +39,3 @@
 <td width=50% align="center"><strong style="color: #FF8334">Абонентская плата: 826 руб./мес.</strong></td>
 </tr></table>
 </div>
-</fieldset>

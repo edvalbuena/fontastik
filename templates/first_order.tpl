@@ -5,7 +5,7 @@
 <div class="center-block max-800">
 
 {% wire id="service-order-form" type="submit" postback={firstorderform} delegate="controller_firstorder_submit" %}
-<form id="service-order-form" method="post" action="postback" class="form">
+<form id="service-order-form" method="post" action="postback" class="form" style="padding-top: 3em;">
 
 
 {# Choose services #}
@@ -36,7 +36,6 @@
             <div>
                 {% include "order_choose_number.tpl" headline=_"Chosen numbers" idname="choose_number" %}
             </div>
-            <br />
             {% wire id="choose_number_back"
                 action={add_class target="choose_number_div" class="hide"}
                 action={remove_class target="choose_service_div" class="hide"}
@@ -65,7 +64,6 @@
             <div>
                 {% include "order_choose_server_params.tpl" headline=_"Server parameters" idname="server_params" %}
             </div>
-            <br />
             {% wire id="choose_server_params_back"
                 action={add_class class="hide" target="choose_server_params_div"}
                 action={remove_class class="hide" target="choose_service_div"}
@@ -90,7 +88,6 @@
             <div>
                 {% include "order_contact_info_widget.tpl" headline=_"Contact information" %}
             </div>
-            <br />
             {% wire id="contact_info_back"
                 action={add_class class="hide" target="contact_info_div"}
                 action={remove_class class="hide" target="choose_service_div"}
@@ -119,7 +116,6 @@
             <div>
                 {% include "order_counterparty_widget.tpl" %}
             </div>
-            <br />
             {% wire id="counterparty_back"
                 action={add_class class="hide" target="counterparty_div"}
                 action={remove_class class="hide" target="contact_info_div"}

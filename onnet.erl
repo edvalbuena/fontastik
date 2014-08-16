@@ -59,7 +59,6 @@ event({postback,{signout,[]}, _, _}, Context) ->
     onnet_auth:onnet_logoff(Context);
 
 event({submit,{changepasswordform, _}, _, _}, Context) ->
-    ?DEBUG(z_context:get_q_all(Context)),
     CustomerEmail = z_context:get_q("customeremail", Context),
     onnet_util:set_and_send_new_password(Context),
     Context2 = z_render:update("change-password-form", z_template:render("change_password_header.tpl",[{headline,?__("Email to send password: ", Context)}, {idname, "change_password_id"}, {class, "disabled"}],Context), Context),
@@ -178,7 +177,6 @@ event({submit,{forgottenpwd, _}, _, _}, Context) ->
     end;
 
 event({submit,{additionalnumberorderform, _}, _, _}, Context) ->
-    ?DEBUG(z_context:get_q_all(Context)),
     CustomerEmail = z_context:get_q("customeremail", Context),
     onnet_util:send_additional_numbers_order(Context),
     Context2 = z_render:update("additional-number-order-form", z_template:render("order_additional_number.tpl",[{headline,?__("Customer's email: ", Context)}, {idname, "choose_number"}, {class, "hide"}],Context), Context),

@@ -37,7 +37,6 @@ onnet_logoff(Context) ->
     z_render:wire({redirect, [{dispatch, "home"}]}, Context1).
 
 is_auth(Context) ->
-    lager:info("lb_user_id: ~p",[z_context:get_session(lb_user_id, Context)]),
     is_integer(z_context:get_session(lb_user_id, Context)).
 
 is_operators_session(Context) ->

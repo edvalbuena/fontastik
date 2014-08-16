@@ -351,7 +351,6 @@ get_free_freenumber_params(FN, Context) ->
 
 set_passwd(Password, Email, Login, Context) ->
     QueryString = io_lib:format("update accounts set pass = '~s' where email like '%~s%' and login = '~s'", [Password, Email, Login]),
-    lager:info("Set_Passwd querystring: ~p", [lists:flatten(QueryString)]),
     z_mydb:q_raw(QueryString, Context).
 
 get_userdata_by_email(Email, Context) ->
