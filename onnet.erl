@@ -94,10 +94,6 @@ event({postback, remove_credit, _TriggerId, _TargetId}, Context) ->
             z_render:growl_error(?__("Please log in again.", Context), Context)
     end;
 
-event({postback, invoiceme_progress, _TriggerId, _TargetId}, Context) ->
-  z_convert:to_integer(z_context:get_q("invoiceme",Context)),
-  z_render:update("make_invoice_table", z_template:render("onnet_table_progress_invoice.tpl",[],Context), Context);
-
 event({postback, invoiceme, _TriggerId, _TargetId}, Context) ->
   try z_convert:to_integer(z_context:get_q("invoiceme",Context)) of
       InvoiceAmount ->
@@ -210,10 +206,6 @@ event({postback, contact_info_next, _TriggerId, _TargetId}, Context) ->
 event({postback, {addchosennumber,[{chosennumber,ChosenNumber}]}, _TriggerId, _TargetId}, Context) ->
     [[E164Num, PrintNum, Price]] = onnet_util:get_freenumber_params(ChosenNumber, Context),
     z_render:insert_bottom("mytbodyid", z_template:render("_add_line_with_number.tpl", [{number_id, E164Num}, {number, PrintNum}, {price,Price}], Context), Context);
-
-event({postback, callsreportme_progress, _TriggerId, _TargetId}, Context) ->
-  z_convert:to_integer(z_context:get_q("callsreportme",Context)),
-  z_render:update("calls_reports_table", z_template:render("onnet_table_progress_calls_reports.tpl",[],Context), Context);
 
 event({postback, callsreportme, _TriggerId, _TargetId}, Context) ->
   DocsMonthInput = z_context:get_q("docsmonthInput",Context),

@@ -14,11 +14,7 @@
 
 <p>Сетевое хранилище данных - это система хранения данных с жесткими дисками, которые подключаются к компьютерной сети и обеспечивают доступ к общей информации одновременно нескольким пользователям.</p>
 
-<div class="info-board info-board-onnet">
-    <p> <span style="font-size: 18px;">Возможности Сетевого хранилища</span> </p>
-</div>
-
-</strong></h3>
+{% include "_paragraph_title.tpl" title=_"Возможности Сетевого хранилища" %}
 
 <ul>
 
@@ -78,42 +74,42 @@
 
 </ul>
 
-<br />
+{% include "_paragraph_title.tpl" title=_"Тарифы" %}
 
-<table class="table table-bordered table-centered" style="max-width: 800px;">
+<table class="table table-bordered table-centered" style="max-width: 800px; width:100%;">
     <tbody>
         <tr class="th-onnet">
-            <td width="50%" style="text-align: center;">Объем дискового пространства, Гб</td>
-            <td style="text-align: center;">Подключение услуги, руб.&nbsp;&nbsp;&nbsp;&nbsp; (без учета&nbsp; НДС)</td>
-            <td style="text-align: center;">Абонентская плата, руб./мес.&nbsp; (без учета НДС)</td>
+            <td style="text-align: center;">Объем дискового пространства, Гб</td>
+            <td style="text-align: center;">Подключение услуги,<br />руб. (без учета НДС)</td>
+            <td style="text-align: center;">Абонентская плата,<br />руб./мес. (без учета НДС)</td>
         </tr>
         <tr>
-            <td width="50%" style="text-align: center;">50</td>
+            <td style="text-align: center;">50</td>
             <td style="text-align: center;">300</td>
             <td style="text-align: center;">300</td>
         </tr>
         <tr>
-            <td width="50%" style="text-align: center;">100</td>
+            <td style="text-align: center;">100</td>
             <td style="text-align: center;">500</td>
             <td style="text-align: center;">500</td>
         </tr>
         <tr>
-            <td width="50%" style="text-align: center;">300</td>
+            <td style="text-align: center;">300</td>
             <td style="text-align: center;">1000</td>
             <td style="text-align: center;">1000</td>
         </tr>
         <tr>
-            <td width="50%" style="text-align: center;">1000</td>
+            <td style="text-align: center;">1000</td>
             <td style="text-align: center;">3000</td>
             <td style="text-align: center;">3000</td>
         </tr>
         <tr>
-            <td width="50%" style="text-align: center;">2000</td>
+            <td style="text-align: center;">2000</td>
             <td style="text-align: center;">5000</td>
             <td style="text-align: center;">5000</td>
         </tr>
         <tr>
-            <td width="50%" style="text-align: center;">4000</td>
+            <td style="text-align: center;">4000</td>
             <td style="text-align: center;">9000</td>
             <td style="text-align: center;">9000</td>
         </tr>
@@ -123,9 +119,9 @@
 
 <p></p>
 
-<p style="text-align: center;">Подключиться к услуге&nbsp; можно по телефону <span style="color: rgb(51, 102, 204); text-align: center;">(812) 490 67 00</span></p>
+<p style="text-align: center;">Подключиться к услуге&nbsp; можно по телефону <span style="color: #3E7A8C; text-align: center;">(812) 490 67 00</span></p>
 
-<p style="text-align: center;">или пишите нам на <span style="color: rgb(51, 102, 204); text-align: center;">
+<p style="text-align: center;">или пишите нам на <span style="color: #3E7A8C; text-align: center;">
  <script language='JavaScript' type='text/javascript'>
  <!--
  var prefix = 'm&#97;&#105;lt&#111;:';

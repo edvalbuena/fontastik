@@ -6,12 +6,6 @@
 
 {% block service_description %}
 
-<div class="info-board info-board-onnet">
-    <p>
-<span style="font-size: 18px;">Возможности Виртуального офиса</span>
-    </p>
-</div>
-
 <ul>
     <li> <p>многоканальный телефонный номер;</p> </li>
     <li> <p>переадресация на мобильные и городские номера;</p> </li>
@@ -22,9 +16,7 @@
     <li> <p>обратный вызов (Call-back).</p> </li>
 </ul>
 
-<div class="info-board info-board-onnet">
-    <p> <span style="font-size: 18px;">Преимущества Виртуального офиса</span> </p>
-</div>
+{% include "_paragraph_title.tpl" title=_"Преимущества Виртуального офиса" %}
 
 <ul>
     <li> 
@@ -34,10 +26,9 @@
     <li><p>Номер многоканальный, а следовательно Ваши клиенты не услышат сигнал &quot;занято&quot;</p> </li>
     <li><p>Вы экономите время и средства при решении вопросов, связанных с телефонизацией офиса, так как Вам не надо приобретать специальное оборудование.</p></li>
 </ul>
-<p></p>
-<div class="info-board info-board-onnet">
-    <p> <span style="font-size: 18px;">Тарифы</span> </p>
-</div>
+
+{% include "_paragraph_title.tpl" title=_"Тарифы" %}
+
 <table class="table table-bordered table-hover table-centered" style="max-width: 800px;">
     <thead>
         <tr class="th-onnet">

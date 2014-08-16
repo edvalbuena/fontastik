@@ -63,14 +63,14 @@ create_callsreport(DocsMonthInput, Context) ->
     EncType = "application/x-www-form-urlencoded",
     [Month, Year] = string:tokens(DocsMonthInput,"/"),
     Day = calendar:last_day_of_the_month(list_to_integer(Year), list_to_integer(Month)),
-    MakeInvoiceStr = io_lib:format("devision=108&doctype=0&a_year=~s&a_month=~s&a_day=~p&startnum=&b_year=~s&b_month=~s&asrent=1&docid=39&advSearchList=&usergroup=0&docfor=3&userid=~s&agrmid=0&operid=0&comment=&async_call=1&generate=1",[Year, Month, Day, Year, Month,  Uid]),
+    MakeInvoiceStr = io_lib:format("devision=108&doctype=0&a_year=~s&a_month=~s&a_day=~p&startnum=&b_year=~s&b_month=~s&asrent=1&docid=39&advSearchList=&usergroup=0&docfor=3&userid=~p&agrmid=0&operid=0&comment=&async_call=1&generate=1",[Year, Month, Day, Year, Month,  Uid]),
     lb_login(Context),
     case httpc:request(post, {Url, [], EncType, lists:flatten(MakeInvoiceStr)}, [], []) of
         {ok, {{_, 200, _}, _, Body}} ->
             lb_logout(Context),
             case re:run(Body, "success: true", [{capture, none}]) of
                 match ->
-                    z_render:update("calls_reports_widget", z_template:render("onnet_widget_calls_reports.tpl", [{headline,?__("Calls report", Context)}, {idname, "calls_reports_widget"}, {selectedmonth, DocsMonthInput}], Context), Context);
+                    z_render:update("update_calls_reports_widget", z_template:render("onnet_widget_calls_reports.tpl", [{headline,?__("Calls report", Context)}, {idname, "calls_reports_widget"}, {selectedmonth, DocsMonthInput}], Context), Context);
      %%               z_render:update("calls_reports_table", z_template:render("onnet_table_ready_calls_reports.tpl", [], Context), Context);
                 _ ->
 		    z_render:growl("Success not mutched", Context)

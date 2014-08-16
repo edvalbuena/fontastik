@@ -6,12 +6,6 @@
 
 {% block service_description %}
 
-<div class="info-board info-board-onnet">
-    <p>
-<span style="font-size: 18px;">{_ Hosted Microsoft Software _} </span> 
-    </p>
-</div>
-
             <p>Предлагаем Вам аренду программного обеспечения компании Microsoft на основе договора SPLA (Service Provider License Agreement).</p>
 
             <p>Аренда программного обеспечения &mdash; это возможность использования программного обеспечения, установленного на&nbsp;<a href="http://onnet.su/virtualserver">виртуальном сервере</a> в&nbsp;удаленном режиме на&nbsp;условиях ежемесячной оплаты.</p>

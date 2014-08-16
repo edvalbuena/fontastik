@@ -1,3 +1,21 @@
+.onnet-service-description {
+  font-size: 1.2em;
+}
+
+a {
+  color: #3E7A8C;
+}
+
+.nav-tabs > li > a {
+  color: #3E7A8C;
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:hover, 
+.nav-tabs>li.active>a:focus {
+  color: #E86110;
+}
+
 /* Hide made by reCaptcha empty iframe */
 body > iframe[src="about:blank"] {
   display:none;
@@ -17,6 +35,7 @@ div table tbody tr td label.radio {
 
 .pager li>a, .pager li>span {
   border-radius: 0px!important;
+  color: #3E7A8C;
 }
 
 .th-onnet {
@@ -80,7 +99,7 @@ table#calls_list_table tfoot tr {
 
 .info-board-onnet {
   background-color: #eee;
-  border-color: rgba(62,122,140,.2);
+  border-color: #3E7A8C;
 }
 
 .free_numbers {
@@ -152,6 +171,7 @@ input[type="text"].input-number-zonnet {
 
 .btn-onnet {
   color: #515151;
+  background-color: #e6e6e6;
   border-color: #eea236;
   margin-left: 3px;
 }

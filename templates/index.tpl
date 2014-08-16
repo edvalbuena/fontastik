@@ -19,15 +19,15 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 col-sm-12">
-                <h1 class="animated slideInDown">Бизнес Телефония</h1>
+                <h1 class="animated slideInDown">{_ Business Telephony _}</h1>
                 <div class="list">
                   <ul>
                     <li class="animated slideInLeft first delay"><span><i class="fa fa fa-phone"></i> 
-                              <a class="undecorate-link" href="/virtualoffice">Виртуальный офис.</a></span></li>
+                              <a class="undecorate-link" href="/virtualoffice">{_ Virtual Office _}.</a></span></li>
                     <li class="animated slideInLeft second delay"><span><i class="fa fa-cogs"></i>
-                              <a class="undecorate-link" href="/hostedpbx">АТС для интеграции CRM.</a></span></li>
+                              <a class="undecorate-link" href="/hostedpbx">{_ PBX CRM Integration _}.</a></span></li>
                     <li class="animated slideInLeft third delay"><span><i class="fa fa-slack"></i>
-                              <a class="undecorate-link" href="/phonenumbers">Номера Москвы и Петербурга.</a></span></li>
+                              <a class="undecorate-link" href="/phonenumbers">{_ St-Petersburg phone numbers _}.</a></span></li>
                   </ul>
                 </div>
               </div>
@@ -39,7 +39,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-8 col-sm-12">
-                <h1 class="animated slideInDown">ОБлачные вычисления</h1>
+                <h1 class="animated slideInDown">{_ Cloud Computing _}</h1>
                 <div class="list">
                   <ul>
                     <li class="animated slideInLeft second delay"><span><i class="fa fa-database"></i> 
@@ -78,45 +78,46 @@
           </h2>
         </div>
           <img src="/lib/img/about.jpg" class="img-about img-responsive" alt="About">
-          <p style="font-size: 1.15em; text-align: center;">
-              <br /> 
-              Кем бы Вы ни были,
-              <br /> 
-              <br /> 
-              где бы Вы ни находились,
+          <p style="font-size: 1.15em; text-align: center; color: #E86110;">
+              <span class="hidden-md"><br /></span> 
+              {_ Whoever You Are _},
               <br /> 
               <br /> 
-              Вы – современный человек. 
+              {_ Wherever You Are _},
+              <br /> 
+              <br /> 
+              {_ You are a modern man _}. 
               <br />
               <br />
-              <span style="color: #E86110;">А это значит, СВЯЗЬ ДЛЯ ВАС ВСЁ!</span>
+              <span style="color: #E86110;">{_ And it means _},<br />{_ COMMUNICATION IS EVERYTHING FOR YOU _}!</span>
               <br />
           </p> 
-          <div style="font-size: 1.15em; text-align: justify; display: inline-block;">
-              Мы предлагаем Вам подойти к организации связи в вашей компании или для себя лично творчески.
-               
-              Напишите нам на <a class="undecorate-link" href="mailto:info@onnet.su">info@onnet.su</a> 
-              или расскажите по телефону <a class="undecorate-link" href="tel:+78124906700">(812) 490-67-00</a>, 
-              каким Вы видите идеально организованнный под Ваши нужды и потребности бизнес-процесс связи.
+              <br />
+              <br />
+              <br />
+          <div style="font-size: 1.15em; display: inline-block; color: #E86110;">
+              {_ Take a look at your communication creatively _}.
+              <br />
+              {_ Let us know what are you dreaming about _}.
               <br />
               <br />
           </div>
           <div style="font-size: 1.3em; text-align: center; color: #E86110;">
               <br />  
-              12-летний опыт работы на рынке телекоммуникаций позволяет нам утверждать: 
+              {_ 12 years of experience in the telecommunications market allows us to state _},
               <br />  
-              В ОБЛАСТИ СВЯЗИ МЫ МОЖЕМ ВСЁ!
+              {_ IN TELECOM WE CAN DO EVERYTHING _}!
               <br />  
               <br />  
           </div>
           <div class="info-board info-board-onnet">
             <h4>{_ Important info _}</h4>
-            <p>Наши ЦЕНЫ действительно ПРИВЛЕКАТЕЛЬНЫ
+            <p>{_ Our rates are ATTRACTIVE in deed _}
               <br />
               <br />
-              826 руб./мес. – абонентская плата за услугу Виртуальная АТС или Виртуальный офис независимо от количества подключенных номеров и абонентов. 
+              826 {_ rub _}./{_ mo _}. - {_ monthly fee for Hosted PBX, regardless of the number of connected phones and trunks _}. 
               <br />
-              Работайте с удовольствием, расширяйте свой бизнес, а мы поможем!</p>
+              {_ Work with pleasure, expand your business, we'll help you _}!</p>
           </div>
         </div>
         <!-- Last updated

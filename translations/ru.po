@@ -1,6 +1,66 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Preparing reports..."
+msgstr "Создание отчетов..."
+
+msgid "Issuing an invoice..."
+msgstr "Выписывается счет..."
+
+msgid "St-Petersburg phone numbers"
+msgstr "Телефонные номера Петербурга"
+
+msgid "PBX CRM Integration"
+msgstr "АТС для интеграции CRM"
+
+msgid "Virual Office"
+msgstr "Виртуальный офис"
+
+msgid "Cloud Computing"
+msgstr "Облачные вычисления"
+
+msgid "Business Telephony"
+msgstr "Бизнес Телефония"
+
+msgid "Work with pleasure, expand your business, we'll help you"
+msgstr "Работайте с удовольствием, расширяйте свой бизнес, а мы поможем"
+
+msgid "monthly fee for Hosted PBX, regardless of the number of connected phones and trunks"
+msgstr "абонентская плата за услугу Виртуальная АТС или Виртуальный офис независимо от количества подключенных номеров и абонентов"
+
+msgid "mo"
+msgstr "мес"
+
+msgid "Our rates are ATTRACTIVE in deed"
+msgstr "Наши ЦЕНЫ действительно ПРИВЛЕКАТЕЛЬНЫ"
+
+msgid "IN TELECOM WE CAN DO EVERYTHING"
+msgstr "В ОБЛАСТИ СВЯЗИ МЫ МОЖЕМ ВСЁ"
+
+msgid "12 years of experience in the telecommunications market allows us to state"
+msgstr "12-летний опыт работы на рынке телекоммуникаций позволяет нам утверждать"
+
+msgid "Let us know what are you dreaming about"
+msgstr "Расскажите нам о чём Вы мечтаете"
+
+msgid "Take a look at your communication creatively"
+msgstr "Подойдите к организации связи творчески"
+
+msgid "And it means"
+msgstr "А это значит"
+
+msgid "COMMUNICATION IS EVERYTHING FOR YOU"
+msgstr "СВЯЗЬ ДЛЯ ВАС ВСЁ"
+
+msgid "You are a modern man"
+msgstr "Вы – современный человек"
+
+msgid "Wherever You Are"
+msgstr "где бы Вы ни находились"
+
+msgid "Whoever You Are"
+msgstr "Кем бы Вы ни были"
+
 msgid "Order"
 msgstr "Заказать"
 
@@ -920,7 +980,7 @@ msgid "Online payments"
 msgstr "Платежи онлайн"
 
 msgid "rub"
-msgstr "руб."
+msgstr "руб"
 
 msgid "rub."
 msgstr "руб."
