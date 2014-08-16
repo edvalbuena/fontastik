@@ -154,7 +154,7 @@ get_userdata_by_email_and_login(Email, Login, Context) ->
 send_passwd_to_email(Email, Userdata, Context) ->
     ReqData = z_context:get_reqdata(Context),
     {ClientIP, _}  = webmachine_request:peer(ReqData),
-    SalesEmail = m_config:get_value(mod_zonnet, sales_email, Context),
+    SalesEmail = m_config:get_value(onnet, sales_email, Context),
     Vars = [{email, Email}
             ,{userdata, Userdata}
             ,{clientip, ClientIP}

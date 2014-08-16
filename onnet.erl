@@ -116,12 +116,12 @@ event({postback, assist_pay, _TriggerId, _TargetId}, Context) ->
         case onnet_util:is_numeric(Agrm_id) of
           true ->
             OrderNumber = string:to_lower(z_ids:id(32)),
-            AssistFolder = binary_to_list(m_config:get_value(mod_zonnet, assist_transaction_folder, Context)),
+            AssistFolder = binary_to_list(m_config:get_value(onnet, assist_transaction_folder, Context)),
             case file:write_file(AssistFolder ++ "/" ++ OrderNumber, "attempt = 0") of
               ok ->
-                Assist_URL = binary_to_list(m_config:get_value(mod_zonnet, assist_home_link, Context)),
-                Merchant_ID = binary_to_list(m_config:get_value(mod_zonnet, assist_shop_id, Context)),
-                Currency = binary_to_list(m_config:get_value(mod_zonnet, assist_shop_currency, Context)),
+                Assist_URL = binary_to_list(m_config:get_value(onnet, assist_home_link, Context)),
+                Merchant_ID = binary_to_list(m_config:get_value(onnet, assist_shop_id, Context)),
+                Currency = binary_to_list(m_config:get_value(onnet, assist_shop_currency, Context)),
                 Payment_URL = io_lib:format("~s?Merchant_ID=~s&OrderNumber=~s&OrderAmount=~s&OrderCurrency=~s&OrderComment=~s&Comment=~s&TestMode=0&Submit=Pay",[Assist_URL, Merchant_ID, OrderNumber, Assist_pay, Currency, Agrm_id, Agrm_id]),
                 z_render:wire({redirect, [{location, Payment_URL}]}, Context);
               _ ->
