@@ -3,9 +3,9 @@
           <div class="services">
             <ul>
                 <li id="sr-hostedpbx">
-                  {% wire id="sr-hostedpbx" action={redirect dispatch="hostedpbx"} %}
+                  {% wire id="sr-hostedpbx" action={redirect dispatch="vpbx"} %}
                   <i class="fa fa-gears fa-3x"></i>
-                  <p>{_ Hosted PBX _}<br /><a href="/hostedpbx">{_ Details _}...</a></p>
+                  <p>{_ Hosted PBX _}<br /><a href="/vpbx">{_ Details _}...</a></p>
                 </li>
                 <li id="sr-virtualoffice">
                   {% wire id="sr-virtualoffice" action={redirect dispatch="virtualoffice"} %}

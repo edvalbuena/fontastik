@@ -1,6 +1,18 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "IVR"
+msgstr "Голосовое приветствие"
+
+msgid "Terms & Cons"
+msgstr "Условия и Тарифы"
+
+msgid "Rates"
+msgstr "Трифы"
+
+msgid "rates"
+msgstr "трифы"
+
 msgid "Preparing reports..."
 msgstr "Создание отчетов..."
 
@@ -178,7 +190,7 @@ msgstr "Выбрать"
 msgid "Cloud Storage"
 msgstr "Сетевое хранилище"
 
-msgid "Free Phone Numbers"
+msgid "Available Phone Numbers"
 msgstr "Свободные телефонные номера"
 
 msgid "Phone Numbers"

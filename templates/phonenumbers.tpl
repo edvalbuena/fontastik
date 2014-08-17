@@ -1,7 +1,7 @@
 {% extends "services.tpl" %}
 
 
-{% block service_name %}{_ Free Phone Numbers _}{% endblock %}
+{% block service_name %}{_ Available Phone Numbers _}{% endblock %}
 
 
 {% block service_description %}

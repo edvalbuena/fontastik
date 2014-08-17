@@ -44,15 +44,17 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">{_ Services _} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/virtualoffice">{_ Virtual Office _}</a></li>
-                  <li><a href="/hostedpbx">{_ Hosted PBX _}</a></li>
+                  <li><a href="/vpbx">{_ Hosted PBX _}</a></li>
                   <li><a href="/phonenumbers">{_ Phone Numbers _}</a></li>
                   <li><a href="/virtualserver">{_ Virtual Server _}</a></li>
                   <li><a href="/cloudstorage">{_ Cloud Storage _}</a></li>
                   <li><a href="/spla">{_ Hosted Microsoft Software _}</a></li>
                   <li><a href="/internet">{_ Internet Access _}</a></li>
+                  <li><a href="/ivr">{_ IVR _}</a></li>
                   <li class="divider"></li>
                   <li><a href="/serviceorder">{_ Service Order _}</a></li>
                   <li><a href="/payments">{_ Payments _}</a></li>
+                  <li><a href="/termsandconditions">{_ Terms & Cons _}</a></li>
                 </ul>
             </li>
            {% endif %}
