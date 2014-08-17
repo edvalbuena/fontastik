@@ -9,7 +9,7 @@
 <div class="row">
 <div class="col-sm-6">
 
-<ul class="onnet-service-description" style="margin-top: 40px;">
+<ul class="onnet-service-description" style="margin-top: 20px;">
   <li style="padding-bottom: 1em;">
      191186, {_ Russia _}, {_ St. Petersburg _},
      <br />

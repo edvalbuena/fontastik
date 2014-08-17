@@ -96,9 +96,9 @@
               <br />
               <br />
           <div style="font-size: 1.15em; display: inline-block; color: #E86110;">
-              {_ Take a look at your communication creatively _}.
+              {_ Take a look at your communication creatively _}...
               <br />
-              {_ Let us know what are you dreaming about _}.
+              ...{_ and let us know what you are dreaming about _}.
               <br />
               <br />
           </div>

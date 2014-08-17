@@ -201,7 +201,7 @@ input[type="text"].input-number-zonnet {
 
 .undecorate-link {
   text-decoration: none!important;
-  color: inherit;
+  color: inherit!important;
   cursor: pointer;
 }
 

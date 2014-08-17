@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <p>&copy; OnNet communications Inc. 2014</p>
+          <p>&copy; OnNet communications Inc. {{ now|date:"Y" }}</p>
         </div>
       </div>
     </div>

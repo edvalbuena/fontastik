@@ -61,8 +61,8 @@ msgstr "В ОБЛАСТИ СВЯЗИ МЫ МОЖЕМ ВСЁ"
 msgid "12 years of experience in the telecommunications market allows us to state"
 msgstr "12-летний опыт работы на рынке телекоммуникаций позволяет нам утверждать"
 
-msgid "Let us know what are you dreaming about"
-msgstr "Расскажите нам о чём Вы мечтаете"
+msgid "and let us know what you are dreaming about"
+msgstr "и расскажите нам о чём Вы мечтаете"
 
 msgid "Take a look at your communication creatively"
 msgstr "Подойдите к организации связи творчески"
