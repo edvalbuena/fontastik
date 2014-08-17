@@ -9,39 +9,30 @@
 <div class="row">
 <div class="col-sm-6">
 
-<h3>Наш адрес:</h3>
-<ul style="margin-top: 40px;">
-<li>191186, г. Санкт- Петербург, ул. Большая Морская, дом 3,<br />БЦ Лидваль , оф. 534.</li>
+<ul class="onnet-service-description" style="margin-top: 40px;">
+  <li style="padding-bottom: 1em;">
+     191186, {_ Russia _}, {_ St. Petersburg _},
+     <br />
+     {_ 3 B. Morskaya str. _},
+     <br />
+     {_ Business Center «Lidval» _}, {_ office _} 534
+  </li>
 
-<li>телефон отдела продаж: <a href="tel:+78124906700">(812) 490-67-00</a> или skype: <a href="skype:onnet.info?call">onnet.info</a></li>
+  <li style="padding-bottom: 1em;">{_ Sales Enquiries _} 
+    <ul>
+      <li>{_ Phone _}: <a href="tel:+78124906700">(812) 490-67-00</a></li>
+      <li>Email: <a class="undecorate-link" href="mailto:info@onnet.su">info@onnet.su</a></li>
+    </ul>
+  </li>
 
-<li>тел/факс для обслуживания клиентов: <a href="tel:+78123634500">(812) 363-45-00</a> или skype: <a href="skype:onnet.support?call">onnet.support</a></li>
-
-<li>e-mail: 
- <script language='JavaScript' type='text/javascript'>
- <!--
- var prefix = 'm&#97;&#105;lt&#111;:';
- var suffix = '';
- var attribs = '';
- var path = 'hr' + 'ef' + '=';
- var addy39548 = '&#105;nf&#111;' + '&#64;';
- addy39548 = addy39548 + '&#111;nn&#101;t' + '&#46;' + 's&#117;';
- document.write( '<a ' + path + '\'' + prefix + addy39548 + suffix + '\'' + attribs + '>' );
- document.write( addy39548 );
- document.write( '<\/a>' );
- //-->
- </script><script language='JavaScript' type='text/javascript'>
- <!--
- document.write( '<span style=\'display: none;\'>' );
- //-->
- </script>Данный адрес e-mail защищен от спам-ботов, Вам необходимо включить Javascript для его просмотра.
- <script language='JavaScript' type='text/javascript'>
- <!--
- document.write( '</' );
- document.write( 'span>' );
- //-->
- </script></li>
+  <li style="padding-bottom: 1em;">{_ Support Enquiries _} 
+    <ul>
+      <li>{_ Phone _}: <a href="tel:+78123634500">(812) 363-45-00</a></li>
+      <li>Email: <a class="undecorate-link" href="mailto:tech@onnet.su">tech@onnet.su</a></li>
+    </ul>
+  </li>
 </ul>
+
 </div>
 <div class="col-sm-6">
 <div class="hidden-xs hidden-sm hidden-md">

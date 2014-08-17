@@ -1,6 +1,15 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Business Center «Lidval»"
+msgstr "Бизнес-центр «Лидваль»"
+
+msgid "Support Enquiries"
+msgstr "Поддержка клиентов"
+
+msgid "Sales Enquiries"
+msgstr "Отдел продаж"
+
 msgid "IVR"
 msgstr "Голосовое приветствие"
 
@@ -163,8 +172,11 @@ msgstr "Санкт-Петербург"
 msgid "Subscribe"
 msgstr "Подписка"
 
-msgid "3, B. Morskaya str., office 534"
-msgstr "Большая Морская ул., д.3, офис 534"
+msgid "3 B. Morskaya str."
+msgstr "Большая Морская ул., д.3"
+
+msgid "office"
+msgstr "офис"
 
 msgid "We promise not to bother you often"
 msgstr "Обещаем не беспокоить Вас часто"

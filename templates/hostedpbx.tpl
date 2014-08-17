@@ -46,10 +46,6 @@
             <td style="text-align: center;"><a href="/phonenumbers">от 1 000</a></td>
         </tr>
         <tr>
-            <td >Настройка возможности приема звонков из сети Skype</td>
-            <td style="text-align: center;">4 000</td>
-        </tr>
-        <tr>
             <td >Абонентская плата за услугу</td>
             <td style="text-align: center;">700</td>
         </tr>
