@@ -52,3 +52,7 @@ Telephony call recordings:
 
 ![Alt text](/lib/images/telephony_call_recordings.png "Telephony call recordings")
 
+
+Contacts:
+
+![Alt text](/lib/images/contacts.png "Contacts")
