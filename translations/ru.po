@@ -43,37 +43,37 @@ msgstr "Облачные вычисления"
 msgid "Business Telephony"
 msgstr "Бизнес Телефония"
 
-msgid "Work with pleasure, expand your business, we'll help you"
+msgid "Enjoy your work, expand your business, we'll help you"
 msgstr "Работайте с удовольствием, расширяйте свой бизнес, а мы поможем"
 
-msgid "monthly fee for Hosted PBX, regardless of the number of connected phones and trunks"
+msgid "monthly fee for a Hosted PBX, regardless of the number of connected phones and trunks"
 msgstr "абонентская плата за услугу Виртуальная АТС или Виртуальный офис независимо от количества подключенных номеров и абонентов"
 
 msgid "mo"
 msgstr "мес"
 
-msgid "Our rates are ATTRACTIVE in deed"
+msgid "Our rates are very ATTRACTIVE indeed"
 msgstr "Наши ЦЕНЫ действительно ПРИВЛЕКАТЕЛЬНЫ"
 
-msgid "IN TELECOM WE CAN DO EVERYTHING"
+msgid "IN TELECOMS WE CAN DO ANYTHING"
 msgstr "В ОБЛАСТИ СВЯЗИ МЫ МОЖЕМ ВСЁ"
 
-msgid "12 years of experience in the telecommunications market allows us to state"
+msgid "12 years of experience in the telecommunications market allows us to state that"
 msgstr "12-летний опыт работы на рынке телекоммуникаций позволяет нам утверждать"
 
-msgid "and let us know what you are dreaming about"
+msgid "and let us know what you are dreaming of"
 msgstr "и расскажите нам о чём Вы мечтаете"
 
 msgid "Take a look at your communication creatively"
 msgstr "Подойдите к организации связи творчески"
 
-msgid "And it means"
+msgid "And it means that"
 msgstr "А это значит"
 
 msgid "COMMUNICATION IS EVERYTHING FOR YOU"
 msgstr "СВЯЗЬ ДЛЯ ВАС ВСЁ"
 
-msgid "You are a modern man"
+msgid "You are a modern person"
 msgstr "Вы – современный человек"
 
 msgid "Wherever You Are"
@@ -178,7 +178,7 @@ msgstr "Большая Морская ул., д.3"
 msgid "office"
 msgstr "офис"
 
-msgid "We promise not to bother you often"
+msgid "We promise not to bother you too often"
 msgstr "Обещаем не беспокоить Вас часто"
 
 msgid "Enter your e-mail below to subscribe to our free newsletter"
@@ -508,7 +508,7 @@ msgstr "Тип контрагента"
 msgid "Best regards"
 msgstr "С уважением"
 
-msgid "OnNet communications Inc."
+msgid "OnNet Communications Inc."
 msgstr "ЗАО «ОнНет комьюникейшнс»"
 
 msgid "Order number"

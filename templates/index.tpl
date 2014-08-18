@@ -86,10 +86,10 @@
               {_ Wherever You Are _},
               <br /> 
               <br /> 
-              {_ You are a modern man _}. 
+              {_ You are a modern person _}. 
               <br />
               <br />
-              <span style="color: #E86110;">{_ And it means _},<br />{_ COMMUNICATION IS EVERYTHING FOR YOU _}!</span>
+              <span style="color: #E86110;">{_ And it means that _},<br />{_ COMMUNICATION IS EVERYTHING FOR YOU _}!</span>
               <br />
           </p> 
               <br />
@@ -98,26 +98,26 @@
           <div style="font-size: 1.15em; display: inline-block; color: #E86110;">
               {_ Take a look at your communication creatively _}...
               <br />
-              ...{_ and let us know what you are dreaming about _}.
+              ...{_ and let us know what you are dreaming of _}.
               <br />
               <br />
           </div>
           <div style="font-size: 1.3em; text-align: center; color: #E86110;">
               <br />  
-              {_ 12 years of experience in the telecommunications market allows us to state _},
+              {_ 12 years of experience in the telecommunications market allows us to state that _},
               <br />  
-              {_ IN TELECOM WE CAN DO EVERYTHING _}!
+              {_ IN TELECOMS WE CAN DO ANYTHING _}!
               <br />  
               <br />  
           </div>
           <div class="info-board info-board-onnet">
             <h4>{_ Important info _}</h4>
-            <p>{_ Our rates are ATTRACTIVE in deed _}
+            <p>{_ Our rates are very ATTRACTIVE indeed _}
               <br />
               <br />
-              826 {_ rub _}./{_ mo _}. - {_ monthly fee for Hosted PBX, regardless of the number of connected phones and trunks _}. 
+              826 {_ rub _}./{_ mo _}. - {_ monthly fee for a Hosted PBX, regardless of the number of connected phones and trunks _}. 
               <br />
-              {_ Work with pleasure, expand your business, we'll help you _}!</p>
+              {_ Enjoy your work, expand your business, we'll help you _}!</p>
           </div>
         </div>
         <!-- Last updated

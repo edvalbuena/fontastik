@@ -33,7 +33,7 @@
         <div class="col-sm-4">
           <div class="headline"><h3>{_ Subscribe _}</h3></div>
           <div class="content">
-            <p>{_ Enter your e-mail below to subscribe to our free newsletter _}.<br />{_ We promise not to bother you often _}!</p>
+            <p>{_ Enter your e-mail below to subscribe to our free newsletter _}.<br />{_ We promise not to bother you too often _}!</p>
             <form class="form" role="form">
               <div class="row">
                 <div class="col-sm-8">
