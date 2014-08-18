@@ -32,6 +32,9 @@ Statistics:
 
 ![Alt text](/lib/images/statistics.png "Statistics")
 
+Contacts:
+
+![Alt text](/lib/images/contacts.png "Contacts")
 
 Telephony status:
 
