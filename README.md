@@ -1,4 +1,4 @@
-onnet
+onnet.su
 ========
 
 Zotonic based website - onnet.su
