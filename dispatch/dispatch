@@ -5,6 +5,7 @@
  {virtualoffice,["virtualoffice"],         controller_template,  [ {template, "virtualoffice.tpl"} ]},
  {vpbx,["vpbx"],         controller_template,  [ {template, "hostedpbx.tpl"} ]},
  {phonenumbers,["phonenumbers"],         controller_template,  [ {template, "phonenumbers.tpl"} ]},
+ {freenumbers,["freenumbers"],         controller_template,  [ {template, "phonenumbers.tpl"} ]},
  {virtualserver,["virtualserver"],         controller_template,  [ {template, "virtualserver.tpl"} ]},
  {cloudstorage,["cloudstorage"],         controller_template,  [ {template, "cloudstorage.tpl"} ]},
  {spla,["spla"],         controller_template,  [ {template, "spla.tpl"} ]},
