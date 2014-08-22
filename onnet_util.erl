@@ -333,7 +333,6 @@ send_additional_numbers_order(Context) ->
     Username = z_context:get_session(lb_username, Context),
     CustomerName = accounts_table("name", 1, Context),
     [CustomerAgreement|_] = agreements_table(Context),
-    lager:info("CustomerAgreement: ~p", [CustomerAgreement]),
     Vars = [{email, CustomerEmail}
             ,{chosennumbers, PhoneNumbers}
             ,{clientip, ClientIP}
