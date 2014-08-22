@@ -12,17 +12,17 @@
     <li>
         <label class="radio"><input id="itturismchoice" type="radio" name="lastchoiceincrm" value="itturismchoice" title="Tour Manager">
                 <h4>Тур менеджер CRM</h4>
+        </label>
                 <div id="itturismdescrdiv">
                         {% include "_empty.tpl" %}
                 </div>
-        </label>
     </li>
     <li>
         <label class="radio"><input id="novacrmchoice" type="radio" name="lastchoiceincrm" value="novacrmchoice" title="Nova">
                 <h4>Nova CRM</h4>
+        </label>
                 <div id="novacrmdescrdiv">
                         {% include "_empty.tpl" %}
                 </div>
-        </label>
     </li>
 </ul>

@@ -12,10 +12,10 @@
     <li>
     	<label class="radio"><input id="crmvpbxtypes" type="radio" name="vpbxtypes" value="crmvpbxtypes" title="CRMs">
 		<h4>для интеграции с системой CRM <small>(необходимо согласование с поставщиком решения, тариф <a id="choosecrmrate" href="#">VPS 0,5</a>)</small></h4>
+	</label>
 		<div id="crmvpbxtypesdiv">
 	   		{% include "_empty.tpl" %}
 		</div>
-	</label>
     </li>
     <li>
     	<label class="radio"><input id="purevpbx" type="radio" name="vpbxtypes" value="purevpbx" title="Standard">
