@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "dated"
+msgstr "от"
+
 msgid "Standard"
 msgstr "Стандарт"
 

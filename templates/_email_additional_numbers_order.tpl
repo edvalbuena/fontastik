@@ -1,14 +1,14 @@
 <html>
 	<head>
 		<title>
-                {_ Additional numbers order _} - {{ m.onnet[{accounts_table fields="name" limit=1}] }}
+                {_ Additional numbers order _} - {{ customername }}
                 </title>
 	</head>
 	<body>
 		<h3>{_ Additional numbers order received _}:</h3>
 
-		<p>{_ Agreement number _}: <strong>#{{ m.onnet.agreements_table[1][1] }}</strong></p>
-                <p>{_ Customer _}: <strong>{{ m.onnet[{accounts_table fields="name" limit=1}] }} ({{ username }})</strong></p>
+		<p>{_ Agreement number _}: <strong>#{{ customeragreement[1] }} {_ dated _} {{ customeragreement[2][2]|date:'Y-m-d' }}</strong></p>
+                <p>{_ Customer _}: <strong>{{ customername }} ({{ username }})</strong></p>
                 <p>{_ Email _}: <strong>{{ email }}</strong></p>
                 {% if chosennumbers %}
                 <p>{_ Chosen numbers _}:<p>

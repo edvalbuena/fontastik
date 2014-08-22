@@ -331,12 +331,17 @@ send_additional_numbers_order(Context) ->
     PhoneNumbers = z_context:get_q_all("chosennumbers", Context),
     SalesEmail = m_config:get_value(onnet, sales_email, Context),
     Username = z_context:get_session(lb_username, Context),
+    CustomerName = accounts_table("name", 1, Context),
+    [CustomerAgreement|_] = agreements_table(Context),
+    lager:info("CustomerAgreement: ~p", [CustomerAgreement]),
     Vars = [{email, CustomerEmail}
             ,{chosennumbers, PhoneNumbers}
             ,{clientip, ClientIP}
             ,{is_prepaid, IsPrepaid}
             ,{account_balance, AccountBalance}
             ,{username, Username}
+            ,{customername, CustomerName}
+            ,{customeragreement, CustomerAgreement}
            ],
 
     E_Num_Order_Customer = #email{
