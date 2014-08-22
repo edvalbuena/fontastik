@@ -27,7 +27,7 @@
 <div class="control-group">
 <table width="100%"><tr>
        <td width="25%"><label class="radio inline" style="padding-left: 1px; font-size: 12px; font-weight: bold; color: inherit; text-rendering: optimizelegibility;">{_ Choose PBX type _}: </label>
-       <td width="20%"><label class="radio inline"><input id="stockpbx" type="radio" name="pbxservicetype" value="FreePBX" title="FreePBX" checked>FreePBX</label></td>
+       <td width="20%"><label class="radio inline"><input id="stockpbx" type="radio" name="pbxservicetype" value="FreePBX" title="FreePBX" checked>{_ Standard _}</label></td>
        <td width="30%"><label class="radio inline"><input id="itturismpbx" type="radio" name="pbxservicetype" value="IT Turism" title="IT Turism">Тур менеджер CRM</label></td>
        <td width="25%"><label class="radio inline"><input id="novacrmpbx" type="radio" name="pbxservicetype" value="Nova CRM" title="Nova CRM">Nova CRM</label></td>
 </tr></table>

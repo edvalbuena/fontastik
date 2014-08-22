@@ -27,7 +27,7 @@
     <li><p>Вы экономите время и средства при решении вопросов, связанных с телефонизацией офиса, так как Вам не надо приобретать специальное оборудование.</p></li>
 </ul>
 
-{% include "_paragraph_title.tpl" title=_"Тарифы" %}
+{% include "_paragraph_title.tpl" title=_"Rates" %}
 
 <table class="table table-bordered table-hover table-centered" style="max-width: 800px;">
     <thead>

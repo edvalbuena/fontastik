@@ -15,7 +15,9 @@
                 {# Make credit #}
                 {% if m.onnet.credit_able %}
                 {# Credit status #}
-                {% include "onnet_widget_dashboard_credit.tpl" headline=_"Credit" %}
+                <div id="update_widget_dashboard_credit">
+                  {% include "onnet_widget_dashboard_credit.tpl" headline=_"Credit" %}
+                </div>
                 {% endif %}
 </div>
 

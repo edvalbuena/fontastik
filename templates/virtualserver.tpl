@@ -23,7 +23,7 @@
     <li> <p>оптимальное соотношение<span style="font-weight: bold;"> </span><strong>цена&nbsp; - качество.</strong></p> </li>
 </ul>
 
-{% include "_paragraph_title.tpl" title=_"Тарифы" %}
+{% include "_paragraph_title.tpl" title=_"Rates" %}
 
 <table class="table table-bordered table-centered" style="max-width: 900px">
     <tbody>

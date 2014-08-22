@@ -29,7 +29,7 @@
                            <input type="radio" name="creditme" value="5900" /> 5900 {_ rub. _}
                        {% endif %}
                 </td>
-                <td>{% button class="btn btn-xs btn-onnet pull-right" text=_"proceed"%}</td>
+                <td>{% button id="apply_credit_button" class="btn btn-xs btn-onnet pull-right" text=_"proceed"%}</td>
                 </form>
             </tr>
     </tbody>

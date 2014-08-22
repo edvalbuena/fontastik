@@ -12,7 +12,9 @@
 
   {% if m.onnet.credit_able %}
   {# Credit status #}
-  {% include "onnet_widget_dashboard_credit.tpl" headline=_"Credit" idname="useless_dashboard_credit_table" %}
+  <div id="update_widget_dashboard_credit">
+    {% include "onnet_widget_dashboard_credit.tpl" headline=_"Credit" idname="useless_dashboard_credit_table" %}
+  </div>
   {% endif %}
 
 </div>

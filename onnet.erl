@@ -73,7 +73,7 @@ event({submit, credit_form, _TriggerId, _TargetId}, Context) ->
         case onnet_util:is_numeric(Agrm_id) of
           true ->
             ok = onnet_util:make_promise_payment(Agrm_id, Credit_amount, Context),
-            z_render:update("dashboard_credit_table", z_template:render("_onnet_widget_dashboard_credit.tpl", [], Context), Context);
+            z_render:update("update_widget_dashboard_credit", z_template:render("onnet_widget_dashboard_credit.tpl", [{headline,?__("Credit", Context)}, {idname, "useless_dashboard_credit_table"}], Context), Context);
           false ->
             z_render:growl_error(?__("Please log in again.", Context), Context)
         end;
@@ -89,7 +89,12 @@ event({postback, remove_credit, _TriggerId, _TargetId}, Context) ->
     case onnet_util:is_numeric(Agrm_id) of
         true ->
             onnet_util:remove_credit(Agrm_id, Context),
-            z_render:update("dashboard_credit_table", z_template:render("_onnet_widget_dashboard_credit.tpl", [], Context), Context);
+            z_render:wire({reload, []}, Context);
+%%           After credit remove credit apply form don't send postback till page woudn't be reloaded. 
+%%           May be will sove this next time. Make dirty page reload for now.
+%%            z_render:update("update_widget_dashboard_credit", 
+%%                               z_template:render("onnet_widget_dashboard_credit.tpl", 
+%%                                                  [{headline,?__("Credit", Context)}, {idname, "useless_dashboard_credit_table"}], Context), Context);
         false ->
             z_render:growl_error(?__("Please log in again.", Context), Context)
     end;

@@ -27,7 +27,7 @@
     </li>
 </ul>
 
-{% include "_paragraph_title.tpl" title=_"Тарифы" %}
+{% include "_paragraph_title.tpl" title=_"Rates" %}
 
 <table class="table table-bordered" style="max-width: 800px; margin: 0 auto !important; float: none !important;" border="0">
     <thead>

@@ -1,6 +1,15 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Standard"
+msgstr "Стандарт"
+
+msgid "Standart"
+msgstr "Стандартный"
+
+msgid "Input Email"
+msgstr "Введите Email"
+
 msgid "Business Center «Lidval»"
 msgstr "Бизнес-центр «Лидваль»"
 
