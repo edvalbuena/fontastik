@@ -37,12 +37,12 @@
             <td style="text-align: center;">{{ record['value'][1]['to_number']|pretty_phonenumber }}</td>
             <td style="text-align: center;">
                 <a href="/getrecordinginline/id/{{ record["id"] }}/filename/{{ record['value'][1]['filename'] }}/timestamp/{{ record['value'][1]['timestamp'] }}">
-                    <i class="icon-play-circle" title="{_ Play _}"></i>
+                    <i class="fa fa-play-circle-o" title="{_ Play _}"></i>
                 </a>
             </td>
             <td style="text-align: center;">
                 <a href="/getrecordingattach/id/{{ record["id"] }}/filename/{{ record['value'][1]['filename'] }}/timestamp/{{ record['value'][1]['timestamp'] }}">
-                    <i style="cursor: pointer;" class="icon-download" title="{_ Download _}"></i>
+                    <i style="cursor: pointer;" class="fa fa-download" title="{_ Download _}"></i>
                 </a>
             </td>
         </tr>
