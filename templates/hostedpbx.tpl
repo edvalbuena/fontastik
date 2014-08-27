@@ -43,7 +43,7 @@
         </tr>
         <tr>
             <td >Подключение номера ГТС</td>
-            <td style="text-align: center;"><a href="/phonenumbers">от 1 000</a></td>
+            <td style="text-align: center;"><a href="/freenumbers">от 1 000</a></td>
         </tr>
         <tr>
             <td >Абонентская плата за услугу</td>

@@ -24,7 +24,7 @@
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_num }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_date[2]|date:'Y-m-d' }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ oper_name }}</a></td>
-            <td><i id=inv{{order_id}} class="icon-envelope"></i></td>
+            <td class="text-center"><i id=inv{{order_id}} class="fa fa-envelope-o"></i></td>
         </tr>
         {% wire id="inv"++order_id action={ dialog_open title=_"Send invoice" template="_email_invoice_dialog.tpl" arg=order_id } %}
       {% endfor %}
@@ -33,7 +33,7 @@
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_num }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_date[2]|date:'Y-m-d' }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ oper_name }}</a></td>
-            <td><i id=inv{{order_id}} class="icon-envelope"></i></td>
+            <td class="text-center"><i id=inv{{order_id}} class="fa fa-envelope-o"></i></td>
         </tr>
         {% wire id="inv"++order_id action={ dialog_open title=_"Send invoice" template="_email_invoice_dialog.tpl" arg=order_id } %}
       {% endfor %}
@@ -43,7 +43,7 @@
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_num }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_date[2]|date:'Y-m-d' }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ oper_name }}</a></td>
-            <td><i id=inv{{order_id}} class="icon-envelope"></i></td>
+            <td class="text-center"><i id=inv{{order_id}} class="fa fa-envelope-o"></i></td>
         </tr>
         {% wire id="inv"++order_id action={ dialog_open title=_"Send invoice" template="_email_invoice_dialog.tpl" arg=order_id } %}
       {% endfor %}

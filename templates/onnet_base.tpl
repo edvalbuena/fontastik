@@ -9,16 +9,22 @@
 
     <title>OnNet communications Inc.</title>
 
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.0.0.js"></script>
-    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<!--    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script> -->
+    {% lib "js/jquery-2.1.1.min.js" %}
+<!--    <script src="//code.jquery.com/jquery-migrate-1.0.0.js"></script> -->
+    {% lib "js/jquery-migrate-1.0.0.js" %}
+<!--    <script src="//code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script> -->
+    {% lib "js/jquery-ui.min.js" %}
+<!--    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
+    {% lib "js/jquery.ui.touch-punch.min.js" %}
 
     <!-- Bootstrap -->
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 
+    {% lib "css/bootstrap.min.css" %}
+    {% lib "js/bootstrap.min.js" %}
 
     <!-- Custom styles for this template -->
     <link href='//fonts.googleapis.com/css?family=Tangerine:100,300,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
@@ -56,15 +62,19 @@
           "js/modules/jquery.timepicker.min.js"
      %}
 
-    {% lib "css/datepicker3.css"  %}
-    {% lib "js/bootstrap-datepicker.js"  %}
-    {% lib "js/locales/bootstrap-datepicker.ru.js"  %}
+    {% lib "css/datepicker3.css" %}
+    {% lib "js/bootstrap-datepicker.js" %}
+    {% lib "js/locales/bootstrap-datepicker.ru.js" %}
 
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
-    <script src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.min.js"></script>
-    <script src="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> 
+    {% lib "css/font-awesome.min.css" %}
+    <!-- <link href="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet"> -->
+    {% lib "css/dataTables.bootstrap.css" %}
+    <!-- <script src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.min.js"></script> -->
+    {% lib "js/jquery.dataTables.min.js" %}
+    <!-- <script src="//cdn.datatables.net/plug-ins/be7019ee387/integration/bootstrap/3/dataTables.bootstrap.js"></script> -->
+    {% lib "js/dataTables.bootstrap.js" %}
     {% lib "js/jquery.dataTables.columnFilter.js" %}
 
 
@@ -82,9 +92,9 @@
     {% include "footer.tpl" %}
     {% include "legal.tpl" %}
     {% include "footer_js.tpl" %}
-    {# include "google_anatytics.tpl" #}
-    {# include "yandex_metrika.tpl" #}
-    {# include "rambler_counter.tpl" #}
+    {% include "google_anatytics.tpl" %}
+    {% include "yandex_metrika.tpl" %}
+    {% include "rambler_counter.tpl" %}
 
     {% script %}
   </body>

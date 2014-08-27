@@ -45,7 +45,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="/virtualoffice">{_ Virtual Office _}</a></li>
                   <li><a href="/vpbx">{_ Hosted PBX _}</a></li>
-                  <li><a href="/phonenumbers">{_ Phone Numbers _}</a></li>
+                  <li><a href="/freenumbers">{_ Phone Numbers _}</a></li>
                   <li><a href="/virtualserver">{_ Virtual Server _}</a></li>
                   <li><a href="/cloudstorage">{_ Cloud Storage _}</a></li>
                   <li><a href="/spla">{_ Hosted Microsoft Software _}</a></li>

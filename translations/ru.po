@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "#"
+msgstr "№"
+
 msgid "dated"
 msgstr "от"
 
@@ -521,6 +524,9 @@ msgid "Best regards"
 msgstr "С уважением"
 
 msgid "OnNet Communications Inc."
+msgstr "ЗАО «ОнНет комьюникейшнс»"
+
+msgid "OnNet communications Inc."
 msgstr "ЗАО «ОнНет комьюникейшнс»"
 
 msgid "Order number"

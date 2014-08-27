@@ -12,10 +12,10 @@
                   <i class="fa fa-phone fa-3x"></i>
                   <p>{_ Virtual Office _}<br /><a href="/virtualoffice">{_ Details _}...</a></p>
                 </li>
-                <li id="sr-phonenumbers">
-                  {% wire id="sr-phonenumbers" action={redirect dispatch="phonenumbers"} %}
+                <li id="sr-freenumbers">
+                  {% wire id="sr-freenumbers" action={redirect dispatch="freenumbers"} %}
                   <i class="fa fa-slack fa-3x"></i>
-                  <p>{_ Phone Numbers _}<br /><a href="/phonenumbers">{_ Choose _}...</a></p>
+                  <p>{_ Phone Numbers _}<br /><a href="/freenumbers">{_ Choose _}...</a></p>
                 </li>
                 <li id="sr-virtualserver">
                   {% wire id="sr-virtualserver" action={redirect dispatch="virtualserver"} %}

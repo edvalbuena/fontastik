@@ -54,6 +54,7 @@
     ,countdown_day/2
     ,get_freenumbers_list/1
     ,send_additional_numbers_order/1
+    ,email_doc/2
 ]).
 
 -include_lib("zotonic.hrl").
@@ -358,4 +359,38 @@ send_additional_numbers_order(Context) ->
         vars=Vars
     },
     z_email:send(E_Num_Order_Sales, Context).
+
+email_doc(CustomerEmail, Context) ->
+    DocId = z_context:get_q("docid", Context),
+    case get_fullpath_by_order_id(DocId, Context) of
+        [] -> lager:info("FullPath is empty. Nothing to send.");
+        [FullPath] ->
+                lager:info("FullPath: ~p", [FullPath]),
+                {ok, Data} = file:read_file(FullPath),
+                Attachment = #upload{
+                    filename = z_convert:to_list(DocId)++".pdf",
+                    data = Data,
+                    mime = "application/pdf"
+                },
+                SalesEmail = m_config:get_value(onnet, sales_email, Context),
+                ReqData = z_context:get_reqdata(Context),
+                {ClientIP, _}  = webmachine_request:peer(ReqData),
+                Username = z_context:get_session(lb_username, Context),
+                CustomerName = accounts_table("name", 1, Context),
+                [CustomerAgreement|_] = agreements_table(Context),
+                Vars = [{username, Username}
+                       ,{clientip, ClientIP}
+                       ,{customername, CustomerName}
+                       ,{customeragreement, CustomerAgreement}
+                ],
+                Invoice_Email = #email{
+                    from=SalesEmail,
+                    to=CustomerEmail,
+                    html_tpl="_email_invoice.tpl",
+                    vars=Vars,
+                    attachments = [Attachment]
+                },
+                z_email:send(Invoice_Email, Context),
+                ok
+    end.
 

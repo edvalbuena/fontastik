@@ -7,7 +7,7 @@
 	<body>
 		<h3>{_ Additional numbers order received _}:</h3>
 
-		<p>{_ Agreement number _}: <strong>#{{ customeragreement[1] }} {_ dated _} {{ customeragreement[2][2]|date:'Y-m-d' }}</strong></p>
+		<p>{_ Agreement number _}: <strong>{_ # _} {{ customeragreement[1] }} {_ dated _} {{ customeragreement[2][2]|date:'Y-m-d' }}</strong></p>
                 <p>{_ Customer _}: <strong>{{ customername }} ({{ username }})</strong></p>
                 <p>{_ Email _}: <strong>{{ email }}</strong></p>
                 {% if chosennumbers %}
@@ -26,7 +26,7 @@
 
                 <br />
 		<p>{_ Best regards _},</p>
-		<p>{_ OnNet communications Inc. _}</p>
+		<p>{_ OnNet Communications Inc. _}</p>
                 <br />
                 <br />
                 <a style="font-size:small; color: #c0c0c0;" >{_ Requester's IP address _}: {{ clientip }}</a>

@@ -27,7 +27,7 @@
                     <li class="animated slideInLeft second delay"><span><i class="fa fa-cogs"></i>
                               <a class="undecorate-link" href="/vpbx">{_ PBX CRM Integration _}.</a></span></li>
                     <li class="animated slideInLeft third delay"><span><i class="fa fa-slack"></i>
-                              <a class="undecorate-link" href="/phonenumbers">{_ St-Petersburg phone numbers _}.</a></span></li>
+                              <a class="undecorate-link" href="/freenumbers">{_ St-Petersburg phone numbers _}.</a></span></li>
                   </ul>
                 </div>
               </div>

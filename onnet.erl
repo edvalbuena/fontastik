@@ -232,7 +232,18 @@ event({postback, refresh_calls_reports, _TriggerId, _TargetId}, Context) ->
     DocsMonthInput = z_context:get_q("docsmonthInput",Context),
     z_render:update("update_calls_reports_widget", z_template:render("onnet_widget_calls_reports.tpl", [{headline,?__("Calls report", Context)}, {idname, "calls_reports_widget"}, {selectedmonth, DocsMonthInput}], Context), Context);
 
+event({submit,{emailinvoice, _}, _, _}, Context) ->
+    ?DEBUG(z_context:get_q_all(Context)),
+    case validator_base_email:validate(email, 2, z_context:get_q("chosen_email",Context), [], Context) of
+        {{ok,[]},_} -> z_render:growl_error(?__("Email format is incorrect",Context), Context);
+        {{ok, CustomerEmail}, _} ->
+                                    onnet_util:email_doc(CustomerEmail, Context),
+                                    ContextOk = z_render:dialog_close(Context),
+                                    z_render:growl([?__("Invoice sent to: ", ContextOk), CustomerEmail], ContextOk);
+        _ -> z_render:growl_error(?__("Email format is incorrect",Context), Context)
+    end;
+
 event(A, Context) ->
-    lager:info("Unknown event: ~p", [A]),
+    lager:info("Unknown event A: ~p", [A]),
     lager:info("Unknown event variables: ~p", [z_context:get_q_all(Context)]),
     lager:info("Unknown event Context: ~p", [Context]).
