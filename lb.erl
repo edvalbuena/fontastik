@@ -429,7 +429,7 @@ get_main_agrm_id(Context) ->
     case z_context:get_session(lb_user_id, Context) of
         undefined -> [];
         UId ->
-            [[QueryResult]] = z_mydb:q(<<"SELECT agrm_id from agreements where uid  = ? and oper_id = 1">>,[UId], Context),
+            [[QueryResult]] = z_mydb:q(<<"SELECT agrm_id from agreements where uid  = ? and oper_id = 1 limit 1">>,[UId], Context),
             mochinum:digits(QueryResult)
     end.
 
