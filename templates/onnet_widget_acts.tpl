@@ -22,9 +22,9 @@
         <tr>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ oper_name }}</a></td>
             <td><a href="/getlbdocs/id/{{order_id}}">{{ order_date[2]|date:'Y-m-d' }}</a></td>
-            <td><a href="/getlbdocs/id/{{order_id}}">{{ curr_summ }}</a></td>
-            <td><a href="/getlbdocs/id/{{order_id}}">{{ tax_summ }}</a></td>
-            <td><a href="/getlbdocs/id/{{order_id}}">{{ total_summ }}</a></td>
+            <td><a href="/getlbdocs/id/{{order_id}}">{{ curr_summ|format_price:[".",""] }}</a></td>
+            <td><a href="/getlbdocs/id/{{order_id}}">{{ tax_summ|format_price:[".",""] }}</a></td>
+            <td><a href="/getlbdocs/id/{{order_id}}">{{ total_summ|format_price:[".",""] }}</a></td>
         </tr>
       {% endfor %}
 
