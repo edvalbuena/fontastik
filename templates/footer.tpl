@@ -10,6 +10,7 @@
             {_ St. Petersburg _}, {_ Russia _}, 191186<br />
             {_ 3 B. Morskaya str. _}, {_ office _} 534<br />
             {_ Phone _}: <a class="undecorate-link" href="tel:+78124906700">+7 812 490 67 00</a><br />
+            <span style="visibility: hidden">{_ Phone _}: </span><a class="undecorate-link" href="tel:+74992726200">+7 499 272 62 00</a><br />
             Fax: <a class="undecorate-link" href="tel:+78123634500">+7 812 363 45 00</a><br />
             Email: <a class="undecorate-link" href="mailto:info@onnet.su">info@onnet.su</a>
             </p>

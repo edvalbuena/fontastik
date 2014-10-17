@@ -16,13 +16,11 @@
 
 <ul>
 
-    <li><a href="http://www.eltel.net/ru/business-networks/wholesale/" target="_blank">ЗАО &laquo;Элтел&raquo;</a>;</li>
-
-    <li><a href="http://megafonnw.ru" target="_blank">ОАО&nbsp;&quot;МегаФон&quot;</a>;</li>
+    <li><a target="_blank" href="http://megafonnw.ru">ОАО&nbsp;&quot;МегаФон&quot;</a>;</li>
 
     <li><a target="_blank" href="http://partners.beeline.ru/operators/index.wbp">ОАО &laquo;Вымпелком&raquo;</a>;</li>
 
-    <li><a href="http://www.company.spb.mts.ru">ЗАО &laquo;КОМСТАР-Регионы&raquo;. Группа компаний МТС</a>.</li>
+    <li><a target="_blank" href="http://www.company.spb.mts.ru">ОАО &laquo;МТС&raquo;</a>.</li>
 
 </ul>
 
@@ -30,7 +28,7 @@
 
 <ul>
     <li>
-        <p><a href="http://selectel.ru/tehnodom/" target="_blank">Дата-центр &quot;Технодом&quot;</a>, ООО &quot;Сеть дата-центров &quot;Селектел&quot;, г. Санкт-Петербург, Россия;</p> 
+        <p><a href="http://www.raduga-2.ru/" target="_blank">Дата-центр &quot;Радуга-2&quot;</a>, ООО &quot;Радуга-2&quot;, г. Санкт-Петербург, Россия;</p> 
     </li>
     <li>
         <p><a href="http://storedata.ru/" target="_blank">Дата-центр &quot;StoreData&quot;</a>, ООО &quot;Научный инновационный центр&quot; (StoreData LLC), г. Москва, Россия;</p>

@@ -20,14 +20,20 @@
 
   <li style="padding-bottom: 1em;">{_ Sales Enquiries _} 
     <ul>
-      <li>{_ Phone _}: <a href="tel:+78124906700">(812) 490-67-00</a></li>
+      <li>
+         {_ Phone _}: <a href="tel:+78124906700">(812) 490-67-00</a><br />
+         <span style="visibility: hidden">{_ Phone _}: </span><a href="tel:+74992726200">(499) 272-62-00</a>
+      </li>
       <li>Email: <a class="undecorate-link" href="mailto:info@onnet.su">info@onnet.su</a></li>
     </ul>
   </li>
 
   <li style="padding-bottom: 1em;">{_ Support Enquiries _} 
     <ul>
-      <li>{_ Phone _}: <a href="tel:+78123634500">(812) 363-45-00</a></li>
+      <li>
+         {_ Phone _}: <a href="tel:+78123634500">(812) 363-45-00</a><br />
+         <span style="visibility: hidden">{_ Phone _}: </span><a href="tel:+74992726200">(499) 272-62-00</a>
+      </li>
       <li>Email: <a class="undecorate-link" href="mailto:tech@onnet.su">tech@onnet.su</a></li>
     </ul>
   </li>
