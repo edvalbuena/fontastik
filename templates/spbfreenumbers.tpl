@@ -1,6 +1,8 @@
 <div class="center-block max-800">
 
-<table id="FreeSPBNumbers" class="table table-striped table-bordered"  cellspacing="0" width="100%">
+<div id="TableSpinner" class="text-center"><i class="fa fa-spinner fa-spin fa-3x"></i></div>
+
+<table id="FreeSPBNumbers" class="table table-striped table-bordered"  cellspacing="0" width="100%" style="display: none;">
 <thead>
 <tr align="center">
     <th style="text-align: center;">Номер ГТС Санкт-Петербурга</th>
@@ -200,6 +202,8 @@
 				values : ["1000", "1600", "1900"]
 			}]
 		});
+                $('#TableSpinner').hide();
+                $('#FreeSPBNumbers').show();
 	});
 
 </script>
