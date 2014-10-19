@@ -18,7 +18,7 @@
         <div class="item active">
           <div class="container">
             <div class="row">
-              <div class="col-md-10 col-sm-12">
+              <div class="col-md-12 col-sm-12">
                 <h1 class="animated slideInDown">{_ Business Telephony _}</h1>
                 <div class="list">
                   <ul>
