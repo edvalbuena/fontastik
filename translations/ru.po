@@ -1,6 +1,12 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Moscow"
+msgstr "Москва"
+
+msgid "Saint Petersburg"
+msgstr "Санкт-Петербург"
+
 msgid "#"
 msgstr "№"
 

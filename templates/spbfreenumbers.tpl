@@ -1,18 +1,6 @@
-{% javascript %}
-// Redefine function in order stop key interception in dataTables filter field
-// modules/mod_base/lib/js/modules/jquery.hotkeys.js
-(function(jQuery){
-
-        jQuery.each([ "keydown", "keyup", "keypress" ], function() {
-                jQuery.event.special[ this ] = { add: 0 };
-        });
-})( jQuery );
-{% endjavascript %}
-
-
 <div class="center-block max-800">
 
-<table id="FreeNumbers" class="table table-striped table-bordered"  cellspacing="0" width="100%">
+<table id="FreeSPBNumbers" class="table table-striped table-bordered"  cellspacing="0" width="100%">
 <thead>
 <tr align="center">
     <th style="text-align: center;">Номер ГТС Санкт-Петербурга</th>
@@ -23,22 +11,23 @@
 </thead>
 <tbody>
 
-{% for number_id, number, price in m.onnet.get_freenumbers_list %}
+{% for number_id, number, price in m.onnet[{get_freenumbers_list_regexp regexp="^7812"}] %}
 
 <tr>
-<td align="right" style="padding: 4px; font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: bottom; width: 50%;"><p class="hidden-xs"><img alt="*" style="height: 40px; float: left; margin-right: 20px;" src="/lib/images/{{ 3|rand|format_integer }}.gif" /></p>
-<span id={{ number_id }} style="padding: 14px 0 0 0; font-size: 1.55em; letter-spacing:1pt" class="undecorate-link free_numbers"><strong>{{ number }}</strong></span>
+<td align="right" style="font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: bottom; width: 50%;"><p class="hidden-xs"><img alt="*" style="height: 60px; float: left; margin-right: 20px;" src="/lib/images/{{ 3|rand|format_integer }}.gif" /></p>
+<a id={{ number_id }} style="padding: 14px 0 0 0; font-size: 1.7em; letter-spacing:1pt" class="free_numbers undecorate-link"><strong>{{ number }}</strong></a>
 </td>
-<td style="padding: 4px; color: #515151; font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: middle; text-align: center; font-size: 1.3em;">{{ price }}</td>
+<td style="color: #515151; font-weight: bold; text-shadow: 1px 1px 3px rgb(170, 170, 170); vertical-align: middle; text-align: center; font-size: 1.3em;">{{ price }}</td>
 <td>{{ number_id }}</td>
 <td>{{ number_id|pretty_phonenumber }}</td>
 </tr>
 
-{% wire id=number_id type="click" 
-        action={dialog_open template="free_number_statistics.tpl" title=[ _"Inbound calls statistics for number", "   ", number ] 
-                                                                  number=number number_id=number_id} 
-        action={growl text=_"Please wait while statistics will be loaded..."}
+{% wire id=number_id 
+  action={dialog_open template="free_number_statistics_pre_order.tpl" title=[ _"Inbound calls statistics for number", "   ", number ] 
+                                                                      number=number number_id=number_id} 
+  action={growl text=_"Please wait while statistics will be loaded..."}
 %}
+
 {% endfor %}
 
 </tbody>
@@ -46,7 +35,7 @@
 
 </div>
 
-{% javascript %}
+<script type="text/javascript" charset="utf-8">
 	$.extend({
 		/**
 		 * Returns get parameters.
@@ -86,7 +75,7 @@
 
 	/* Table initialisation */
 	$(document).ready(function() {
-		var oTable = $('#FreeNumbers').dataTable({
+		var oTable = $('#FreeSPBNumbers').dataTable({
                         "pagingType": "simple_numbers",
 
 			"oSearch" : {
@@ -96,9 +85,9 @@
 
 			"sDom" : "<'row-fluid'><'span'<'span14'l><'span10'f>r>t<'span'<'span14'i><'span10'p>>",
 
-			"iDisplayLength" : 6,
+			"iDisplayLength" : -1,
 
-			"aLengthMenu" : [[6, 25, 50, -1], [6, 25, 50, "Все"]],
+			"aLengthMenu" : [[10, 25, 50, -1], [10, 25, 50, "Все"]],
 
 			aaSorting : [[0, AscDesc]],
 
@@ -212,4 +201,5 @@
 			}]
 		});
 	});
-{% endjavascript %}
+
+</script>

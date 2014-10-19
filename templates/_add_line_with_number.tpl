@@ -1,6 +1,6 @@
         <tr id={{ #tr }}>
             <td class="td-center" width="40%">
-               (812) {{ number }}
+                {{ number }}
             </td>
             <td class="td-center" width="40%">
                {{ price|onnet_add_vat }} {_ rub. _} ({_ incl. _} {_ VAT _})

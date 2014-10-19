@@ -86,6 +86,10 @@ table#calls_list_table tfoot tr {
   border-color: #3E7A8C;
 }
 
+.nav-pills-orange > li.active > a, .nav-pills-orange > li.active > a:hover, .nav-pills-orange > li.active > a:focus {
+  background-color: #3E7A8C;
+}
+
 .pagination>li>a,
 .pagination>li>a:hover {
   color: #3E7A8C;
