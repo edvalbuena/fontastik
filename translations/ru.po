@@ -49,8 +49,8 @@ msgstr "Создание отчетов..."
 msgid "Issuing an invoice..."
 msgstr "Выписывается счет..."
 
-msgid "St-Petersburg phone numbers"
-msgstr "Телефонные номера Петербурга"
+msgid "Moscow and St-Petersburg phone numbers"
+msgstr "Телефонные номера Москвы и Петербурга"
 
 msgid "PBX CRM Integration"
 msgstr "АТС для интеграции CRM"

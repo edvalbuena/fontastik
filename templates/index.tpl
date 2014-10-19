@@ -18,7 +18,7 @@
         <div class="item active">
           <div class="container">
             <div class="row">
-              <div class="col-md-8 col-sm-12">
+              <div class="col-md-10 col-sm-12">
                 <h1 class="animated slideInDown">{_ Business Telephony _}</h1>
                 <div class="list">
                   <ul>
@@ -27,7 +27,7 @@
                     <li class="animated slideInLeft second delay"><span><i class="fa fa-cogs"></i>
                               <a class="undecorate-link" href="/vpbx">{_ PBX CRM Integration _}.</a></span></li>
                     <li class="animated slideInLeft third delay"><span><i class="fa fa-slack"></i>
-                              <a class="undecorate-link" href="/freenumbers">{_ St-Petersburg phone numbers _}.</a></span></li>
+                              <a class="undecorate-link" href="/freenumbers">{_ Moscow and St-Petersburg phone numbers _}.</a></span></li>
                   </ul>
                 </div>
               </div>
