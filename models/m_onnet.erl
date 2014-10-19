@@ -152,6 +152,9 @@ m_find_value({get_call_attempts,[{phonenumber, Phone_Number}, {offset, Offset}, 
 m_find_value(get_freenumbers_list, _M, Context) ->
     onnet_util:get_freenumbers_list(Context);
 
+m_find_value({get_freenumbers_list_regexp,[{regexp, Regexp}]}, _M, Context) ->
+    onnet_util:get_freenumbers_list_regexp(Regexp, Context);
+
 m_find_value(_V, _VV, _Context) ->
     [_V,_VV,"m_onnet_find_value_mismatch"].
 

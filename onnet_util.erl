@@ -53,6 +53,7 @@
     ,check_file_size_exceeded/3
     ,countdown_day/2
     ,get_freenumbers_list/1
+    ,get_freenumbers_list_regexp/2
     ,send_additional_numbers_order/1
     ,email_doc/2
 ]).
@@ -322,6 +323,9 @@ countdown_day({Year,Month,Day},N) ->
 
 get_freenumbers_list(Context) ->
     lb:get_freenumbers_list(Context).
+
+get_freenumbers_list_regexp(Regexp, Context) ->
+    lb:get_freenumbers_list_regexp(Regexp, Context).
 
 send_additional_numbers_order(Context) ->
     IsPrepaid = is_prepaid(Context),

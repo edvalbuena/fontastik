@@ -48,6 +48,7 @@
        ,is_valid_account/1
        ,account_numbers/1
        ,get_freenumbers_list/1
+       ,get_freenumbers_list_regexp/2
 ]).
 
 -include_lib("zotonic.hrl").
@@ -557,6 +558,9 @@ account_numbers(Context) ->
             end
     end.
 
-get_freenumbers_list(Context) ->
-    z_mydb:q(<<"select number_id, number, price from all_phones_status where ocupated_date = '0000-00-00' and state = 1 and publish = 1 order by number_id asc">>, Context).
+get_freenumbers_list_regexp(Regexp, Context) ->
+    QueryString = io_lib:format("select number_id, number, price from all_phones_status where ocupated_date = '0000-00-00' and state = 1 and publish = 1 and number_id regexp '~s' order by number_id asc", [Regexp]),
+    z_mydb:q(QueryString, Context).
 
+get_freenumbers_list(Context) ->
+    get_freenumbers_list_regexp(<<".?">>, Context).
