@@ -9,6 +9,7 @@
 <p>Наша сеть посторена на основе современного высокотехнологичного оборудования ведущих Российских и мировых производителей, таких как:</p>
 <ul>
     <li><a target="_blank" href="http://www.m200.ru/">Компания «МТА», Санкт-Петербург</a>;</li>
+    <li><a target="_blank" href="http://eltex.nsk.ru/">ООО «Предприятие «Элтекс», Новосибирск</a>;</li>
     <li><a target="_blank" href="http://www.cisco.com/en/US/products/ps10265/index.html">Cisco Systems, Inc</a>.</li>
 </ul>
 
