@@ -35,6 +35,7 @@
                   <li><a href="/fax_out">{_ Outgoing Faxes _}</a></li>
                   <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   <li><a href="/call_recordings">{_ Call recordings _}</a></li>
+                  <li><a href="/callback">{_ Callback _}</a></li>
                   {% endif %}
                 </ul>
               </li>
