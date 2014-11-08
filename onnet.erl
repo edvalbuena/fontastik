@@ -55,6 +55,27 @@ event({submit,{onnetauth,[]},"sign_in_form","sign_in_form"}, Context) ->
             z_render:growl_error(?__("Auth failed.", Context), Context)
     end;
 
+event({submit,{account_admin_onnetauth,[]},"admin_sign_in_form","admin_sign_in_form"}, Context) ->
+    Login = iolist_to_binary(z_context:get_q("username",Context)),
+    Password = iolist_to_binary(z_context:get_q("password",Context)),
+    Account = iolist_to_binary(z_context:get_q("account",Context)),
+    case zkazoo_http:kz_user_creds(Login, Password, Account, Context) of
+        {ok, {account_id, 'undefined'}, {'auth_token', _}, {'crossbar', _}} ->
+            lager:info("Failed to authenticate Kazoo user ~p", [z_context:get_q("username", Context)]),
+            z_render:growl_error(?__("Admin auth failed.", Context), Context);
+        {ok, {account_id, _}, {'auth_token', <<>>}, {'crossbar', _}} ->
+            lager:info("Failed to authenticate Kazoo user ~p", [z_context:get_q("username", Context)]),
+            z_render:growl_error(?__("Admin auth failed.", Context), Context);
+        {'ok', {'account_id', Account_Id}, {'auth_token', Auth_Token}, {'crossbar', _Crossbar_URL}} ->
+            lager:info("Kazoo user ~p authenticated", [z_context:get_q("username", Context)]),
+            z_context:set_session(kazoo_auth_token, Auth_Token, Context),
+            z_context:set_session(kazoo_account_id, Account_Id, Context),
+            z_render:wire({redirect, [{dispatch, "onnet_dashboard"}]}, Context);
+        _ ->
+            lager:info("Failed to authenticate Kazoo user ~p", [z_context:get_q("username", Context)]),
+            z_render:growl_error(?__("Admin auth failed.", Context), Context)
+    end;
+
 event({postback,{signout,[]}, _, _}, Context) ->
     onnet_auth:onnet_logoff(Context);
 

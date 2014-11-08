@@ -7,6 +7,7 @@
    ,onnet_logon/2
    ,onnet_logoff/1
    ,is_auth/1
+   ,is_account_admin_auth/1
    ,is_operators_session/1
 ]).
 
@@ -38,6 +39,12 @@ onnet_logoff(Context) ->
 
 is_auth(Context) ->
     is_integer(z_context:get_session(lb_user_id, Context)).
+
+is_account_admin_auth(Context) ->
+    case z_session:get(kazoo_auth_token, Context) of
+        'undefined' -> false;
+        _ -> true
+    end.
 
 is_operators_session(Context) ->
     case z_session:get(onnet_operator, Context) of

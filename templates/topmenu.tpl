@@ -15,24 +15,25 @@
             <li class="hidden-sm hidden-md"><a href="/">{_ Home _}</a></li>
            {% endif %}
            {% if m.onnet.is_auth %}
-            <li class="visible-sm" id="cogs-menu">
-              <a href="/onnet_dashboard">
-                <i class="fa fa-gears fa-lg"></i>
-              </a>
-            </li>
-            <li class="hidden-sm"><a href="/onnet_dashboard">{_ Dashboard _}</a></li>
-            <li class="hidden-sm"><a href="/finance_details">{_ Payments _}</a></li>
-            <li class="hidden-sm hidden-md"><a href="/documents">{_ Documents _}</a></li>
+            <li class="hidden-md hidden-sm"><a href="/onnet_dashboard">{_ Dashboard _}</a></li>
+            <li class="visible-md visible-sm"><a href="/onnet_dashboard"><i class="fa fa-dashboard fa-lg"></i></a></li>
+            <li class="hidden-md hidden-sm"><a href="/finance_details">{_ Payments _}</a></li>
+            <li class="visible-md visible-sm"><a href="/finance_details"><i class="fa fa-ruble fa-lg"></i></a></li>
+            <li class="hidden-md hidden-sm"><a href="/statistics">{_ Statistics _}</a></li>
+            <li class="visible-md visible-sm"><a href="/statistics"><i class="fa fa-area-chart fa-lg"></i></a></li>
+            <li class="hidden-md hidden-sm"><a href="/documents">{_ Documents _}</a></li>
+            <li class="visible-md visible-sm"><a href="/documents"><i class="fa fa-newspaper-o fa-lg"></i></a></li>
             {% if m.modules.info.mod_zkazoo.enabled %}
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{_ Telephony _} <b class="caret"></b></a>
+                <a href="#" class="hidden-md hidden-sm dropdown-toggle" data-toggle="dropdown">{_ Telephony _} <b class="caret"></b></a>
+                <a href="#" class="visible-md visible-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone fa-lg"></i> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   {% if m.zkazoo.get_kazoo_account_id %}
                     <li><a href="/status_panel">{_ Status panel _}</a></li>
                   {% endif %}
                   {% if m.onnet.is_operators_session %}
-                  <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   <li><a href="/fax_out">{_ Outgoing Faxes _}</a></li>
+                  <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   <li><a href="/call_recordings">{_ Call recordings _}</a></li>
                   {% endif %}
                 </ul>
@@ -111,24 +112,37 @@
             </li>
           {% endif %}
           {% if m.onnet.is_auth %}
-            <!-- Signed in. Profile Menu -->
-            <li id="profile-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{_ My Account _} <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li><a href="/onnet_dashboard">{_ Dashboard _}</a></li>
-                  <li><a href="/account_details">{_ Account Details _}</a></li>
-                  <li><a href="/finance_details">{_ Payments _}</a></li>
-                  <li><a href="/statistics">{_ Statistics _}</a></li>
-                  <li><a href="/documents">{_ Documents _}</a></li>
-                  <li class="divider"></li>
-                  <li><a id="sign_out_menu" href="#">{_ Sign out _}</a></li>
-                 {% wire id="sign_out_menu" postback={signout} delegate="onnet" %} 
-              </ul>
+            <!-- Admin Sign in -->
+            {% if not m.onnet.is_account_admin_auth %}
+              <li id="admin-sign-in">
+                <a href="#"><i class="fa fa-key fa-lg"></i></a>
+                <div class="search-box hidden" id="admin-sign-in-box">
+                  {% wire id="admin_sign_in_form" type="submit" postback={account_admin_onnetauth} delegate="onnet" %}
+                  <form id="admin_sign_in_form" class="input-group" method="post" action="postback">
+                    <div><p>{_ Admin Login _}</p></div>
+                    <input type="text" class="form-control mb-10" placeholder="{_ Login _}" id="username"
+                            name="username" value=""  autofocus="autofocus" autocapitalize="off" autocomplete="on" tabindex=1 />
+                    {% validate id="username" type={presence} %}
+  
+                    <input type="password" class="form-control mb-10" placeholder="{_ Password _}"
+                            id="password" name="password" value="" autocomplete="on" tabindex=2/>
+  
+                    <input type="text" class="form-control mb-10" placeholder="{_ Account _}"
+                            id="account" name="account" value="" autocomplete="on" tabindex=3/>
+  
+                    {% button text=_"Enter" action={submit target="admin_sign_in_form"} class="btn btn-default" style="min-width: 6em;" %}
+                    <button id="cancel-admin-auth-btn" class="btn btn-default pull-right" style="min-width: 6em;" type="button">{_ Cancel _}</button>
+                  </form>
+                </div>
+              </li>
+            {% else %}
+              <li id="admin-signed-in"><a href="#"><i class="fa fa-gears fa-lg"></i></a></li>
+            {% endif %}
+            <li id="sign_out">
+              <a class="visible-lg visible-md" href="#">{_ Sign out _}</a>
+              <a class="visible-sm" href="#"><i class="fa fa-power-off fa-lg"></i></a>
             </li>
-            <li class="visible-lg">
-              <a id="sign_out" href="#">{_ Sign out _}</a>
-              {% wire id="sign_out" postback={signout} delegate="onnet" %} 
-            </li>
+            {% wire id="sign_out" postback={signout} delegate="onnet" %} 
           {% endif %}
           {% if not m.onnet.is_auth %}
             <!-- Place Order -->

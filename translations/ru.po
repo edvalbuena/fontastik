@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Admin Login"
+msgstr "Доступ администратора"
+
 msgid "Moscow"
 msgstr "Москва"
 

@@ -12,6 +12,9 @@
 
 -include_lib("zotonic.hrl").
 
+m_find_value(is_account_admin_auth, _M, Context) ->
+    onnet_auth:is_account_admin_auth(Context);
+
 m_find_value(is_auth, _M, Context) ->
     onnet_auth:is_auth(Context);
 
