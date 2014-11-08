@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Admin auth failed."
+msgstr "Ошибка авторизации."
+
 msgid "Admin Login"
 msgstr "Доступ администратора"
 
