@@ -35,6 +35,8 @@
                   <li><a href="/fax_out">{_ Outgoing Faxes _}</a></li>
                   <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   <li><a href="/call_recordings">{_ Call recordings _}</a></li>
+                  {% endif %}
+                  {% if m.onnet.is_account_admin_auth or m.onnet.is_operators_session %}
                   <li><a href="/callback">{_ Callback _}</a></li>
                   {% endif %}
                 </ul>

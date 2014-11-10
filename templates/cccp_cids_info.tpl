@@ -10,18 +10,20 @@
 <table class="table table-condensed table-hover table-centered">
     <thead>
         <tr>
-            <th style="text-align: center;">{_ Username _}</th>
-            <th style="text-align: center;">{_ Email _}</th>
-            <th style="text-align: center;">{_ Privilege level _}</th>
+            <th style="text-align: center;">{_ CID _}</th>
+            <th style="text-align: center;">{_ Outbound CID _}</th>
+            <th style="text-align: center;">{_ Owner _}</th>
         </tr>
     </thead>
     <tbody>
-      {% for user in m.zkazoo.kz_list_users %}
-      <tr>
-        <td style="text-align: center;">{{ user["username"] }}</td>
-        <td style="text-align: center;">{{ user["email"] }}</td>
-        <td style="text-align: center;">{{ user["priv_level"] }}</td>
-      </tr>
+      {% for cred in m.zkazoo.kz_cccp_creds_list %}
+        {% if cred["cid"] %}
+          <tr>
+            <td style="text-align: center;">{{ cred["cid"] }}</td>
+            <td style="text-align: center;">{{ cred["outbound_cid"] }}</td>
+            <td style="text-align: center;">{{ cred["owner_id"] }}</td>
+          </tr>
+        {% endif %}
       {% endfor %}
     </tbody>
 </table>
