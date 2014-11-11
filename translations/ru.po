@@ -40,8 +40,8 @@ msgstr "ПИН-код"
 msgid "Outbound CID"
 msgstr "АОН"
 
-msgid "Calling cards and callback service"
-msgstr "Сервис обратного вызова и доступ по пин-коду"
+msgid "Callback service"
+msgstr "Сервис обратного вызова"
 
 msgid "Admin auth failed."
 msgstr "Ошибка авторизации."

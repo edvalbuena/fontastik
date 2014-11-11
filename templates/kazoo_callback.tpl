@@ -2,7 +2,7 @@
 
 {% block service_description %}
 
-  {% include "_onnet_account_page_title.tpl" title=_"Calling cards and callback service" %}
+  {% include "_onnet_account_page_title.tpl" title=_"Callback service" %}
 
 <br />
 <div class="pl-10 pr-10 col-md-6">
