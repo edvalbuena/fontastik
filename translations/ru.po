@@ -1,6 +1,39 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "add"
+msgstr "добавить"
+
+msgid "add pin-code"
+msgstr "добавить пин-код"
+
+msgid "add cid"
+msgstr "добавить номер"
+
+msgid "add authorized cid"
+msgstr "добавить авторизованный номер"
+
+msgid "add authorized CID"
+msgstr "добавить авторизованный номер"
+
+msgid "Pin-code list"
+msgstr "Список пин-кодов"
+
+msgid "Authorized CID list"
+msgstr "Список авторизованных номеров"
+
+msgid "New CID"
+msgstr "Новый номер"
+
+msgid "Authorized CID"
+msgstr "Авторизованный номер"
+
+msgid "Outbound CID"
+msgstr "АОН"
+
+msgid "Calling cards and callback service"
+msgstr "Сервис обратного вызова и доступ по пин-коду"
+
 msgid "Admin auth failed."
 msgstr "Ошибка авторизации."
 
@@ -315,6 +348,9 @@ msgstr "изменить пароль"
 
 msgid "cancel order"
 msgstr "отменить заказ"
+
+msgid "cancel"
+msgstr "отменить"
 
 msgid "Agreement number"
 msgstr "Номер договора"

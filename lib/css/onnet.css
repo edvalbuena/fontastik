@@ -127,9 +127,9 @@ table.dataTable thead > tr > th {
 }
 
 input[type="text"].input-number-onnet {
-  width: 9em!important;
+  width: 7em!important;
   height: 1.6em!important;
-  padding-left: 5%;
+  padding-left: 1%;
   vertical-align: middle;
   margin-bottom: 1px!important;
 }
