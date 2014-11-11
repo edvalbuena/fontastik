@@ -4,6 +4,9 @@ msgstr "Россия"
 msgid "add"
 msgstr "добавить"
 
+msgid "add pin"
+msgstr "добавить пин"
+
 msgid "add pin-code"
 msgstr "добавить пин-код"
 
@@ -27,6 +30,12 @@ msgstr "Новый номер"
 
 msgid "Authorized CID"
 msgstr "Авторизованный номер"
+
+msgid "PIN"
+msgstr "ПИН"
+
+msgid "Authorized PIN"
+msgstr "ПИН-код"
 
 msgid "Outbound CID"
 msgstr "АОН"

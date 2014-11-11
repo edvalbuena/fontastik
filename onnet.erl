@@ -209,7 +209,13 @@ event({submit,{addcccpcidform, _}, _, _}, Context) ->
     OutboundCID = iolist_to_binary(z_context:get_q("outbound_cid", Context)),
     OwnerID = iolist_to_binary(z_context:get_q("owner_id", Context)),
     zkazoo_http:add_cccp_doc({<<"cid">>, NewAuthCID}, {<<"outbound_cid">>, OutboundCID}, {<<"owner_id">>, OwnerID}, Context),
- %   timer:sleep(1000),
+    z_render:wire({redirect, [{dispatch, "callback"}]}, Context);
+
+event({submit,{addcccppinform, _}, _, _}, Context) ->
+    NewAuthPIN = iolist_to_binary(z_context:get_q("pin_number", Context)),
+    OutboundCID = iolist_to_binary(z_context:get_q("outbound_cid", Context)),
+    OwnerID = iolist_to_binary(z_context:get_q("owner_id", Context)),
+    zkazoo_http:add_cccp_doc({<<"pin">>, NewAuthPIN}, {<<"outbound_cid">>, OutboundCID}, {<<"owner_id">>, OwnerID}, Context),
     z_render:wire({redirect, [{dispatch, "callback"}]}, Context);
 
 event({postback, choose_number_next, _TriggerId, _TargetId}, Context) ->
@@ -274,7 +280,7 @@ event({submit,{emailinvoice, _}, _, _}, Context) ->
 
 event({postback, del_cccp_doc, TriggerId, _TargetId}, Context) ->
     zkazoo_http:del_cccp_doc(TriggerId, Context),
-    z_render:update("auth_cid_table", z_template:render("_authorized_cid_table.tpl", [], Context), Context);
+    z_render:wire({redirect, [{dispatch, "callback"}]}, Context);
 
 event(A, Context) ->
     lager:info("Unknown event A: ~p", [A]),

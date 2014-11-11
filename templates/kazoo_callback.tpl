@@ -12,6 +12,7 @@
 </div>
 <div class="pl-10 pr-10 col-md-6">
                 {# Pins #}
+                {% include "onnet_widget_add_cccp_pin.tpl" %}
                 {% include "cccp_pins_info.tpl" headline=_"Pin-code list" %}
 </div>
 
