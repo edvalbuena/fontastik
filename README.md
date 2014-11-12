@@ -55,7 +55,7 @@ Telephony call recordings:
 
 Callback:
 
-![Alt text](https://github.com/onnet/onnet/blob/84fe1d1941ff5d00b823800ae35c5b46f1c3bbe3/lib/images/callbackadmin.png "Telephony call recordings")
+![Alt text](lib/images/callbackadmin.png "Telephony call recordings")
 
 
 Contacts:
