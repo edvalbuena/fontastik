@@ -21,9 +21,9 @@
 
     <li><a target="_blank" href="http://partners.beeline.ru/operators/index.wbp">ОАО &laquo;Вымпелком&raquo;</a>;</li>
 
-    <li><a target="_blank" href="http://www.company.spb.mts.ru">ОАО &laquo;МТС&raquo;</a>.</li>
+    <li><a target="_blank" href="http://www.company.spb.mts.ru">ОАО &laquo;МТС&raquo;</a>;</li>
 
-    <li><a target="_blank" href="http://www.westcall.ru/">ЗАО &laquo;ВЕСТ КОЛЛ ЛТД&raquo;</a>.</li>
+    <li><a target="_blank" href="http://www.westcall.ru/">ЗАО &laquo;ВЕСТ КОЛЛ ЛТД&raquo;</a>;</li>
 
     <li><a target="_blank" href="http://www.msk-ix.ru/">ЗАО &laquo;ЦВКС &laquo;МСК-IX&raquo;</a>.</li>
 
