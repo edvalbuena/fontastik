@@ -53,6 +53,11 @@ Telephony call recordings:
 ![Alt text](/lib/images/telephony_call_recordings.png "Telephony call recordings")
 
 
+Callback:
+
+![Alt text](lib/images/callbackadmin.png "Telephony call recordings")
+
+
 Contacts:
 
 ![Alt text](/lib/images/contacts.png "Contacts")
