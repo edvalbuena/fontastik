@@ -207,15 +207,15 @@ event({submit,{additionalnumberorderform, _}, _, _}, Context) ->
 event({submit,{addcccpcidform, _}, _, _}, Context) ->
     NewAuthCID = iolist_to_binary(z_context:get_q("cid_number", Context)),
     OutboundCID = iolist_to_binary(z_context:get_q("outbound_cid", Context)),
-    OwnerID = iolist_to_binary(z_context:get_q("owner_id", Context)),
-    zkazoo_http:add_cccp_doc({<<"cid">>, NewAuthCID}, {<<"outbound_cid">>, OutboundCID}, {<<"owner_id">>, OwnerID}, Context),
+    UserId = iolist_to_binary(z_context:get_q("user_id", Context)),
+    zkazoo_http:add_cccp_doc({<<"cid">>, NewAuthCID}, {<<"outbound_cid">>, OutboundCID}, {<<"user_id">>, UserId}, Context),
     z_render:wire({redirect, [{dispatch, "callback"}]}, Context);
 
 event({submit,{addcccppinform, _}, _, _}, Context) ->
     NewAuthPIN = iolist_to_binary(z_context:get_q("pin_number", Context)),
     OutboundCID = iolist_to_binary(z_context:get_q("outbound_cid", Context)),
-    OwnerID = iolist_to_binary(z_context:get_q("owner_id", Context)),
-    zkazoo_http:add_cccp_doc({<<"pin">>, NewAuthPIN}, {<<"outbound_cid">>, OutboundCID}, {<<"owner_id">>, OwnerID}, Context),
+    UserId = iolist_to_binary(z_context:get_q("user_id", Context)),
+    zkazoo_http:add_cccp_doc({<<"pin">>, NewAuthPIN}, {<<"outbound_cid">>, OutboundCID}, {<<"user_id">>, UserId}, Context),
     z_render:wire({redirect, [{dispatch, "callback"}]}, Context);
 
 event({postback, choose_number_next, _TriggerId, _TargetId}, Context) ->

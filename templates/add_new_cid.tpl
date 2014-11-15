@@ -17,7 +17,7 @@
 </select>
 
 <i class="fa fa-user hidden-md"></i>
-<select name="owner_id">
+<select name="user_id">
 {% for user in m.zkazoo.kz_list_users %}
   <option value="{{ user["id"] }}">{{ user["username"] }}</option>
 {% endfor %}
