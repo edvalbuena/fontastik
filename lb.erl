@@ -571,7 +571,7 @@ has_virtual_office(Context) ->
         undefined -> [];
         UId ->
             case z_mydb:q("SELECT 1 FROM usbox_services where ((tar_id = 189 and cat_idx = 172) or (tar_id = 229 and cat_idx = 181)) 
-                                                          and timeto > NOW() and vg_id in (Select vg_id from vgroups where uid = 578)",[UId], Context) of
+                                                          and timeto > NOW() and vg_id in (Select vg_id from vgroups where uid = ?)",[UId], Context) of
                 [QueryResult] -> QueryResult;
                 _ -> []
             end
