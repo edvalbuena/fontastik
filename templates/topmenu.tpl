@@ -116,7 +116,8 @@
           {% endif %}
           {% if m.onnet.is_auth %}
             <!-- Admin Sign in -->
-            {% if not m.onnet.is_account_admin_auth or m.zkazoo.kz_list_users %}
+           {% if m.onnet[{is_service_provided type=4}] %}
+            {% if not m.onnet.is_account_admin_auth %}
               <li id="admin-sign-in">
                 <a href="#"><i class="fa fa-key fa-lg"></i></a>
                 <div class="search-box hidden" id="admin-sign-in-box">
@@ -141,11 +142,12 @@
             {% else %}
               <li id="admin-signed-in"><a href="#"><i class="fa fa-gears fa-lg"></i></a></li>
             {% endif %}
-            <li id="sign_out">
-              <a class="visible-lg visible-md" href="#">{_ Sign out _}</a>
-              <a class="visible-sm" href="#"><i class="fa fa-power-off fa-lg"></i></a>
-            </li>
-            {% wire id="sign_out" postback={signout} delegate="onnet" %} 
+           {% endif %}
+           <li id="sign_out">
+             <a class="visible-lg visible-md" href="#">{_ Sign out _}</a>
+             <a class="visible-sm" href="#"><i class="fa fa-power-off fa-lg"></i></a>
+           </li>
+           {% wire id="sign_out" postback={signout} delegate="onnet" %} 
           {% endif %}
           {% if not m.onnet.is_auth %}
             <!-- Place Order -->
