@@ -56,6 +56,7 @@
     ,get_freenumbers_list_regexp/2
     ,send_additional_numbers_order/1
     ,email_doc/2
+    ,has_virtual_office/1
 ]).
 
 -include_lib("zotonic.hrl").
@@ -397,4 +398,7 @@ email_doc(CustomerEmail, Context) ->
                 z_email:send(Invoice_Email, Context),
                 ok
     end.
+
+has_virtual_office(Context) ->
+    lb:has_virtual_office(Context).
 

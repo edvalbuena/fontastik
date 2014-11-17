@@ -49,6 +49,7 @@
        ,account_numbers/1
        ,get_freenumbers_list/1
        ,get_freenumbers_list_regexp/2
+       ,has_virtual_office/1
 ]).
 
 -include_lib("zotonic.hrl").
@@ -564,3 +565,14 @@ get_freenumbers_list_regexp(Regexp, Context) ->
 
 get_freenumbers_list(Context) ->
     get_freenumbers_list_regexp(<<".?">>, Context).
+
+has_virtual_office(Context) ->
+    case z_context:get_session(lb_user_id, Context) of
+        undefined -> [];
+        UId ->
+            case z_mydb:q("SELECT 1 FROM usbox_services where ((tar_id = 189 and cat_idx = 172) or (tar_id = 229 and cat_idx = 181)) 
+                                                          and timeto > NOW() and vg_id in (Select vg_id from vgroups where uid = 578)",[UId], Context) of
+                [QueryResult] -> QueryResult;
+                _ -> []
+            end
+    end.

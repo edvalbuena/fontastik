@@ -30,7 +30,9 @@
                 <ul class="dropdown-menu">
                   <li><a href="/status_panel">{_ Status panel _}</a></li>
                   <li><a href="/fax_out">{_ Outgoing Faxes _}</a></li>
-                  <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
+                  {% if m.onnet.has_virtual_office %}
+                    <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
+                  {% endif %}
                   {% if m.onnet.is_operators_session %}
                     <li><a href="/call_recordings">{_ Call recordings _}</a></li>
                   {% endif %}
@@ -114,7 +116,7 @@
           {% endif %}
           {% if m.onnet.is_auth %}
             <!-- Admin Sign in -->
-           {% if m.onnet[{is_service_provided type=4}] %}
+           {% if m.onnet.has_virtual_office %}
             {% if not m.onnet.is_account_admin_auth %}
               <li id="admin-sign-in">
                 <a href="#"><i class="fa fa-key fa-lg"></i></a>
