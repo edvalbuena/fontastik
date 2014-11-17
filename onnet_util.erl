@@ -57,6 +57,7 @@
     ,send_additional_numbers_order/1
     ,email_doc/2
     ,has_virtual_office/1
+    ,get_login_by_agrm_id/2
 ]).
 
 -include_lib("zotonic.hrl").
@@ -401,4 +402,7 @@ email_doc(CustomerEmail, Context) ->
 
 has_virtual_office(Context) ->
     lb:has_virtual_office(Context).
+
+get_login_by_agrm_id(AgrmId, Context) ->
+    lb:get_login_by_agrm_id(AgrmId, Context).
 

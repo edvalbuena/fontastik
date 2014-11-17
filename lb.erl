@@ -50,6 +50,7 @@
        ,get_freenumbers_list/1
        ,get_freenumbers_list_regexp/2
        ,has_virtual_office/1
+       ,get_login_by_agrm_id/2
 ]).
 
 -include_lib("zotonic.hrl").
@@ -576,3 +577,10 @@ has_virtual_office(Context) ->
                 _ -> []
             end
     end.
+
+get_login_by_agrm_id(AgrmId, Context) ->
+    case z_mydb:q("select login from accounts where uid = (select uid from agreements where agrm_id = ?)",[AgrmId], Context) of
+        [QueryResult] -> QueryResult;
+        _ -> []
+    end.
+
