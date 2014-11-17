@@ -1,6 +1,12 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "PIN access phone number"
+msgstr "Номер доступа по ПИН-коду"
+
+msgid "Callback service phone number"
+msgstr "Номер доступа для обратного вызова"
+
 msgid "add"
 msgstr "добавить"
 

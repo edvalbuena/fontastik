@@ -7,11 +7,13 @@
 <br />
 <div class="pl-10 pr-10 col-md-6">
                 {# CIDs #}
+                <h4>{_ Callback service phone number _}: {{ m.config.onnet.callback_number.value }}</h4>
                 {% include "onnet_widget_add_cccp_cid.tpl" %}
                 {% include "cccp_cids_info.tpl" cat="text" headline=_"Authorized CID list" %}
 </div>
 <div class="pl-10 pr-10 col-md-6">
                 {# Pins #}
+                <h4>{_ PIN access phone number _}: {{ m.config.onnet.callingcards_number.value }}</h4>
                 {% include "onnet_widget_add_cccp_pin.tpl" %}
                 {% include "cccp_pins_info.tpl" headline=_"Pin-code list" %}
 </div>
