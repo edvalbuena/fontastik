@@ -116,7 +116,7 @@
           {% endif %}
           {% if m.onnet.is_auth %}
             <!-- Admin Sign in -->
-            {% if not m.onnet.is_account_admin_auth %}
+            {% if not m.onnet.is_account_admin_auth and m.zkazoo.kz_list_users %}
               <li id="admin-sign-in">
                 <a href="#"><i class="fa fa-key fa-lg"></i></a>
                 <div class="search-box hidden" id="admin-sign-in-box">
