@@ -23,7 +23,7 @@
             <li class="visible-md visible-sm"><a href="/statistics"><i class="fa fa-area-chart fa-lg"></i></a></li>
             <li class="hidden-md hidden-sm"><a href="/documents">{_ Documents _}</a></li>
             <li class="visible-md visible-sm"><a href="/documents"><i class="fa fa-newspaper-o fa-lg"></i></a></li>
-            {% if m.modules.info.mod_zkazoo.enabled %}
+            {% if m.modules.info.mod_zkazoo.enabled and m.onnet[{is_service_provided type=4}] %}
               <li class="dropdown">
                 <a href="#" class="hidden-md hidden-sm dropdown-toggle" data-toggle="dropdown">{_ Telephony _} <b class="caret"></b></a>
                 <a href="#" class="visible-md visible-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-phone fa-lg"></i> <b class="caret"></b></a>
@@ -36,7 +36,7 @@
                   <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   <li><a href="/call_recordings">{_ Call recordings _}</a></li>
                   {% endif %}
-                  {% if m.onnet.is_account_admin_auth or m.onnet.is_operators_session %}
+                  {% if m.onnet.is_account_admin_auth %}
                   <li><a href="/callback">{_ Callback _}</a></li>
                   {% endif %}
                 </ul>
