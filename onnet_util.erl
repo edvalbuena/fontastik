@@ -59,6 +59,7 @@
     ,has_virtual_office/1
     ,get_login_by_agrm_id/2
     ,book_numbers/3
+    ,book_numbers_by_context/1
 ]).
 
 -include_lib("zotonic.hrl").
@@ -417,3 +418,8 @@ book_numbers([Number|Numbers], CustomerName, Context) ->
     book_numbers(Numbers, CustomerName, Context);
 book_numbers(Number, CustomerName, Context) ->
     book_number(Number, CustomerName, Context).
+
+book_numbers_by_context(Context) ->
+    PhoneNumbers = z_context:get_q_all("chosennumbers", Context),
+    CustomerName = accounts_table("name", 1, Context),
+    book_numbers(PhoneNumbers, CustomerName, Context).

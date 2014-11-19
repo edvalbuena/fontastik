@@ -201,6 +201,7 @@ event({submit,{forgottenpwd, _}, _, _}, Context) ->
 event({submit,{additionalnumberorderform, _}, _, _}, Context) ->
     CustomerEmail = z_context:get_q("customeremail", Context),
     onnet_util:send_additional_numbers_order(Context),
+    onnet_util:book_numbers_by_context(Context),
     Context2 = z_render:update("additional-number-order-form", z_template:render("order_additional_number.tpl",[{headline,?__("Customer's email: ", Context)}, {idname, "choose_number"}, {class, "hide"}],Context), Context),
     z_render:growl([?__("Order sent.", Context2), "<br />", ?__("Copy sent to: ", Context2), CustomerEmail], Context2);
 
