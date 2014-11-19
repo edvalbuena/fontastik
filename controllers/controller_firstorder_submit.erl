@@ -145,6 +145,8 @@ event(#submit{message={firstorderform, []}}, Context) ->
              ok
     end,
 
+    onnet_util:book_numbers_by_context(Context),
+
     z_render:update("service-order-form", z_template:render("_firstorder_completed.tpl", Vars, Context), Context)
 
   catch

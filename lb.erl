@@ -587,3 +587,4 @@ get_login_by_agrm_id(AgrmId, Context) ->
 
 book_number(Number, CustomerName, Context) ->
     z_mydb:q_raw("update all_phones_status set ocupated_date = (now() + interval 5 day), comment = ? where number_id = ?",[CustomerName, Number], Context).
+

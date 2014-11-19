@@ -408,8 +408,11 @@ has_virtual_office(Context) ->
 get_login_by_agrm_id(AgrmId, Context) ->
     lb:get_login_by_agrm_id(AgrmId, Context).
 
+book_number(Number, [], Context) ->
+   book_number(Number, <<"New Customer">>, Context);
 book_number(Number, CustomerName, Context) ->
-   lb:book_number(Number, CustomerName, Context).
+   [Num|_] = re:split(Number, [":"], [{return, 'binary'}]),
+   lb:book_number(Num, z_convert:to_binary(CustomerName), Context).
 
 book_numbers([], _CustomerName, _Context) ->
     'ok';
