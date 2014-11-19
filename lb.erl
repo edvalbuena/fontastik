@@ -51,6 +51,7 @@
        ,get_freenumbers_list_regexp/2
        ,has_virtual_office/1
        ,get_login_by_agrm_id/2
+       ,book_number/3
 ]).
 
 -include_lib("zotonic.hrl").
@@ -584,3 +585,5 @@ get_login_by_agrm_id(AgrmId, Context) ->
         _ -> []
     end.
 
+book_number(Number, CustomerName, Context) ->
+    z_mydb:q_raw("update all_phones_status set ocupated_date = (now() + interval 5 day), comment = ? where number_id = ?",[CustomerName, Number], Context).

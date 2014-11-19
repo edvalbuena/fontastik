@@ -58,6 +58,7 @@
     ,email_doc/2
     ,has_virtual_office/1
     ,get_login_by_agrm_id/2
+    ,book_numbers/3
 ]).
 
 -include_lib("zotonic.hrl").
@@ -406,3 +407,13 @@ has_virtual_office(Context) ->
 get_login_by_agrm_id(AgrmId, Context) ->
     lb:get_login_by_agrm_id(AgrmId, Context).
 
+book_number(Number, CustomerName, Context) ->
+   lb:book_number(Number, CustomerName, Context).
+
+book_numbers([], _CustomerName, _Context) ->
+    'ok';
+book_numbers([Number|Numbers], CustomerName, Context) ->
+    book_number(Number, CustomerName, Context),
+    book_numbers(Numbers, CustomerName, Context);
+book_numbers(Number, CustomerName, Context) ->
+    book_number(Number, CustomerName, Context).
