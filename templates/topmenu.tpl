@@ -116,7 +116,7 @@
           {% endif %}
           {% if m.onnet.is_auth %}
             <!-- Admin Sign in -->
-           {% if m.onnet.has_virtual_office %}
+           {% if m.onnet.has_virtual_office or m.onnet.is_operators_session %}
             {% if not m.onnet.is_account_admin_auth %}
               <li id="admin-sign-in">
                 <a href="#"><i class="fa fa-key fa-lg"></i></a>
