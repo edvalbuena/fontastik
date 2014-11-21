@@ -39,7 +39,7 @@
                 <td style="text-align: center;"><a href="/getinfaxdoc/id/{{ attempt["id"] }}"><i class="fa fa-download" title="{_ Download _}"></i></a></td>
                 <td style="text-align: center;"><i id={{ attempt["id"] }} style="cursor: pointer;" class="fa fa-info-circle" title="{_ Details _}"></i></td>
             </tr>
-            {% wire id=attempt["id"] action={ dialog_open title=_"Fax details" template="_fax_details.tpl" arg=attempt } %}
+            {% wire id=attempt["id"] action={ dialog_open title=_"Fax details" template="_details.tpl" arg=attempt } %}
           {% endif %} 
     {% endfor %}
     </tbody>

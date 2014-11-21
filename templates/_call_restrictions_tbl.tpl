@@ -36,6 +36,6 @@
                 {% wire id="ts_"++classifier[1] action={postback postback={change_call_restriction type='trunkstore' classifier=classifier[1]} delegate="mod_zkazoo"} %}
                 {% wire id="acc_"++classifier[1] action={postback postback={change_call_restriction type='account' classifier=classifier[1]} delegate="mod_zkazoo"} %}
               {% endif %}
-              {% wire id=classifier[1] action={ dialog_open title=_"Restrictions details" template="_fax_details.tpl" arg=classifier } %}
+              {% wire id=classifier[1] action={ dialog_open title=_"Restrictions details" template="_details.tpl" arg=classifier } %}
            </tr>
        {% endfor %}
