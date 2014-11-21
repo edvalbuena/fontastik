@@ -39,6 +39,9 @@
                   {% if m.onnet.is_account_admin_auth %}
                     <li><a href="/callback">{_ Callback _}</a></li>
                   {% endif %}
+                  {% if m.onnet.has_virtual_office %}
+                    <li><a href="{{ m.config.onnet.virtual_office_url.value }}">{_ Virtual Office _}</a></li>
+                  {% endif %}
                 </ul>
               </li>
            {% endif %}
