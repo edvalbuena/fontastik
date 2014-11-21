@@ -161,6 +161,9 @@ m_find_value({get_freenumbers_list_regexp,[{regexp, Regexp}]}, _M, Context) ->
 m_find_value(has_virtual_office, _M, Context) ->
     onnet_util:has_virtual_office(Context);
 
+m_find_value(has_virtual_pbx, _M, Context) ->
+    onnet_util:has_virtual_pbx(Context);
+
 m_find_value(_V, _VV, _Context) ->
     [_V,_VV,"m_onnet_find_value_mismatch"].
 

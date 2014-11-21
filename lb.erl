@@ -50,6 +50,7 @@
        ,get_freenumbers_list/1
        ,get_freenumbers_list_regexp/2
        ,has_virtual_office/1
+       ,has_virtual_pbx/1
        ,get_login_by_agrm_id/2
        ,book_number/3
 ]).
@@ -573,6 +574,17 @@ has_virtual_office(Context) ->
         undefined -> [];
         UId ->
             case z_mydb:q("SELECT 1 FROM usbox_services where ((tar_id = 189 and cat_idx = 172) or (tar_id = 229 and cat_idx = 181)) 
+                                                          and timeto > NOW() and vg_id in (Select vg_id from vgroups where uid = ?)",[UId], Context) of
+                [QueryResult] -> QueryResult;
+                _ -> []
+            end
+    end.
+
+has_virtual_pbx(Context) ->
+    case z_context:get_session(lb_user_id, Context) of
+        undefined -> [];
+        UId ->
+            case z_mydb:q("SELECT 1 FROM usbox_services where ((tar_id = 189 and cat_idx = 173) or (tar_id = 229 and cat_idx = 180)) 
                                                           and timeto > NOW() and vg_id in (Select vg_id from vgroups where uid = ?)",[UId], Context) of
                 [QueryResult] -> QueryResult;
                 _ -> []

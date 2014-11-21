@@ -39,6 +39,13 @@
                   {% if m.onnet.is_account_admin_auth %}
                     <li><a href="/callback">{_ Callback _}</a></li>
                   {% endif %}
+                  {% if m.onnet.has_virtual_pbx %}
+                    {% for username, ip_address, port, agent, auth_type, details in m.zkazoo.get_registrations %}
+                      {% if  auth_type == "sys_info" %}
+                        <li><a href="https://{{ ip_address }}" target="_blank">{_ Virtual PBX _}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
                   {% if m.onnet.has_virtual_office %}
                     <li><a href="{{ m.config.onnet.virtual_office_url.value }}" target="_blank">{_ Virtual Office _}</a></li>
                   {% endif %}

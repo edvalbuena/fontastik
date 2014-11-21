@@ -57,6 +57,7 @@
     ,send_additional_numbers_order/1
     ,email_doc/2
     ,has_virtual_office/1
+    ,has_virtual_pbx/1
     ,get_login_by_agrm_id/2
     ,book_numbers/3
     ,book_numbers_by_context/1
@@ -404,6 +405,9 @@ email_doc(CustomerEmail, Context) ->
 
 has_virtual_office(Context) ->
     lb:has_virtual_office(Context).
+
+has_virtual_pbx(Context) ->
+    lb:has_virtual_pbx(Context).
 
 get_login_by_agrm_id(AgrmId, Context) ->
     lb:get_login_by_agrm_id(AgrmId, Context).

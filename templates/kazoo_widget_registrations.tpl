@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-       {% for username, ip_address, port, agent, details in m.zkazoo.get_registrations %}
+       {% for username, ip_address, port, agent, auth_type, details in m.zkazoo.get_registrations %}
            <tr><td style="text-align: center;">{{ username }}</td><td style="text-align: center;">{% if agent|match:"PBX" %}<a href="https://{{ ip_address }}" target="_blank">{{ ip_address }}</a>{% else %}{{ ip_address }}{% endif %}</td><td style="text-align: center;">{{ port }}</td><td style="text-align: center;">{{ agent }}</td><td id={{ username }} style="text-align: center;"><i class="fa fa-info-circle" title="{_ Details _}"></i></td></tr>
            {% wire id=username action={ dialog_open title=_"Registration details" template="_details.tpl" arg=details } %}
        {% endfor %}
