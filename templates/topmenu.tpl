@@ -30,7 +30,7 @@
                 <ul class="dropdown-menu">
                   <li><a href="/status_panel">{_ Status panel _}</a></li>
                   <li><a href="/fax_out">{_ Outgoing Faxes _}</a></li>
-                  {% if m.onnet.has_virtual_office %}
+                  {% if m.onnet.has_virtual_office or m.onnet.is_operators_session %}
                     <li><a href="/fax_in">{_ Incoming Faxes _}</a></li>
                   {% endif %}
                   {% if m.onnet.is_operators_session %}
