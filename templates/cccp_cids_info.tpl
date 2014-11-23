@@ -2,6 +2,7 @@
 
 {% block widget_headline %}
     {{ headline }}:
+  {% if m.onnet.is_account_admin_auth or m.onnet.is_operators_session %}
     {% button class="btn btn-xs btn-onnet pull-right" text=_"add cid" id="addcidbtn"
                                   action={enable target="add_cid"}
                                   action={add_class class="disabled" target="addcidbtn"}
@@ -15,6 +16,7 @@
                                                                                        headline=_"#"
                                                                                        idname="add_cid" class="disabled"}
     %}
+  {% endif %}
 {% endblock %}
 
 {% block widget_class %}{% if last %}last{% endif %}{% endblock %}
