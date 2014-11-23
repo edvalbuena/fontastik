@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Callback"
+msgstr "Обратный вызов"
+
 msgid "Off"
 msgstr "Выкл"
 
