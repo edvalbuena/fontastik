@@ -1,6 +1,12 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Off"
+msgstr "Выкл"
+
+msgid "On"
+msgstr "Вкл"
+
 msgid "PIN access phone number"
 msgstr "Номер доступа по ПИН-коду"
 
