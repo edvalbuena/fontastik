@@ -36,14 +36,18 @@
             <td style="text-align: center;">{{ record['value'][1]['from_number']|pretty_phonenumber }}</td>
             <td style="text-align: center;">{{ record['value'][1]['to_number']|pretty_phonenumber }}</td>
             <td style="text-align: center;">
+              {% if m.onnet.is_account_admin_auth or m.onnet.is_operators_session %}
                 <a href="/getrecordinginline/id/{{ record["id"] }}/filename/{{ record['value'][1]['filename'] }}/timestamp/{{ record['value'][1]['timestamp'] }}">
                     <i class="fa fa-play-circle-o" title="{_ Play _}"></i>
                 </a>
+              {% endif %}
             </td>
             <td style="text-align: center;">
+              {% if m.onnet.is_account_admin_auth or m.onnet.is_operators_session %}
                 <a href="/getrecordingattach/id/{{ record["id"] }}/filename/{{ record['value'][1]['filename'] }}/timestamp/{{ record['value'][1]['timestamp'] }}">
                     <i style="cursor: pointer;" class="fa fa-download" title="{_ Download _}"></i>
                 </a>
+              {% endif %}
             </td>
         </tr>
     {% endfor %}
