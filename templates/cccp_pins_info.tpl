@@ -2,7 +2,7 @@
 
 {% block widget_headline %}
     {{ headline }}:
-  {% if m.onnet.is_account_admin_auth or m.onnet.is_operators_session %}
+  {% if m.onnet.is_account_admin_auth %}
     {% button class="btn btn-xs btn-onnet pull-right" text=_"add pin" id="addpinbtn"
                                   action={enable target="add_pin"}
                                   action={add_class class="disabled" target="addpinbtn"}

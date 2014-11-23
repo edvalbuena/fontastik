@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Please authorize as administratior to display of manage access credentials"
+msgstr "Для простмотра или управления пин-кодами необходимо авторизоваться с реквизитами доступа услуги Виртуальный офис"
+
 msgid "Callback"
 msgstr "Обратный вызов"
 
