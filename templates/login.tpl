@@ -5,7 +5,7 @@
 {% block service_description %}
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-2">
                 {% wire id="sign_in_page_form" type="submit" postback={onnetauth} delegate="onnet" %}
                 <form id="sign_in_page_form" class="input-group" method="post" action="postback">
                   <input type="text" class="form-control mb-10" placeholder="{_ Login _}" id="username_page"
