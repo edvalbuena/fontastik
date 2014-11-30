@@ -41,6 +41,20 @@
           "css/onnet.css"
     %}
  
+    {% with ["/lib/img/spb_gostdvor.jpg","/lib/img/msk_city.jpg","/lib/img/ldn_docklands.jpg"]|random as bgr_image %}
+    <style type="text/css">
+        #wrap,
+        #hp-slider {
+            height: 480px;
+            background: url({{ bgr_image }}) no-repeat center center; 
+            background-size: cover;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{{ bgr_image }}', sizingMethod='scale');
+            -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='{{ bgr_image }}', sizingMethod='scale')";
+            border-bottom: 1px solid #eee;
+            color: #fff;
+        }
+    </style>
+    {% endwith %} 
 
     {% lib "js/apps/zotonic-1.0.js" %}
     {% lib "js/apps/z.widgetmanager.js" %}

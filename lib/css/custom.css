@@ -91,16 +91,6 @@ h1.hl small, h2.hl small, h3.hl small, h4.hl small, h5.hl small, h6.hl small {
 
 /* ===== Showcase ===== */
 
-#wrap,
-#hp-slider {
-	height: 480px;
-	background: url(../img/spb_nevskiy_gostdvor.jpg) no-repeat center center;
-	background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/spb_nevskiy_gostdvor.jpg', sizingMethod='scale');
-	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/spb_nevskiy_gostdvor.jpg', sizingMethod='scale')";
-	border-bottom: 1px solid #eee;
-	color: #fff;
-}
 #wrap h1,
 #hp-slider h1 {
 	font-family: 'Lato', sans-serif;

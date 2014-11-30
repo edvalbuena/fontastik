@@ -14,7 +14,7 @@
                     {% include "onnet_widget_calls_reports.tpl" headline=_"Calls report" idname="calls_reports_widget" %}
                 </div>
 
-                <div class="hidden-phone">
+                <div class="hidden-xs hidden-phone">
                     <br /><br />
                     <p id="elcactoimg" align="center"><img  width="60%" src="/lib/images/3.gif" alt="" /></p>
                 </div>

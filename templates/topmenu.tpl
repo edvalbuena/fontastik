@@ -48,6 +48,9 @@
                 </ul>
               </li>
            {% endif %}
+           <li class="divider visible-xs"></li>
+           <li><a id="xs_sign_out" class="visible-xs" href="#">{_ Sign out _}</a></li>
+           {% wire id="xs_sign_out" postback={signout} delegate="onnet" %} 
            {% endif %}
            {% if not m.onnet.is_auth %}
             <li class="dropdown">
@@ -83,9 +86,10 @@
            {% endif %}
            {% if not m.onnet.is_auth %}
             <li class="hidden-sm hidden-md"><a href="/contactus">{_ Contact us _}</a></li>
+            <li class="divider visible-xs"></li>
+            <li class="visible-xs"><a href="/login">{_ Sign in _}</a></li>
            {% endif %}
             <!-- Profile links for extra small screens -->
-            <!-- <li class="visible-xs"><a href="sign-in.html">{_ Sign in _}</a></li> -->
             <!-- <li  class="visible-xs"><a href="#">Sign out</a></li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-xs">
