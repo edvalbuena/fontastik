@@ -16,8 +16,8 @@
     <thead>
         <tr>
             <th>{_ Date _}</th>
-            <th>{_ Sum _}</th>
-            <th>{_ Comment _}</th>
+            <th class="td-center">{_ Sum _}, {_ rub. _} <span class="onnet-07em">({_ excl VAT _})</span></th>
+            <th class="td-center">{_ Comment _}</th>
         </tr>
     </thead>
     <tbody>
@@ -25,8 +25,8 @@
             {% for amount, date, comment in m.onnet[{account_payments limit=lines}] %}
                 <tr>
                     <td>{{ date }}</td>
-                    <td>{{ amount }} {_ rub. _}</td>
-                    <td>{% if comment|match:"ssist" %}{_ ASSIST _}
+                    <td class="td-center">{{ amount }}</td>
+                    <td class="td-center">{% if comment|match:"ssist" %}{_ ASSIST _}
                                             {% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}
                                             {% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}
                                             {% else %}{_ Wire transfer _}
@@ -38,8 +38,8 @@
             {% for amount, date, comment in m.onnet.account_payments %}
                 <tr>
                     <td>{{ date }}</td>
-                    <td>{{ amount }} {_ rub. _}</td>
-                    <td>{% if comment|match:"ssist" %}{_ ASSIST _}
+                    <td class="td-center">{{ amount }}</td>
+                    <td class="td-center">{% if comment|match:"ssist" %}{_ ASSIST _}
                                             {% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}
                                             {% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}
                                             {% else %}{_ Wire transfer _}

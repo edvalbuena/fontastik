@@ -29,12 +29,12 @@
     </thead>
     <tbody>
         {% if m.onnet.is_prepaid %}
-            <tr><td>{_ Current balance _}</td><td>{{ m.onnet.account_balance }} {_ rub. _}</td></tr>
+            <tr><td>{_ Current balance _}</td><td>{{ m.onnet.account_balance }} {_ rub. _} <span class="onnet-07em">({_ excl VAT _})</span></td></tr>
         {% else %}
-            <tr><td>{_ Current month expenses _}</td><td>{{ m.onnet.calc_curr_month_exp }} {_ rub. _}</td></tr>
+            <tr><td>{_ Current month expenses _}</td><td>{{ m.onnet.calc_curr_month_exp }} {_ rub. _} <span class="onnet-07em">({_ excl VAT _})</span></td></tr>
         {% endif %}  
         {% for amount, date, comment in m.onnet[{account_payments limit=1}] %}
-            <tr><td>{_ Previous payment _}</td><td>{{ date }} - {{ amount }} {_ rub. _} - {% if comment|match:"ssist" %}{_ ASSIST _}{% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}{% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}{% else %}{_ Wire transfer _}{% endif %}</td></tr>
+            <tr><td>{_ Previous payment _}</td><td>{{ date }} - {{ amount }} {_ rub. _} <span class="onnet-07em">({_ excl VAT _})</span> - {% if comment|match:"ssist" %}{_ ASSIST _}{% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}{% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}{% else %}{_ Wire transfer _}{% endif %}</td></tr>
         {% endfor %}
     </tbody>
 </table>
