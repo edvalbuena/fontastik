@@ -45,6 +45,9 @@ observe_postback_notify(A, _Context) ->
     lager:info("Catched postback notify: ~p", [A]),
     undefined.
 
+event({submit,{onnetauth,[]},"sign_in_page_form","sign_in_page_form"}, Context) ->
+    event({submit,{onnetauth,[]},"sign_in_form","sign_in_form"}, Context);
+
 event({submit,{onnetauth,[]},"sign_in_form","sign_in_form"}, Context) ->
     case onnet_auth:sign_in(Context) of
         {ok, AuthContext} ->
@@ -55,15 +58,8 @@ event({submit,{onnetauth,[]},"sign_in_form","sign_in_form"}, Context) ->
             z_render:growl_error(?__("Auth failed.", Context), Context)
     end;
 
-event({submit,{onnetauth,[]},"sign_in_page_form","sign_in_page_form"}, Context) ->
-    case onnet_auth:sign_in(Context) of
-        {ok, AuthContext} ->
-            lager:info("User ~p authenticated", [z_context:get_q("username", Context)]),
-            z_render:wire({redirect, [{dispatch, "onnet_dashboard"}]}, AuthContext);
-        {sign_in_failed} ->
-            lager:info("Failed to authenticate user ~p", [z_context:get_q("username", Context)]),
-            z_render:growl_error(?__("Auth failed.", Context), Context)
-    end;
+event({submit,{account_admin_onnetauth,[]},"admin_sign_in_page_form","admin_sign_in_page_form"}, Context) ->
+    event({submit,{account_admin_onnetauth,[]},"admin_sign_in_form","admin_sign_in_form"}, Context);
 
 event({submit,{account_admin_onnetauth,[]},"admin_sign_in_form","admin_sign_in_form"}, Context) ->
     Login = iolist_to_binary(z_context:get_q("username",Context)),

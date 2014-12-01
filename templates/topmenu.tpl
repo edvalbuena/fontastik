@@ -43,6 +43,10 @@
                     {% endfor %}
                   {% endif %}
                   {% if m.onnet.has_virtual_office %}
+                    {% if not m.onnet.is_account_admin_auth %}
+                      <li class="divider visible-xs"></li>
+                      <li class="visible-xs"><a href="/office_admin_login">{_ Admin Login _}</a></li>
+                    {% endif %}
                     <li><a href="{{ m.config.onnet.virtual_office_url.value }}" target="_blank">{_ Virtual Office _}</a></li>
                   {% endif %}
                 </ul>
