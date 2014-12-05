@@ -131,21 +131,20 @@
             <span class="decoration"></span>
           </h2>
         </div>
-        <div class="tab-content">
-          <div class="tab-pane active" id="blog">
-            {% for id in m.search[{query cat='news' sort='-rsc.publication_start' pagelen=4}] %}
-            <div class="media">
-              <a class="pull-left" href="{{ m.rsc[id].page_path }}">
-                {% image m.rsc[id].depiction class="media-object" alt="Blog Message" %}
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="{{ m.rsc[id].page_path }}">{{ m.rsc[id].title }}</a></h4>
-                <a class="undecorate-link" href="{{ m.rsc[id].page_path }}">{{ m.rsc[id].summary }}</a>
-              </div>
-            </div>
-            {% endfor %}
-            <a href="#" class="read-more">{_ more news _}...</a>
-          </div>
+        <ul class="nav nav-tabs">
+          <li id="newsupdate" class="active"><a href="#blog" data-toggle="tab">{_ News _}</a></li>
+          <li id="blogupdate"><a href="#comments" data-toggle="tab">{_ Blog _}</a></li>
+        </ul>
+        {% wire id="newsupdate" action={ update target="brakingnewsarea" template="_news_at_index.tpl" }
+                                action={toggle_class target="newsupdate" class="active"}
+                                action={toggle_class target="blogupdate" class="active"}
+         %}
+        {% wire id="blogupdate" action={ update target="brakingnewsarea" template="_blog_at_index.tpl" } 
+                                action={toggle_class target="newsupdate" class="active"}
+                                action={toggle_class target="blogupdate" class="active"}
+         %}
+        <div id="brakingnewsarea" class="tab-content">
+          {% include "_news_at_index.tpl" %}
         </div>
         </div>
       </div>
