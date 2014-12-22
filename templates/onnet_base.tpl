@@ -41,7 +41,7 @@
           "css/onnet.css"
     %}
  
-    {% with ["/lib/img/spb_gostdvor.jpg","/lib/img/msk_city.jpg","/lib/img/ldn_docklands.jpg"]|random as bgr_image %}
+    {% with ["/lib/img/spb_gostdvor.jpg","/lib/img/msk_city.jpg"]|random as bgr_image %}
     <style type="text/css">
         #wrap,
         #hp-slider {

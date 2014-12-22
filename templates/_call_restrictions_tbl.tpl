@@ -9,7 +9,7 @@
               <td style="text-align: center;">
                   {% if m.zkazoo[{get_ts_restriction classifier=classifier[1]}]|match:"deny" %}
                       <i class="fa fa-ban" title="{_ Denied _}"></i>
-                  {% elseif m.zkazoo[{get_ts_restriction classifier=classifier[1]}]|match:"allow" %}
+                  {% elseif m.zkazoo[{get_ts_restriction classifier=classifier[1]}]|match:"allow|inherit" %}
                       <i class="fa fa-check-circle" title="{_ Allowed _}"></i>
                   {% else %}
                       <i class="fa fa-minus-circle" title="{_ Not applicable _}"></i>
