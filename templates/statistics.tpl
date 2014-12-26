@@ -18,7 +18,7 @@
 <div id="paytab" class="pl-10 pr-10 col-md-6">
                 <div id="update_onnet_widget_calls_list">
                     {# Calls list #}
-                    {% include "onnet_widget_calls_list.tpl" headline=_"Phone calls statistics" idname="calls_list_widget" direction="1" operator="1,6,881" %}
+                    {% include "onnet_widget_calls_list.tpl" headline=_"Phone calls statistics" idname="calls_list_widget" direction="1" operator="1,6,881,1017" %}
                 </div>
 </div>
 
