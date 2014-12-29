@@ -23,8 +23,8 @@
           <div class="content social">
             <p>{_ Stay in touch with us _}:</p>
             <ul>
-                <li><a href="https://twitter.com/onnetcomm"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://github.com/onnet"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://twitter.com/onnetcomm" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://github.com/onnet" target="_blank"><i class="fa fa-github"></i></a></li>
             </ul>
             <div class="clearfix"></div>
           </div>
