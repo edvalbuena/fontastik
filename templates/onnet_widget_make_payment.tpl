@@ -53,15 +53,39 @@
                 <div class="btn-group pull-right">
                    {% wire id="yapayment_yandex" action={set_value  id="yapayment_type" value="PC"}
                                                  action={script script="$('#yapayment_yandex_checked').css('visibility', 'visible');"}
+                                                 action={script script="$('#yapayment_sber_checked').css('visibility', 'hidden');"}
+                                                 action={script script="$('#yapayment_alpha_checked').css('visibility', 'hidden');"}
                                                  action={script script="$('#yapayment_crcards_checked').css('visibility', 'hidden');"}
                    %}
                     <button id="yapayment_yandex" class="btn btn-xs btn-onnet">
                        <i id="yapayment_yandex_checked" style="visibility:visible;" class="fa fa-check"></i>
                        <img src="/lib/images/yandex-money.png" title="Yandex" alt="Yandex" height="18px">
                     </button>
+                   {% wire id="yapayment_sber" action={set_value  id="yapayment_type" value="SB"}
+                                                 action={script script="$('#yapayment_sber_checked').css('visibility', 'visible');"}
+                                                 action={script script="$('#yapayment_yandex_checked').css('visibility', 'hidden');"}
+                                                 action={script script="$('#yapayment_alpha_checked').css('visibility', 'hidden');"}
+                                                 action={script script="$('#yapayment_crcards_checked').css('visibility', 'hidden');"}
+                   %}
+                    <button id="yapayment_sber" class="btn btn-xs btn-onnet">
+                       <i id="yapayment_sber_checked" style="visibility:hidden;" class="fa fa-check"></i>
+                       <img src="/lib/images/sberbank.png" title="Yandex" alt="Yandex" height="18px">
+                    </button>
+                   {% wire id="yapayment_alpha" action={set_value  id="yapayment_type" value="AB"}
+                                                 action={script script="$('#yapayment_alpha_checked').css('visibility', 'visible');"}
+                                                 action={script script="$('#yapayment_yandex_checked').css('visibility', 'hidden');"}
+                                                 action={script script="$('#yapayment_sber_checked').css('visibility', 'hidden');"}
+                                                 action={script script="$('#yapayment_crcards_checked').css('visibility', 'hidden');"}
+                   %}
+                    <button id="yapayment_alpha" class="btn btn-xs btn-onnet">
+                       <i id="yapayment_alpha_checked" style="visibility:hidden;" class="fa fa-check"></i>
+                       <img src="/lib/images/alfabank.png" title="Yandex" alt="Yandex" height="18px">
+                    </button>
                    {% wire id="yapayment_crcards" action={set_value  id="yapayment_type" value="AC"}
                                                   action={script script="$('#yapayment_crcards_checked').css('visibility', 'visible');"}
                                                   action={script script="$('#yapayment_yandex_checked').css('visibility', 'hidden');"}
+                                                  action={script script="$('#yapayment_sber_checked').css('visibility', 'hidden');"}
+                                                  action={script script="$('#yapayment_alpha_checked').css('visibility', 'hidden');"}
                    %}
                     <button id="yapayment_crcards" class="btn btn-xs btn-onnet">
                        <i id="yapayment_crcards_checked" style="visibility:hidden;" class="fa fa-check"></i>
