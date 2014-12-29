@@ -9,7 +9,10 @@
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
         <tr style="background-color:#F8F8F8">
-            <th><span style="color: #FF9002">{_ ASSIST - Electronic Payment System _}</span></th>
+            <th>
+               <span class="visible-lg" style="color: #FF9002">{_ ASSIST - Electronic Payment System _}</span>
+               <span class="hidden-lg" style="color: #FF9002">{_ ASSIST _}</span>
+            </th>
             <th colspan="2"><span style="display: block; text-align: right;"><img src="/lib/images/qiwi.png" height="18px" title="QIWI" alt="QIWI"><img src="/lib/images/yandex-money.png" title="Yandex" alt="Yandex" height="18px"><img src="/lib/images/webmoney.png" height="18px" title="Webmoney" alt="Webmoney"></span></th>
         </tr>
     </thead>
@@ -26,7 +29,10 @@
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
         <tr style="background-color:#F8F8F8">
-            <th><span style="color: #FF9002">{_ Dengi Online - Electronic Payment System _}</span></th>
+            <th>
+                <span class="visible-lg" style="color: #FF9002">{_ Dengi Online - Electronic Payment System _}</span>
+                <span class="hidden-lg" style="color: #FF9002">{_ Dengi Online _}</span>
+            </th>
             <th colspan="2">
                 <span style="display: block; text-align: right;">
                   <img src="/lib/images/visa.png" height="18px" title="VISA" alt="VISA"><img src="/lib/images/mastercard.png" height="18px" title="MASTERCARD" alt="MASTERCARD"><img src="/lib/images/mts-bank.png" height="18px" title="MTS Bank" alt="MTS Bank">
@@ -48,7 +54,10 @@
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
         <tr style="background-color:#F8F8F8">
-            <th><span style="color: #FF9002">{_ Yandex.Money - Electronic Payment System _}</span></th>
+            <th>
+                <span class="visible-lg" style="color: #FF9002">{_ Yandex.Money - Electronic Payment System _}</span>
+                <span class="hidden-lg" style="color: #FF9002">{_ Yandex.Money _}</span>
+            </th>
             <th colspan="2">
                 <div class="btn-group pull-right">
                    {% wire id="yapayment_yandex" action={set_value  id="yapayment_type" value="PC"}
@@ -77,7 +86,7 @@
                                                  action={script script="$('#yapayment_sber_checked').css('visibility', 'hidden');"}
                                                  action={script script="$('#yapayment_crcards_checked').css('visibility', 'hidden');"}
                    %}
-                    <button id="yapayment_alpha" class="btn btn-xs btn-onnet">
+                    <button id="yapayment_alpha" class="btn btn-xs btn-onnet hidden-md">
                        <i id="yapayment_alpha_checked" style="visibility:hidden;" class="fa fa-check"></i>
                        <img src="/lib/images/alfabank.png" title="Yandex" alt="Yandex" height="18px">
                     </button>
@@ -89,7 +98,7 @@
                    %}
                     <button id="yapayment_crcards" class="btn btn-xs btn-onnet">
                        <i id="yapayment_crcards_checked" style="visibility:hidden;" class="fa fa-check"></i>
-                       <img src="/lib/images/visa.png" height="18px" title="VISA" alt="VISA"><img src="/lib/images/mastercard.png" height="18px" title="MASTERCARD" alt="MASTERCARD">
+                       <img src="/lib/images/visa.png" height="18px" title="VISA" alt="VISA"><img class="hidden-md" src="/lib/images/mastercard.png" height="18px" title="MASTERCARD" alt="MASTERCARD">
                     </button>
                     <input id="yapayment_type" name="yapayment_type" type="hidden" value="PC" />
                 </div>
