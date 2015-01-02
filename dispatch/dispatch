@@ -34,6 +34,7 @@
  {kazoo_fax_out, ["fax_out"], controller_onnet, [{template, "kazoo_fax_out.tpl"}, {selected, "fax_out"}]},
  {kazoo_call_recordings, ["call_recordings"], controller_onnet, [{template, "kazoo_call_recordings.tpl"}, {selected, "call_recordings"}]},
  {kazoo_callback, ["callback"], controller_template, [{template, "kazoo_callback.tpl"}, {selected, "callback"}]},
+ {mail, ["mail"], controller_redirect, [{url, "https://mail.onnet.su"}, {is_permanent, true}]},
 
  {test,["test"],         controller_template,  [ {template, "test.tpl"} ]},
 
