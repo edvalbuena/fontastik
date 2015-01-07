@@ -8,9 +8,18 @@
     ,add_payment/5
     ,create_invoice/2
     ,create_callsreport/2
+    ,lb_login_data/2
+    ,lb_soap_blkVgroup/4
+    ,lb_blkVgroup_data/3
+    ,lb_soap_auth/2
 ]).
 
 -include_lib("zotonic.hrl").
+
+-define(SOAPENV_O, "<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:urn='urn:api3'>").
+-define(SOAPENV_C, "</soapenv:Envelope>").
+-define(BODY_O, "<soapenv:Body>").
+-define(BODY_C, "</soapenv:Body>").
 
 lb_login(Context) ->
     EncType = "application/x-www-form-urlencoded",
@@ -25,6 +34,26 @@ lb_logout(Context) ->
     EncType = "application/x-www-form-urlencoded",
     Url = binary_to_list(m_config:get_value(onnet, lb_url, Context)),
     httpc:request(post, {Url, [], EncType, lists:flatten("devision=99")}, [], []).
+
+lb_soap_auth(Move, Context) ->
+    EncType = "text/xml",
+    Url = "http://b3.onnet.su:34012/",
+    case Move of
+        'login' ->
+            LB_User = binary_to_list(m_config:get_value(onnet, lb_user, Context)),
+            LB_Password = binary_to_list(m_config:get_value(onnet, lb_password, Context)),
+            httpc:set_options([{cookies, enabled}]),
+            httpc:request(post, {Url, [], EncType, lb_login_data(LB_User, LB_Password)}, [], []);
+        'logout' ->
+            httpc:request(post, {Url, [], EncType, lb_logout_data()}, [], [])
+    end.
+
+lb_soap_blkVgroup(Id, Blk, State, Context) ->
+    EncType = "text/xml",
+    Url = "http://b3.onnet.su:34012/",
+    lb_soap_auth('login', Context),
+    httpc:request(post, {Url, [], EncType, lb_blkVgroup_data(Id, Blk, State)}, [], []),
+    lb_soap_auth('logout', Context).
 
 add_payment(Agrm_Id, Summ, Receipt, Comment, Context) ->
     Url = binary_to_list(m_config:get_value(onnet, lb_url, Context)),
@@ -80,3 +109,30 @@ create_callsreport(DocsMonthInput, Context) ->
 	    z_render:growl("Bad httpc", Context)
     end.
 
+lb_login_data(Login, Password) ->
+    ?SOAPENV_O
+      ++ ?BODY_O
+        ++ "<urn:Login>"
+          ++ "<login>"++z_convert:to_list(Login)++"</login>"
+          ++ "<pass>"++z_convert:to_list(Password)++"</pass>"
+        ++ "</urn:Login>"
+      ++ ?BODY_C
+    ++ ?SOAPENV_C.
+
+lb_blkVgroup_data(Id, Blk, State) ->
+    ?SOAPENV_O
+      ++ ?BODY_O
+        ++ "<urn:blkVgroup>"
+          ++ "<id>"++z_convert:to_list(Id)++"</id>"
+          ++ "<blk>"++z_convert:to_list(Blk)++"</blk>"
+          ++ "<state>"++z_convert:to_list(State)++"</state>"
+        ++ "</urn:blkVgroup>"
+      ++ ?BODY_C
+    ++ ?SOAPENV_C.
+
+lb_logout_data() ->
+    ?SOAPENV_O
+      ++ ?BODY_O
+        ++ "<urn:Logout/>"
+      ++ ?BODY_C
+    ++ ?SOAPENV_C.
