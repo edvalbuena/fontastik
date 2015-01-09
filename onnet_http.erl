@@ -8,13 +8,11 @@
     ,add_payment/5
     ,create_invoice/2
     ,create_callsreport/2
-    ,lb_login_data/2
-    ,lb_soap_blkVgroup/4
-    ,lb_blkVgroup_data/3
-    ,lb_soap_auth/2
+    ,maybe_unblock_agreement/2
 ]).
 
 -include_lib("zotonic.hrl").
+-include_lib("xmerl/include/xmerl.hrl").
 
 -define(SOAPENV_O, "<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:urn='urn:api3'>").
 -define(SOAPENV_C, "</soapenv:Envelope>").
@@ -48,12 +46,55 @@ lb_soap_auth(Move, Context) ->
             httpc:request(post, {Url, [], EncType, lb_logout_data()}, [], [])
     end.
 
-lb_soap_blkVgroup(Id, Blk, State, Context) ->
+maybe_unblock_agreement(AgrmId, Context) ->
+    timer:sleep(300000),
+    case re:run(lb_get_balance_by_agrmid(AgrmId, Context),"-") of
+        nomatch -> lb_block_agreement(AgrmId, 10, "off", Context);
+        {match,[{0,1}]} -> 'ok'
+    end.
+
+lb_block_agreement(AgrmId, BlkType, State, Context) ->
+    Xml_VgidList = lb_soap_getVgroups(AgrmId, BlkType, Context),
+    lb_soap_block_Vgroups(Xml_VgidList, BlkType, State, Context).
+
+lb_soap_blkVgroup(Id, BlkType, State, Context) ->
     EncType = "text/xml",
     Url = "http://b3.onnet.su:34012/",
     lb_soap_auth('login', Context),
-    httpc:request(post, {Url, [], EncType, lb_blkVgroup_data(Id, Blk, State)}, [], []),
+    httpc:request(post, {Url, [], EncType, lb_blkVgroup_data(Id, BlkType, State)}, [], []),
     lb_soap_auth('logout', Context).
+
+lb_soap_getVgroups(AgrmId, BlkType, Context) ->
+    EncType = "text/xml",
+    Url = "http://b3.onnet.su:34012/",
+    lb_soap_auth('login', Context),
+    {ok, {{_, 200, _}, _, Body}} = httpc:request(post, {Url, [], EncType, lb_getVgroups_data(AgrmId, BlkType)}, [], []),
+    lb_soap_auth('logout', Context),
+    {Xml, _} = xmerl_scan:string(Body),
+    xmerl_xpath:string("//SOAP-ENV:Envelope/SOAP-ENV:Body/lbapi:getVgroupsResponse/ret/vgid/text()", Xml).
+
+lb_soap_block_Vgroups([], _, _, _) ->
+    ok;
+lb_soap_block_Vgroups([H|T], BlkType, State, Context) ->
+    lb_soap_block_Vgroup(H, BlkType, State, Context),
+    lb_soap_block_Vgroups(T, BlkType, State, Context).
+
+lb_soap_block_Vgroup(XmlRec, BlkType, State, Context) ->
+    lb_soap_blkVgroup(XmlRec#xmlText.value, BlkType, State, Context).
+
+lb_soap_getAgreement(AgrmId, Context) ->
+    EncType = "text/xml",
+    Url = "http://b3.onnet.su:34012/",
+    lb_soap_auth('login', Context),
+    {ok, {{_, 200, _}, _, Body}} = httpc:request(post, {Url, [], EncType, lb_getAgreements_data(AgrmId)}, [], []),
+    lb_soap_auth('logout', Context),
+    Body.
+
+lb_get_balance_by_agrmid(AgrmId, Context) ->
+    Body = lb_soap_getAgreement(AgrmId, Context),
+    {Xml, _} = xmerl_scan:string(Body),
+    [H|_] = xmerl_xpath:string("//SOAP-ENV:Envelope/SOAP-ENV:Body/lbapi:getAgreementsResponse/ret/balance/text()", Xml),
+    H#xmlText.value.
 
 add_payment(Agrm_Id, Summ, Receipt, Comment, Context) ->
     Url = binary_to_list(m_config:get_value(onnet, lb_url, Context)),
@@ -61,6 +102,7 @@ add_payment(Agrm_Id, Summ, Receipt, Comment, Context) ->
     EncType = "application/x-www-form-urlencoded",
     lb_login(Context),
     httpc:request(post, {Url, [], EncType, lists:flatten(QueryString)}, [], []),
+    _ = spawn(?MODULE, 'maybe_unblock_agreement', [Agrm_Id, Context]),
     lb_logout(Context).
 
 create_invoice(Amount, Context) ->
@@ -136,3 +178,27 @@ lb_logout_data() ->
         ++ "<urn:Logout/>"
       ++ ?BODY_C
     ++ ?SOAPENV_C.
+
+lb_getVgroups_data(AgrmId, BlockedId) ->
+    ?SOAPENV_O
+      ++ ?BODY_O
+        ++ "<urn:getVgroups>"
+          ++ "<flt>"
+            ++ "<agrmid>"++z_convert:to_list(AgrmId)++"</agrmid>"
+            ++ "<blocked>"++z_convert:to_list(BlockedId)++"</blocked>"
+          ++ "</flt>"
+        ++ "</urn:getVgroups>"
+      ++ ?BODY_C
+    ++ ?SOAPENV_C.
+
+lb_getAgreements_data(AgrmId) ->
+    ?SOAPENV_O
+      ++ ?BODY_O
+        ++ "<urn:getAgreements>"
+          ++ "<flt>"
+            ++ "<agrmid>"++z_convert:to_list(AgrmId)++"</agrmid>"
+          ++ "</flt>"
+        ++ "</urn:getAgreements>"
+      ++ ?BODY_C
+    ++ ?SOAPENV_C.
+
