@@ -242,7 +242,7 @@ is_prepaid(Context) ->
         undefined -> [];
         UId ->
             case z_mydb:q("SELECT 1 FROM tarifs, vgroups where tarifs.tar_id = vgroups.tar_id and vgroups.uid = ? and tarifs.type = 5
-                                                  and tarifs.act_block > 0  and vgroups.blocked < 10 limit 1",[UId], Context) of
+                                                  and tarifs.act_block > 0 limit 1",[UId], Context) of
                 [] -> false;
                 _ -> true
             end
