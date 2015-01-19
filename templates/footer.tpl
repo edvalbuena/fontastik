@@ -23,8 +23,17 @@
           <div class="content social">
             <p>{_ Stay in touch with us _}:</p>
             <ul>
-                <li><a href="https://twitter.com/onnetcomm" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://github.com/onnet" target="_blank"><i class="fa fa-github"></i></a></li>
+                <li title="twitter.com/onnetcomm"><a href="https://twitter.com/onnetcomm" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li title="github.com/onnet"><a href="https://github.com/onnet" target="_blank"><i class="fa fa-github"></i></a></li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="content social">
+            <p>{_ For Customers _}:</p>
+            <ul>
+                <li title="mail.onnet.su"><a href="https://mail.onnet.su" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+                <li title="portal.onnet.su"><a href="https://portal.onnet.su" target="_blank"><i class="fa fa-tty"></i></a></li>
+                <li title="HelpDesk.telepark.info"><a href="http://helpdesk.telepark.info" target="_blank"><i class="fa fa-question"></i></a></li>
             </ul>
             <div class="clearfix"></div>
           </div>
