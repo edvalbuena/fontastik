@@ -17,6 +17,9 @@
 
                   {% button text=_"Enter" action={submit target="sign_in_page_form"} class="btn btn-default" %}
                 </form>
+  <br/>
+  <a href="/password_recovery" style="margin-top: 2em;" class="undecorate-link">{_ Forgot your password? _}</a>
+  <br/>
   </div>
 </div>
     

@@ -139,7 +139,10 @@ set_passwd(Password, Email, Login, Context) ->
     lb:set_passwd(Password, Email, Login, Context).
 
 maybe_send_passwd(Context) ->
-    Email = z_context:get_q("user_email",Context),
+    Email = case z_context:get_q("user_email",Context) of
+                'undefined' -> z_context:get_q("user_email_page_field",Context);
+                 _ -> z_context:get_q("user_email",Context)
+            end,
     case get_userdata_by_email(Email, Context) of
          [] -> false;
          Userdata ->

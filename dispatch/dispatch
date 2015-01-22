@@ -21,6 +21,7 @@
  {ivr,["ivr"],         controller_template,  [ {template, "ivr.tpl"} ]},
  {first_order, ["first_order"], controller_template, [{template, "first_order.tpl"}, {anonymous, true}]},
  {login,["login"],         controller_template,  [ {template, "login.tpl"} ]},
+ {password_recovery,["password_recovery"],         controller_template,  [ {template, "password_recovery.tpl"} ]},
  {office_admin_login,["office_admin_login"],         controller_template,  [ {template, "office_admin_login.tpl"} ]},
  {onnet_dashboard,["onnet_dashboard"],         controller_template,  [ {template, "onnet_dashboard.tpl"} ]},
  {account_details,["account_details"],         controller_template,  [ {template, "account_details.tpl"} ]},
