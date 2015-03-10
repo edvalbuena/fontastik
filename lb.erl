@@ -227,11 +227,11 @@ account_status(Context) ->
     case z_context:get_session(lb_user_id, Context) of
         undefined -> [];
         UId ->
-            case z_mydb:q(<<"SELECT blocked FROM vgroups where uid = ? and archive = 0 and id = 1 order by blocked asc limit 1">>,[UId], Context) of
-                [[StatusID]] -> StatusID;
+            case z_mydb:q(<<"SELECT blocked, block_date FROM vgroups where uid = ? and archive = 0 and id = 1 order by blocked asc limit 1">>,[UId], Context) of
+                [[StatusID,{datetime,BlockDate}]] -> [StatusID, BlockDate];
                  _  ->
-                    case z_mydb:q(<<"SELECT blocked FROM vgroups where uid = ? and archive = 0 order by blocked desc limit 1">>,[UId], Context) of
-                       [[StatusID]] -> StatusID;
+                    case z_mydb:q(<<"SELECT blocked, block_date FROM vgroups where uid = ? and archive = 0 order by blocked desc limit 1">>,[UId], Context) of
+                       [[StatusID,{datetime,BlockDate}]] -> [StatusID, BlockDate];
                        _ -> []
                     end
             end

@@ -22,9 +22,11 @@
     <thead>
         <tr>
             <th>{_ Account status _}</th>
-            <th>{% if m.onnet.account_status == 0 %}<span class="zprimary">{_ Active _}</span> 
-                            {% else %}<span class="zalarm">{_ Blocked _}{% endif %}</span>
+            {% with m.onnet.account_status as account_status %}
+            <th>{% if account_status[1] == 0 %}<span class="zprimary">{_ Active _}</span> 
+                            {% else %}<span class="zalarm">{_ Blocked _} <span class="onnet-07em">({{ account_status[2] }})</span>{% endif %}</span>
             </th>
+            {% endwith %}
         </tr>
     </thead>
     <tbody>
