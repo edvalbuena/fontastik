@@ -40,8 +40,10 @@
         {% endfor %}
     </tbody>
 </table>
-<span id="set_lb_notify_level_tpl">
-{% include "_set_lb_notify_level.tpl" %}
-</span>
+{% if m.onnet.is_prepaid %}
+    <span id="set_lb_notify_level_tpl">
+        {% include "_set_lb_notify_level.tpl" %}
+    </span>
+{% endif %}  
 {% endblock %}
 
