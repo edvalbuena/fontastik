@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Prefix"
+msgstr "Код направления"
+
 msgid "For Customers"
 msgstr "Для клиентов"
 

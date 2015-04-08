@@ -61,6 +61,7 @@
     ,get_login_by_agrm_id/2
     ,book_numbers/3
     ,book_numbers_by_context/1
+    ,rates_list/2
 ]).
 
 -include_lib("zotonic.hrl").
@@ -433,3 +434,17 @@ book_numbers_by_context(Context) ->
     PhoneNumbers = z_context:get_q_all("chosennumbers", Context),
     CustomerName = accounts_table("name", 1, Context),
     book_numbers(PhoneNumbers, CustomerName, Context).
+
+rates_list(TarId, Context) ->
+    Directions = lb:get_directions_list(TarId, Context),
+    build_rates_list(Directions, [], TarId, Context).
+
+build_rates_list([], Acc, _TarId, _Context) -> Acc;
+build_rates_list([[Descr, Price, CatId]|T], Acc, TarId, Context) ->
+   AccNew = [{[{"prefix", lb:get_prefix_list(TarId,CatId,Context)}
+              ,{"cost", Price}
+              ,{"description", Descr}
+              ,{"surcharge", 0}]
+             }|Acc],
+   build_rates_list(T, AccNew, TarId, Context).
+    

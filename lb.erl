@@ -53,6 +53,8 @@
        ,has_virtual_pbx/1
        ,get_login_by_agrm_id/2
        ,book_number/3
+       ,get_directions_list/2
+       ,get_prefix_list/3
 ]).
 
 -include_lib("zotonic.hrl").
@@ -599,4 +601,12 @@ get_login_by_agrm_id(AgrmId, Context) ->
 
 book_number(Number, CustomerName, Context) ->
     z_mydb:q_raw("update all_phones_status set ocupated_date = (now() + interval 5 day), comment = ? where number_id = ?",[CustomerName, Number], Context).
+
+get_directions_list(TarId, Context) ->
+    z_mydb:q(<<"SELECT descr, above, cat_idx from categories where tar_id = ?">>, [TarId], Context).
+
+get_prefix_list(TarId, CatId, Context) ->
+    z_mydb:q(<<"SELECT tel_cat.zone_num FROM tel_cat, tel_cat_idx where 
+                       tel_cat_idx.zone_id = tel_cat.zone_id and  tel_cat_idx.tar_id = ? and  tel_cat_idx.cat_idx = ? order by tel_cat.zone_num">>,
+                       [TarId, CatId], Context).
 
