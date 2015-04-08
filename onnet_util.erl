@@ -62,6 +62,9 @@
     ,book_numbers/3
     ,book_numbers_by_context/1
     ,rates_list/2
+    ,user_balance_notify/1
+    ,set_notify_balance/2
+    ,set_notify_disable/1
 ]).
 
 -include_lib("zotonic.hrl").
@@ -448,3 +451,12 @@ build_rates_list([[Descr, Price, CatId]|T], Acc, TarId, Context) ->
              }|Acc],
    build_rates_list(T, AccNew, TarId, Context).
     
+user_balance_notify(Context) ->
+    [BNotify,BLimit] = lb:user_balance_notify(Context),
+    [{<<"b_notify">>, BNotify},{<<"b_limit">>, BLimit}].
+
+set_notify_balance(Blimit, Context) ->
+    lb:set_notify_balance(1, Blimit, Context).
+
+set_notify_disable(Context) ->
+    lb:set_notify_balance(0, 0, Context).

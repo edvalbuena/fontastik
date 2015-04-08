@@ -289,6 +289,15 @@ event({postback, del_cccp_doc, TriggerId, _TargetId}, Context) ->
     zkazoo_http:del_cccp_doc(TriggerId, Context),
     z_render:wire({redirect, [{dispatch, "callback"}]}, Context);
 
+event({postback,notify_submit_btn,_,_}, Context) ->
+    Blevel = z_context:get_q("balance",Context),
+    onnet_util:set_notify_balance(Blevel, Context),
+    z_render:update("set_lb_notify_level_tpl", z_template:render("_set_lb_notify_level.tpl", [], Context), Context);
+
+event({postback,notify_disable_btn,_,_}, Context) ->
+    onnet_util:set_notify_disable(Context),
+    z_render:update("set_lb_notify_level_tpl", z_template:render("_set_lb_notify_level.tpl", [], Context), Context);
+
 event(A, Context) ->
     lager:info("Unknown event A: ~p", [A]),
     lager:info("Unknown event variables: ~p", [z_context:get_q_all(Context)]),

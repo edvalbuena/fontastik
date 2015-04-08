@@ -1,6 +1,18 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Notify when balance falls below"
+msgstr "Уведомлять если баланс ниже"
+
+msgid "save"
+msgstr "сохранить"
+
+msgid "disable alert"
+msgstr "отключить оповещение"
+
+msgid "Low balance notify level"
+msgstr "Уровень оповещеня о низком балансе"
+
 msgid "Prefix"
 msgstr "Код направления"
 

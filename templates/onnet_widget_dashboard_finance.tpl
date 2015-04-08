@@ -21,7 +21,7 @@
 <table class="table table-condensed table-hover table-centered">
     <thead>
         <tr>
-            <th>{_ Account status _}</th>
+            <th style="width: 35%;">{_ Account status _}</th>
             {% with m.onnet.account_status as account_status %}
             <th>{% if account_status[1] == 0 %}<span class="zprimary">{_ Active _}</span> 
                             {% else %}<span class="zalarm">{_ Blocked _} <span class="onnet-07em">({{ account_status[2] }})</span>{% endif %}</span>
@@ -40,5 +40,8 @@
         {% endfor %}
     </tbody>
 </table>
+<span id="set_lb_notify_level_tpl">
+{% include "_set_lb_notify_level.tpl" %}
+</span>
 {% endblock %}
 

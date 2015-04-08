@@ -55,6 +55,8 @@
        ,book_number/3
        ,get_directions_list/2
        ,get_prefix_list/3
+       ,user_balance_notify/1
+       ,set_notify_balance/3
 ]).
 
 -include_lib("zotonic.hrl").
@@ -609,4 +611,21 @@ get_prefix_list(TarId, CatId, Context) ->
     z_mydb:q(<<"SELECT tel_cat.zone_num FROM tel_cat, tel_cat_idx where 
                        tel_cat_idx.zone_id = tel_cat.zone_id and  tel_cat_idx.tar_id = ? and  tel_cat_idx.cat_idx = ? order by tel_cat.zone_num">>,
                        [TarId, CatId], Context).
+
+user_balance_notify(Context) ->
+    case z_context:get_session(lb_user_id, Context) of
+        undefined -> [];
+        UId ->
+            case z_mydb:q("select b_notify, b_limit from agreements where oper_id = 1 and uid = ?",[UId], Context) of
+                [QueryResult] -> QueryResult;
+                _ -> []
+            end
+    end.
+
+set_notify_balance(BNotify, Blimit, Context) ->
+    case z_context:get_session(lb_user_id, Context) of
+        undefined -> [];
+        UId ->
+            z_mydb:q_raw("update agreements set b_notify = ?, b_limit = ? where oper_id = 1 and uid = ?",[BNotify, Blimit, UId], Context)
+    end.
 

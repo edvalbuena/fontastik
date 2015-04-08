@@ -167,6 +167,9 @@ m_find_value(has_virtual_pbx, _M, Context) ->
 m_find_value({rates_list,[{tar_id, TarId}]}, _M, Context) ->
     onnet_util:rates_list(TarId, Context);
 
+m_find_value(user_balance_notify, _M, Context) ->
+    onnet_util:user_balance_notify(Context);
+
 m_find_value(_V, _VV, _Context) ->
     [_V,_VV,"m_onnet_find_value_mismatch"].
 
