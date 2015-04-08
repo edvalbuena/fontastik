@@ -13,6 +13,7 @@
 <tbody>
 
 {% for rate in m.onnet[{rates_list tar_id="269"}] %}
+{% if rate["prefix"] %}
 <tr>
     <td style="text-align: left; vertical-align: middle; width: 45%;">{{ rate["description"] }}</td>
     {% if rate["prefix"][4] %}
@@ -41,6 +42,7 @@
         {{ rate["cost"] }} / min.
     </td>
 </tr>
+{% endif %}
 {% endfor %}
 
 </tbody>
