@@ -49,7 +49,9 @@ lb_soap_auth(Move, Context) ->
 maybe_unblock_agreement(AgrmId, Context) ->
     timer:sleep(300000),
     case re:run(lb_get_balance_by_agrmid(AgrmId, Context),"-") of
-        nomatch -> lb_block_agreement(AgrmId, 10, "off", Context);
+        nomatch ->
+            onnet_util:set_notify_balance(500, Context),
+            lb_block_agreement(AgrmId, 10, "off", Context);
         {match,[{0,1}]} -> 'ok'
     end.
 
