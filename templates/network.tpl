@@ -25,7 +25,9 @@
 
     <li><a target="_blank" href="http://www.westcall.ru/">ЗАО &laquo;ВЕСТ КОЛЛ ЛТД&raquo;</a>;</li>
 
-    <li><a target="_blank" href="http://www.msk-ix.ru/">ЗАО &laquo;ЦВКС &laquo;МСК-IX&raquo;</a>.</li>
+    <li><a target="_blank" href="http://www.msk-ix.ru/">ЗАО &laquo;ЦВКС &laquo;МСК-IX&raquo;</a>;</li>
+
+    <li><a target="_blank" href="http://www.cloud-ix.net/">ГК &laquo;Филанко&raquo; проект &laquo;Cloud-IX&raquo;</a>.</li>
 
 </ul>
 
