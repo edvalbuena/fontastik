@@ -13,6 +13,7 @@
  {payments,["payments"],         controller_template,  [ {template, "payments.tpl"} ]},
  {aboutus,["aboutus"],         controller_template,  [ {template, "aboutus.tpl"} ]},
  {network,["network"],         controller_template,  [ {template, "network.tpl"} ]},
+ {cityreach,["cityreach"],         controller_template,  [ {template, "cityreach.tpl"} ]},
  {trademark,["trademark"],         controller_template,  [ {template, "trademark.tpl"} ]},
  {licenses,["licenses"],         controller_template,  [ {template, "licenses.tpl"} ]},
  {companydetails,["companydetails"],         controller_template,  [ {template, "companydetails.tpl"} ]},

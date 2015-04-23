@@ -41,7 +41,7 @@
         <p><a href="http://storedata.ru/" target="_blank">Дата-центр &quot;StoreData&quot;</a>, ООО &quot;Научный инновационный центр&quot; (StoreData LLC), г. Москва, Россия;</p>
     </li>
     <li>
-        <p style="margin-bottom: 0cm;"><a href="http://onnet.su/20130124291/cityreach" target="_blank">City Reach Data Centre</a>, London, UK.</p>
+        <p style="margin-bottom: 0cm;"><a href="/cityreach" target="_blank">City Reach Data Centre</a>, London, UK.</p>
     </li>
 </ul>
 
