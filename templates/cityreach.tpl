@@ -60,8 +60,6 @@
 
 <p>Дешево и сердито ... очень рекомендуем :)&nbsp;</p>
 
-<p><img src="/lib/img/relax.jpg" width="0" height="0" alt="" /></p>
-
 <p style="text-align: left;">&nbsp;<img src="/lib/img/relax2.jpg" width="290" alt="" />
                              &nbsp;&nbsp;
                                    <img src="/lib/img/coins.jpg" width="290" alt="" style="vertical-align: bottom;" /></p>
