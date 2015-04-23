@@ -1,7 +1,7 @@
 {% extends "services.tpl" %}
 
 
-{% block service_name %}City Reach {_ Data Centre _}{% endblock %}
+{% block service_name %}{_ City Reach Data Centre _}{% endblock %}
 
 
 {% block service_description %}

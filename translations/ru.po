@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "City Reach Data Centre"
+msgstr "Дата-центр City Reach"
+
 msgid "Notify when balance falls below"
 msgstr "Уведомлять если баланс ниже"
 
