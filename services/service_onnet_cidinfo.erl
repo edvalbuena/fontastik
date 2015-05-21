@@ -14,9 +14,8 @@ process_get(_ReqData, Context) ->
 get_info(Context) ->
     case is_key_valid(Context) of
         'true' ->
-            Calling_Number = z_context:get_q("calling_number", Context),
-            Reply = [{'company_name', "ZAO Test"}, {'agrm_num', "145-PRE"}, {'contact_person', <<"Ivanov I. P.">>}, 
-                     {'cur_balance', 1285.15}, {'login_name', "customer1"}, {'calling_number', Calling_Number}],
+            CallingNumber = z_context:get_q("calling_number", Context),
+            Reply = get_cidinfo(CallingNumber, Context),
             {struct, Reply};
         _ ->
             {error,  access_denied, undefined}
@@ -32,4 +31,15 @@ is_key_valid(Context) ->
     case z_context:get_q("md5", Context) of
         undefined -> false;
         Md5 -> string:to_lower(Md5Hash) == string:to_lower(Md5)
+    end.
+
+get_cidinfo(Number, Context) ->
+    PhoneNumber = case (length(Number) > 10) of
+                       'true' -> string:substr(Number, length(Number)-9);
+                       'false' -> Number
+                  end,
+    case lb:get_account_info_by_number(PhoneNumber, Context) of
+        [] -> [{'company_name', ""}, {'agrm_num', ""}, {'contact_person', <<"">>},{'cur_balance', ""}, {'login_name', ""}, {'calling_number', PhoneNumber}];
+        [[CompanyName, Login, _Email, Balance, Person]] ->
+              [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber}]
     end.

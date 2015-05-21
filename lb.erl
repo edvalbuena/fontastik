@@ -57,6 +57,7 @@
        ,get_prefix_list/3
        ,user_balance_notify/1
        ,set_notify_balance/3
+       ,get_account_info_by_number/2
 ]).
 
 -include_lib("zotonic.hrl").
@@ -628,4 +629,16 @@ set_notify_balance(BNotify, Blimit, Context) ->
         UId ->
             z_mydb:q_raw("update agreements set b_notify = ?, b_limit = ? where oper_id = 1 and uid = ?",[BNotify, Blimit, UId], Context)
     end.
+
+get_account_info_by_number(PhoneNumber, Context) ->
+    QueryString = io_lib:format("select accounts.name, accounts.login, accounts.email, round(agreements.balance,2), accounts.kont_person from vgroups,accounts,agreements
+                                        where accounts.uid = vgroups.uid and agreements.uid = accounts.uid 
+                                              and oper_id = 1 
+                                              and (vg_id = (SELECT vg_id FROM tel_staff where phone_number like '%~s%') 
+                                                   or accounts.uid = (select uid from accounts where replace(replace(replace(replace(phone, '-', ''), ' ', ''), ')', ''), '(', '') regexp ~s = 1 
+                                                                             and category = 0 limit 1) = 1 ) limit 1", [PhoneNumber, PhoneNumber]),
+    z_mydb:q(QueryString, Context).
+
+
+
 
