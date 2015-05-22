@@ -632,11 +632,14 @@ set_notify_balance(BNotify, Blimit, Context) ->
 
 get_account_info_by_number(PhoneNumber, Context) ->
     QueryString = io_lib:format("select accounts.name, accounts.login, accounts.email, round(agreements.balance,2), accounts.kont_person from vgroups,accounts,agreements
-                                        where accounts.uid = vgroups.uid and agreements.uid = accounts.uid 
-                                              and oper_id = 1 
-                                              and (vg_id = (SELECT vg_id FROM tel_staff where phone_number like '%~s%') 
-                                                   or accounts.uid = (select uid from accounts where replace(replace(replace(replace(phone, '-', ''), ' ', ''), ')', ''), '(', '') regexp ~s = 1 
-                                                                             and category = 0 limit 1) = 1 ) limit 1", [PhoneNumber, PhoneNumber]),
+                                     where accounts.uid = vgroups.uid and agreements.uid = accounts.uid and oper_id = 1 
+                                         and (vg_id = (SELECT vg_id FROM tel_staff where phone_number like '%~s%') 
+                                             or accounts.uid = (select uid from accounts where (replace(replace(replace(replace(phone, '-', ''), ' ', ''), ')', ''), '(', '') regexp ~s = 1
+                                             or replace(replace(replace(replace(fax, '-', ''), ' ', ''), ')', ''), '(', '') regexp ~s = 1
+                                             or replace(replace(replace(replace(mobile, '-', ''), ' ', ''), ')', ''), '(', '') regexp ~s = 1
+                                             or replace(replace(replace(replace(kont_person, '-', ''), ' ', ''), ')', ''), '(', '') regexp ~s = 1) 
+                                         and category = 0 limit 1)) limit 1
+                                ", [PhoneNumber, PhoneNumber, PhoneNumber, PhoneNumber, PhoneNumber]),
     z_mydb:q(QueryString, Context).
 
 

@@ -4,7 +4,7 @@
 -svc_title("CID Info.").
 -svc_needauth(false).
 
--export([process_get/2]).
+-export([process_get/2, number_length/2]).
 
 -include_lib("zotonic.hrl").
 
@@ -34,12 +34,21 @@ is_key_valid(Context) ->
     end.
 
 get_cidinfo(Number, Context) ->
-    PhoneNumber = case (length(Number) > 10) of
-                       'true' -> string:substr(Number, length(Number)-9);
-                       'false' -> Number
-                  end,
+    PhoneNumber = number_length(Number, 10),
     case lb:get_account_info_by_number(PhoneNumber, Context) of
-        [] -> [{'company_name', ""}, {'agrm_num', ""}, {'contact_person', <<"">>},{'cur_balance', ""}, {'login_name', ""}, {'calling_number', PhoneNumber}];
+        [] -> 
+              PhoneNumber2 = number_length(Number, 7),
+              case lb:get_account_info_by_number(PhoneNumber2, Context) of 
+                  [] -> [{'company_name', ""}, {'agrm_num', ""}, {'contact_person', <<"">>},{'cur_balance', ""}, {'login_name', ""}, {'calling_number', PhoneNumber2}];
+                  [[CompanyName, Login, _Email, Balance, Person]] ->
+                        [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber2}]
+              end;
         [[CompanyName, Login, _Email, Balance, Person]] ->
               [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber}]
+    end.
+
+number_length(Number, Length) ->
+    case (length(Number) > Length) of
+        'true' -> string:substr(Number, length(Number)-Length+1);
+        'false' -> Number
     end.
