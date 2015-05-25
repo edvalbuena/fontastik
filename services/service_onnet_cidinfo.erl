@@ -39,12 +39,12 @@ get_cidinfo(Number, Context) ->
         [] -> 
               PhoneNumber2 = number_length(Number, 7),
               case lb:get_account_info_by_number(PhoneNumber2, Context) of 
-                  [] -> [{'company_name', ""}, {'agrm_num', ""}, {'contact_person', <<"">>},{'cur_balance', ""}, {'login_name', ""}, {'calling_number', PhoneNumber2}];
-                  [[CompanyName, Login, _Email, Balance, Person]] ->
-                        [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber2}]
+                  [] -> [{'company_name', ""}, {'agrm_num', ""}, {'contact_person', <<"">>},{'cur_balance', ""}, {'login_name', ""}, {'calling_number', PhoneNumber2}, {'email', ""}];
+                  [[CompanyName, Login, Email, Balance, Person]] ->
+                        [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber2}, {'email', Email}]
               end;
-        [[CompanyName, Login, _Email, Balance, Person]] ->
-              [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber}]
+        [[CompanyName, Login, Email, Balance, Person]] ->
+              [{'company_name', CompanyName}, {'agrm_num', ""}, {'contact_person', Person}, {'cur_balance', Balance}, {'login_name', Login}, {'calling_number', PhoneNumber}, {'email', Email}]
     end.
 
 number_length(Number, Length) ->

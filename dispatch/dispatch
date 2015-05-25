@@ -39,6 +39,7 @@
  {mail, ["mail"], controller_redirect, [{url, "https://mail.onnet.su"}, {is_permanent, true}]},
 
  {test,["test"],         controller_template,  [ {template, "test.tpl"} ]},
+ {popup_login,["popup_login"],         controller_popup,  [ ]},
 
  {blog,["blog", id],         controller_page,  [ {template, "blog.tpl"} ]},
  {blog,["blog", id, slug],   controller_page,  [ {template, "blog.tpl"} ]},
