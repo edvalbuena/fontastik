@@ -1,6 +1,9 @@
 msgid "Russia"
 msgstr "Россия"
 
+msgid "Electronic Data Interchange"
+msgstr "Электронный документооборот"
+
 msgid "City Reach Data Centre"
 msgstr "Дата-центр City Reach"
 

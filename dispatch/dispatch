@@ -17,6 +17,7 @@
  {trademark,["trademark"],         controller_template,  [ {template, "trademark.tpl"} ]},
  {licenses,["licenses"],         controller_template,  [ {template, "licenses.tpl"} ]},
  {companydetails,["companydetails"],         controller_template,  [ {template, "companydetails.tpl"} ]},
+ {edi,["edi"],         controller_template,  [ {template, "edi.tpl"} ]},
  {contactus,["contactus"],         controller_template,  [ {template, "contactus.tpl"} ]},
  {termsandconditions,["termsandconditions"],         controller_template,  [ {template, "termsandconditions.tpl"} ]},
  {ivr,["ivr"],         controller_template,  [ {template, "ivr.tpl"} ]},
