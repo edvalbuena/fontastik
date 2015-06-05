@@ -268,7 +268,7 @@ calc_curr_month_exp(Context) ->
         Uid ->
           {{Year, Month, Day}, {_, _, _}} = erlang:localtime(),
           Today = io_lib:format("~w~2..0w~2..0w",[Year, Month, Day]),
-          QueryString = io_lib:format("Select FORMAT(COALESCE(ifnull((SELECT sum(amount) FROM  tel001~s where uid = ~p),0) + ifnull((SELECT sum(amount) FROM  user002~s where uid = ~p),0) + ifnull((SELECT sum(amount) FROM  day where Month(timefrom) = Month(Now()) and Year(timefrom) = Year(Now()) and uid = ~p),0) + (Select sum(amount) from usbox_charge where agrm_id = (SELECT agrm_id FROM agreements where uid = ~p and oper_id = 1) and Month(period) = Month(Now()) and Year(period) = Year(Now())),0),2)",[Today,Uid,Today,Uid,Uid,Uid]),
+          QueryString = io_lib:format("Select FORMAT(COALESCE(ifnull((SELECT sum(amount) FROM  tel001~s where uid = ~p),0) + ifnull((SELECT sum(amount) FROM  user002~s where uid = ~p),0) + ifnull((SELECT sum(amount) FROM  day where Month(timefrom) = Month(Now()) and Year(timefrom) = Year(Now()) and uid = ~p),0) + (Select sum(amount) from usbox_charge where agrm_id = (SELECT agrm_id FROM agreements where uid = ~p and oper_id = 1 and archive = 0) and Month(period) = Month(Now()) and Year(period) = Year(Now())),0),2)",[Today,Uid,Today,Uid,Uid,Uid]),
           QueryCheckTableString = io_lib:format("show tables like 'tel001~s'", [Today]),
           case z_mydb:q(QueryCheckTableString, Context) of
                 [] -> ["0"];
