@@ -6,6 +6,7 @@
 
 {% block widget_content %}
 <table class="table table-hover table-centered table-condensed">
+    {% if m.modules.info.mod_assist.enabled %}
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
         <tr style="background-color:#F8F8F8">
@@ -25,6 +26,7 @@
             <td>{% button class="btn btn-xs btn-onnet pull-right" action={postback postback="assist_pay" delegate="onnet" qarg="assist_pay"} text=_"proceed"%}</td>
         </tr>
     </tbody>
+    {% endif %}
     {% if m.modules.info.mod_zomoney.enabled %}
     <thead>
         <tr style="height: 10px; color: white!important; background-color: white!important;"><td colspan="3"></td></tr>
