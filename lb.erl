@@ -623,6 +623,13 @@ user_balance_notify(Context) ->
             end
     end.
 
+set_notify_balance_by_agrmid(1, Blimit, AgrmId, Context) ->
+    case z_context:get_session(lb_user_id, Context) of
+        undefined -> [];
+        UId ->
+            z_mydb:q_raw("update agreements set b_notify = ?, b_limit = ? where oper_id = 1 and uid = ?",[BNotify, Blimit, UId], Context)
+    end.
+
 set_notify_balance(BNotify, Blimit, Context) ->
     case z_context:get_session(lb_user_id, Context) of
         undefined -> [];
