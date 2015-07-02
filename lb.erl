@@ -57,6 +57,7 @@
        ,get_prefix_list/3
        ,user_balance_notify/1
        ,set_notify_balance/3
+       ,set_notify_balance_by_agrmid/4
        ,get_account_info_by_number/2
 ]).
 
@@ -623,12 +624,8 @@ user_balance_notify(Context) ->
             end
     end.
 
-set_notify_balance_by_agrmid(1, Blimit, AgrmId, Context) ->
-    case z_context:get_session(lb_user_id, Context) of
-        undefined -> [];
-        UId ->
-            z_mydb:q_raw("update agreements set b_notify = ?, b_limit = ? where oper_id = 1 and uid = ?",[BNotify, Blimit, UId], Context)
-    end.
+set_notify_balance_by_agrmid(BNotify, Blimit, AgrmId, Context) ->
+    z_mydb:q_raw("update agreements set b_notify = ?, b_limit = ? where oper_id = 1 and agrm_id = ?",[BNotify, Blimit, AgrmId], Context).
 
 set_notify_balance(BNotify, Blimit, Context) ->
     case z_context:get_session(lb_user_id, Context) of
