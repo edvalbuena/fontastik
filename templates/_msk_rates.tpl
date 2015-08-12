@@ -7,7 +7,7 @@
 <tr>
     <th style="text-align: center; vertical-align: middle; width: 45%;">{_ Description _}</th>
     <th  style="text-align: center; vertical-align: middle; width: 40%;">{_ Prefix _}</th>
-    <th style="text-align: center; vertical-align: middle; width: 15%;">{_ Price _}</th>
+    <th style="text-align: center; vertical-align: middle; width: 15%;">{_ Price _} ({_ excl VAT _})</th>
 </tr>
 </thead>
 <tbody>
