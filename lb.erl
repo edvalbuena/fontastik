@@ -286,7 +286,7 @@ account_payments(Limit, Context) ->
     case z_context:get_session(lb_user_id, Context) of
         undefined -> [];
         UId ->
-            QueryResult = z_mydb:q(<<"SELECT amount, left(pay_date,10), comment FROM payments where agrm_id = (SELECT agrm_id from agreements
+            QueryResult = z_mydb:q(<<"SELECT amount, left(pay_date,10), comment, status, left(cancel_date,10) FROM payments where agrm_id = (SELECT agrm_id from agreements
                  where uid  = ? and oper_id = 1 limit 1) ORDER BY LEFT( pay_date, 10 ) DESC limit ?">>,[UId, Limit], Context),
             QueryResult
     end.

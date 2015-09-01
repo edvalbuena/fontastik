@@ -22,28 +22,38 @@
     </thead>
     <tbody>
         {% if lines %}
-            {% for amount, date, comment in m.onnet[{account_payments limit=lines}] %}
+            {% for amount, date, comment, status, cancel_date in m.onnet[{account_payments limit=lines}] %}
                 <tr>
                     <td>{{ date }}</td>
                     <td class="td-center">{{ amount }}</td>
-                    <td class="td-center">{% if comment|match:"ssist" %}{_ ASSIST _}
-                                            {% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}
-                                            {% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}
-                                            {% else %}{_ Wire transfer _}
-                                            {% endif %}
+                    <td class="td-center">
+                      {% if status=="2" %}
+                        {_ Chargeback _} - {{ cancel_date }}
+                      {% else %}
+                        {% if comment|match:"ssist" %}{_ ASSIST _}
+                        {% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}
+                        {% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}
+                        {% else %}{_ Wire transfer _}
+                        {% endif %}
+                      {% endif %}
                     </td>
                 </tr>
             {% endfor %}
         {% else %}
-            {% for amount, date, comment in m.onnet.account_payments %}
+            {% for amount, date, comment, status, cancel_date in m.onnet.account_payments %}
                 <tr>
                     <td>{{ date }}</td>
                     <td class="td-center">{{ amount }}</td>
-                    <td class="td-center">{% if comment|match:"ssist" %}{_ ASSIST _}
-                                            {% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}
-                                            {% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}
-                                            {% else %}{_ Wire transfer _}
-                                            {% endif %}
+                    <td class="td-center">
+                      {% if status=="2" %}
+                        {_ Chargeback _} - {{ cancel_date }}
+                      {% else %}
+                        {% if comment|match:"ssist" %}{_ ASSIST _}
+                        {% elseif comment|match:"DengiOnl" %}{_ Dengi Online _}
+                        {% elseif comment|match:"Yandex.Money" %}{_ Yandex.Money _}
+                        {% else %}{_ Wire transfer _}
+                        {% endif %}
+                      {% endif %}
                     </td>
                 </tr>
             {% endfor %}
