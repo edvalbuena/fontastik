@@ -15,7 +15,7 @@
      <br />
      {_ 3 B. Morskaya str. _},
      <br />
-     {_ Business Center «Lidval» _}, {_ office _} 534
+     {_ Business Center «Lidval» _}, {_ office _} 505
   </li>
 
   <li style="padding-bottom: 1em;">{_ Sales Enquiries _} 
