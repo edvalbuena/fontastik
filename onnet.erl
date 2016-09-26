@@ -1,8 +1,8 @@
--module(onnet).
+-module(fontastik).
 -author("kirill.sysoev@gmail.com").
 
--mod_title("OnNet website").
--mod_description("OnNet website").
+-mod_title("fontastik").
+-mod_description("fontastik").
 -mod_prio(10).
 
 -export([
